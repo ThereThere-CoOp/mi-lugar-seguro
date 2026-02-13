@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bsi6owx6silmp"]
+
+[ext_resource type="Script" uid="uid://cvioo3h8iajd4" path="res://game/rooms/dining_room/room_dining_room.gd" id="1_7vr1q"]
+[ext_resource type="PackedScene" uid="uid://dub1pavngxayc" path="res://game/rooms/dining_room/props/background/prop_background.tscn" id="2_8l3ps"]
+[ext_resource type="PackedScene" uid="uid://b0iic84ftcbqm" path="res://game/rooms/dining_room/walkable_areas/dining_room/walkable_area_dining_room.tscn" id="2_a40g8"]
+[ext_resource type="PackedScene" uid="uid://cyawbxy7hqjpa" path="res://game/characters/mel/character_mel.tscn" id="3_h7v82"]
+
+[node name="RoomDiningRoom" type="Node2D" unique_id=1499937107]
+script = ExtResource("1_7vr1q")
+script_name = "DiningRoom"
+width = 384
+height = 216
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=1669335760]
+
+[node name="DiningRoom" parent="WalkableAreas" unique_id=1044030738 instance=ExtResource("2_a40g8")]
+
+[node name="Props" type="Node2D" parent="." unique_id=1191494412]
+
+[node name="Background" parent="Props" unique_id=1561339571 instance=ExtResource("2_8l3ps")]
+baseline = 0
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=1266283428]
+
+[node name="Regions" type="Node2D" parent="." unique_id=477507962]
+
+[node name="Markers" type="Node2D" parent="." unique_id=62722895]
+
+[node name="Characters" type="Node2D" parent="." unique_id=1174253765]
+
+[node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_h7v82")]
+position = Vector2(98, 164)
+metadata/EDITOR_TMP_COPY_OF = "Mel"

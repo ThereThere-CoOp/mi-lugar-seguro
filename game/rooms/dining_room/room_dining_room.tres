@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://wkvvl2hiqbkd"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/room_dining_room_state.gd" id="1_ohvoi"]
+
+[resource]
+resource_name = "DiningRoom"
+script = ExtResource("1_ohvoi")
+script_name = "DiningRoom"
+scene = "res://game/rooms/dining_room/room_dining_room.tscn"

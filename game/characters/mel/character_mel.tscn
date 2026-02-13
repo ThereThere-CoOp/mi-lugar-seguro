@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cyawbxy7hqjpa"]
+
+[ext_resource type="Script" uid="uid://rhc3i8mk121l" path="res://game/characters/mel/character_mel.gd" id="1_fkhqn"]
+[ext_resource type="Texture2D" uid="uid://ct28ym3f340bi" path="res://assets/characters/mel/Clothes 3/Character1F_3_idle_0.png" id="2_eyien"]
+
+[node name="CharacterMel" type="Area2D" unique_id=1544624530]
+script = ExtResource("1_fkhqn")
+flips_when = 2
+dialog_pos = Vector2(4.2291183, -88.37659)
+script_name = "Mel"
+description = "Mel"
+cursor = 8
+interaction_polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+interaction_polygon_position = Vector2(-2, -4.0000005)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=840826392]
+scale = Vector2(2.5, 2.5)
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1928215384]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=172647207]
+texture_filter = 1
+position = Vector2(-1.9999999, -39.999996)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_eyien")
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=790706011]
+visible = false
+position = Vector2(-2, -4.0000005)
+scale = Vector2(1.390894, -0.37536964)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=161101720]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
