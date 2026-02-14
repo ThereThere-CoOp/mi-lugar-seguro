@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dw6ye3goq4hx7"]
+
+[ext_resource type="Script" uid="uid://dyfjb7dn2jrvg" path="res://game/rooms/bed_room/room_bed_room.gd" id="1_07t5b"]
+[ext_resource type="PackedScene" uid="uid://dc2ad8c5yf6w1" path="res://game/rooms/bed_room/walkable_areas/bed_room/walkable_area_bed_room.tscn" id="2_6rab4"]
+[ext_resource type="PackedScene" uid="uid://fswcs0sppaew" path="res://game/rooms/bed_room/props/background/prop_background.tscn" id="2_puwli"]
+[ext_resource type="PackedScene" uid="uid://cyawbxy7hqjpa" path="res://game/characters/mel/character_mel.tscn" id="3_qxlar"]
+
+[node name="RoomBedRoom" type="Node2D" unique_id=715075739]
+script = ExtResource("1_07t5b")
+script_name = "BedRoom"
+width = 384
+height = 216
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=127929714]
+
+[node name="BedRoom" parent="WalkableAreas" unique_id=943201697 instance=ExtResource("2_6rab4")]
+position = Vector2(192, 108)
+interaction_polygon = [PackedVector2Array(-186, 19, -166, 16, -123, 15, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 15, 124, 13, 123, -10, 167, -9, 167, 14, 184, 15, 187, 103, -185, 100)]
+
+[node name="Props" type="Node2D" parent="." unique_id=1344969986]
+
+[node name="Background" parent="Props" unique_id=2017438015 instance=ExtResource("2_puwli")]
+baseline = 0
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=1803161742]
+
+[node name="Regions" type="Node2D" parent="." unique_id=1912086040]
+
+[node name="Markers" type="Node2D" parent="." unique_id=1772186368]
+
+[node name="Characters" type="Node2D" parent="." unique_id=628236741]
+
+[node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_qxlar")]
+position = Vector2(57, 174)
+metadata/EDITOR_TMP_COPY_OF = "Mel"

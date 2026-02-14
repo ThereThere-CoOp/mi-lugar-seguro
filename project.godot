@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mi lugar seguro"
-run/main_scene="uid://bsi6owx6silmp"
+run/main_scene="uid://dw6ye3goq4hx7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

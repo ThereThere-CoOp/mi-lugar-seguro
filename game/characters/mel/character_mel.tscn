@@ -100,10 +100,11 @@ texture = ExtResource("2_eyien")
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=790706011]
 visible = false
 position = Vector2(-2, -4.0000005)
-scale = Vector2(1.390894, -0.37536964)
+scale = Vector2(1.2446927, -0.36872426)
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=161101720]
 visible = false
+scale = Vector2(0.38047364, 0.016938316)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
