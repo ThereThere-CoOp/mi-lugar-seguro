@@ -14,8 +14,7 @@ height = 216
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=127929714]
 
 [node name="BedRoom" parent="WalkableAreas" unique_id=943201697 instance=ExtResource("2_6rab4")]
-position = Vector2(192, 108)
-interaction_polygon = [PackedVector2Array(-186, 19, -166, 16, -123, 15, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 15, 124, 13, 123, -10, 167, -9, 167, 14, 184, 15, 187, 103, -185, 100)]
+interaction_polygon = [PackedVector2Array(-186, 19, -166, 16, -123, 15, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 39, 61, 37, 75, 32, 75, 13, 124, 13, 123, -10, 167, -9, 167, 14, 184, 15, 187, 103, -185, 100)]
 
 [node name="Props" type="Node2D" parent="." unique_id=1344969986]
 

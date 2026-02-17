@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cmenn03dmy8nc" path="res://game/rooms/bed_room/walkable_areas/bed_room/walkable_area_bed_room.gd" id="1_8ck7d"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_e47gf"]
-vertices = PackedVector2Array(124, 13, 123, -10, 167, -9, 167, 14, -166, 16, -123, 15, -123, 41, -185, 100, -186, 19, -91, 39, -91, 29, -75, 29, -75, 63, 187, 103, 49, 67, 48, 15, 184, 15)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 0, 3, 16), PackedInt32Array(14, 13, 7, 12), PackedInt32Array(12, 7, 6, 9)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-186, 19, -166, 16, -123, 15, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 15, 124, 13, 123, -10, 167, -9, 167, 14, 184, 15, 187, 103, -185, 100)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8ck7d"]
+vertices = PackedVector2Array(124, 13, 123, -10, 167, -9, 167, 14, -166, 16, -123, 15, -123, 41, -185, 100, -186, 19, -91, 39, -91, 29, -75, 29, -75, 63, 187, 103, 75, 32, 75, 13, 184, 15, 49, 67, 48, 39, 61, 37)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 0, 3, 16), PackedInt32Array(17, 18, 19), PackedInt32Array(6, 9, 12, 7), PackedInt32Array(13, 7, 12, 17), PackedInt32Array(14, 13, 17, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-186, 19, -166, 16, -123, 15, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 39, 61, 37, 75, 32, 75, 13, 124, 13, 123, -10, 167, -9, 167, 14, 184, 15, 187, 103, -185, 100)])
 agent_radius = 0.0
 
 [node name="BedRoom" type="Node2D" unique_id=943201697]
@@ -13,8 +13,8 @@ position = Vector2(192, 108)
 script = ExtResource("1_8ck7d")
 script_name = "BedRoom"
 description = "Bed Room"
-interaction_polygon = [PackedVector2Array(-186, 19, -166, 16, -123, 15, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 15, 124, 13, 123, -10, 167, -9, 167, 14, 184, 15, 187, 103, -185, 100)]
+interaction_polygon = [PackedVector2Array(-186, 19, -166, 16, -123, 15, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 39, 61, 37, 75, 32, 75, 13, 124, 13, 123, -10, 167, -9, 167, 14, 184, 15, 187, 103, -185, 100)]
 
 [node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=1609240134]
 modulate = Color(0, 1, 0, 1)
-navigation_polygon = SubResource("NavigationPolygon_e47gf")
+navigation_polygon = SubResource("NavigationPolygon_8ck7d")

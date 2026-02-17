@@ -453,6 +453,7 @@ texture = ExtResource("3_dnsku")
 8:2/0 = 0
 8:3/0 = 0
 8:4/0 = 0
+9:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnsku"]
 texture = ExtResource("4_fwg3u")
