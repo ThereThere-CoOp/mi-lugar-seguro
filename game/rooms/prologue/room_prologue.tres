@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://uhgnmygc0psw"]
+
+[ext_resource type="Script" path="res://game/rooms/prologue/room_prologue_state.gd" id="1_gqmyn"]
+
+[resource]
+resource_name = "Prologue"
+script = ExtResource("1_gqmyn")
+script_name = "Prologue"
+scene = "res://game/rooms/prologue/room_prologue.tscn"

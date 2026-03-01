@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dap2yysfe2wsu"]
+
+[ext_resource type="Script" uid="uid://c2mp42vh6fjj6" path="res://game/rooms/prologue/room_prologue.gd" id="1_jvhu4"]
+[ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="2_jvani"]
+[ext_resource type="PackedScene" uid="uid://drtn0vby8ska" path="res://game/rooms/prologue/props/background/prop_background.tscn" id="2_xfuyb"]
+[ext_resource type="FontFile" uid="uid://dixh1egf7k2fb" path="res://addons/popochiu/engine/objects/gui/fonts/monkeyisland_1991.ttf" id="4_oeuk6"]
+
+[node name="RoomPrologue" type="Node2D" unique_id=39465226]
+script = ExtResource("1_jvhu4")
+script_name = "Prologue"
+has_player = false
+hide_gui = true
+width = 384
+height = 216
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=560540627]
+
+[node name="Props" type="Node2D" parent="." unique_id=2065690630]
+
+[node name="Background" parent="Props" unique_id=567898875 instance=ExtResource("2_xfuyb")]
+position = Vector2(192, 108)
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=1598200187]
+
+[node name="Regions" type="Node2D" parent="." unique_id=1573567076]
+
+[node name="Markers" type="Node2D" parent="." unique_id=36916081]
+
+[node name="Characters" type="Node2D" parent="." unique_id=21497531]
+
+[node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("2_jvani")]
+position = Vector2(192, 108)
+metadata/EDITOR_TMP_COPY_OF = "Narrator"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1751078837]
+layer = -1
+
+[node name="ChapterLabel" type="Label" parent="CanvasLayer" unique_id=284676389]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_oeuk6")
+theme_override_font_sizes/font_size = 34

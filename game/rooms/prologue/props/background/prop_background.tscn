@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://drtn0vby8ska"]
+
+[ext_resource type="Script" uid="uid://cja8hfdhtst7s" path="res://game/rooms/prologue/props/background/prop_background.gd" id="1_pc1ad"]
+
+[node name="Background" type="Area2D" unique_id=567898875]
+z_index = -1
+input_pickable = false
+script = ExtResource("1_pc1ad")
+script_name = "Background"
+description = "Background"
+clickable = false
+baseline = -108
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352306521]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=723073719]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1201356074]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1682955368]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=2061582659]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1372657089]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

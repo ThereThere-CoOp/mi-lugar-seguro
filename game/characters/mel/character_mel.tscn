@@ -77,15 +77,16 @@ _data = {
 [node name="CharacterMel" type="Area2D" unique_id=1544624530]
 script = ExtResource("1_fkhqn")
 flips_when = 2
-dialog_pos = Vector2(4.2291183, -88.37659)
+dialog_pos = Vector2(1.8838768, -80.11241)
 script_name = "Mel"
 description = "Mel"
 cursor = 8
 interaction_polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
-interaction_polygon_position = Vector2(-2, -4.0000005)
+interaction_polygon_position = Vector2(-2, -3)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=840826392]
-scale = Vector2(2.5, 2.5)
+position = Vector2(0, -37.999992)
+scale = Vector2(2.5, 4.5)
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1928215384]
@@ -99,12 +100,12 @@ texture = ExtResource("2_eyien")
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=790706011]
 visible = false
-position = Vector2(-2, -4.0000005)
-scale = Vector2(1.2446927, -0.36872426)
+position = Vector2(-2, -3)
+scale = Vector2(1.8186512, -0.83782494)
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=161101720]
 visible = false
-scale = Vector2(0.38047364, 0.016938316)
+scale = Vector2(0.60340405, 0.018054994)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
