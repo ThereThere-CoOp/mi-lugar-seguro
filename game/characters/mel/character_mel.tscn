@@ -8,12 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://brolyiri1adra" path="res://assets/characters/mel/Clothes 3/Character1F_3_idle_5.png" id="6_nbarx"]
 [ext_resource type="Texture2D" uid="uid://cdgjkqu3pd3um" path="res://assets/characters/mel/Clothes 3/Character1F_3_idle_6.png" id="7_r5o6r"]
 [ext_resource type="Texture2D" uid="uid://6wba8i4a6y8d" path="res://assets/characters/mel/Clothes 3/Character1F_3_idle_7.png" id="8_6c2m0"]
+[ext_resource type="Texture2D" uid="uid://co6el7vtu7nna" path="res://assets/characters/mel/Clothes 3/Character1F_3_talk_0.png" id="9_lirtj"]
 [ext_resource type="Texture2D" uid="uid://cqlnqs5jhj2rw" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_0.png" id="9_r5o6r"]
 [ext_resource type="Texture2D" uid="uid://ckbkxei5jwqj4" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_1.png" id="10_6c2m0"]
+[ext_resource type="Texture2D" uid="uid://bej55m0y37m2i" path="res://assets/characters/mel/Clothes 3/Character1F_3_talk_1.png" id="10_glrqt"]
+[ext_resource type="Texture2D" uid="uid://cd73r2vjf3lgu" path="res://assets/characters/mel/Clothes 3/Character1F_3_talk_2.png" id="11_1n0ig"]
 [ext_resource type="Texture2D" uid="uid://b3sxaam0n6nl5" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_2.png" id="11_dipg2"]
 [ext_resource type="Texture2D" uid="uid://by860nhsv6sqg" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_3.png" id="12_48wsb"]
+[ext_resource type="Texture2D" uid="uid://bp2vs2k8jvjbc" path="res://assets/characters/mel/Clothes 3/Character1F_3_talk_3.png" id="12_nonkf"]
 [ext_resource type="Texture2D" uid="uid://y7hyrbycn2kt" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_4.png" id="13_acoqt"]
+[ext_resource type="Texture2D" uid="uid://dm1buljwupp6c" path="res://assets/characters/mel/Clothes 3/Character1F_3_talk_4.png" id="13_jhmjc"]
 [ext_resource type="Texture2D" uid="uid://d37cn4wpmx1n1" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_5.png" id="14_n4nyv"]
+[ext_resource type="Texture2D" uid="uid://crcapp0sifk1p" path="res://assets/characters/mel/Clothes 3/Character1F_3_talk_5.png" id="14_v54hc"]
+[ext_resource type="Texture2D" uid="uid://cinfowviwt7ba" path="res://assets/characters/mel/Clothes 3/Character1F_3_talk_6.png" id="15_j4kgf"]
 [ext_resource type="Texture2D" uid="uid://cyjkjhho3ujtc" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_6.png" id="15_jvyrj"]
 [ext_resource type="Texture2D" uid="uid://us38fw5q5qun" path="res://assets/characters/mel/Clothes 3/Character1F_3_walk_7.png" id="16_2hter"]
 
@@ -49,6 +56,23 @@ tracks/0/keys = {
 "values": [ExtResource("2_eyien"), ExtResource("3_ooijo"), ExtResource("2_eyien"), ExtResource("4_byrdo"), ExtResource("5_kybbw"), ExtResource("6_nbarx"), ExtResource("7_r5o6r"), ExtResource("8_6c2m0")]
 }
 
+[sub_resource type="Animation" id="Animation_dj513"]
+resource_name = "talk"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("9_lirtj"), ExtResource("10_glrqt"), ExtResource("11_1n0ig"), ExtResource("12_nonkf"), ExtResource("13_jhmjc"), ExtResource("14_v54hc"), ExtResource("15_j4kgf")]
+}
+
 [sub_resource type="Animation" id="Animation_acoqt"]
 resource_name = "walk"
 length = 0.7
@@ -71,15 +95,19 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_dipg2"),
 &"idle": SubResource("Animation_48wsb"),
+&"talk": SubResource("Animation_dj513"),
 &"walk": SubResource("Animation_acoqt")
 }
 
 [node name="CharacterMel" type="Area2D" unique_id=1544624530]
+scale = Vector2(2.5, 2.5)
+input_pickable = false
 script = ExtResource("1_fkhqn")
 flips_when = 2
 dialog_pos = Vector2(1.8838768, -80.11241)
 script_name = "Mel"
 description = "Mel"
+clickable = false
 cursor = 8
 interaction_polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 interaction_polygon_position = Vector2(-2, -3)
@@ -94,8 +122,7 @@ libraries/ = SubResource("AnimationLibrary_acoqt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=172647207]
 texture_filter = 1
-position = Vector2(-1.9999999, -39.999996)
-scale = Vector2(2.5, 2.5)
+position = Vector2(-0.8000002, -16)
 texture = ExtResource("2_eyien")
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=790706011]

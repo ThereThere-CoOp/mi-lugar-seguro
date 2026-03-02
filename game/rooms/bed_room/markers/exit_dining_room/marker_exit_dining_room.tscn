@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bencgv1xtdnbv"]
+
+[node name="ExitDiningRoom" type="Marker2D" unique_id=527159596]
+visible = false

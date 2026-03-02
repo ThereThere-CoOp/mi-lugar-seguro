@@ -18,4 +18,3 @@ func get_DiningRoom() -> PRDiningRoom: return get_runtime_room("DiningRoom")
 func get_BedRoom() -> PRBedRoom: return get_runtime_room("BedRoom")
 func get_Prologue() -> PRPrologue: return get_runtime_room("Prologue")
 # ---- functions
-

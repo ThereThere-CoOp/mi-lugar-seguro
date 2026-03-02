@@ -11,21 +11,21 @@ var state: Data = load("res://game/rooms/prologue/room_prologue.tres")
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	R.Prologue.hide_gui = true
 
 
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	await E.cutscene([
-		"Narrator: Esta es una pequeña historia",
-		"Narrator: La historia de una chica llamada Mel",
-		"Narrator: Mel es muy hermosa y muy inteligente",
-		"Narrator: Tiene grandes dotes para el arte y se le da muy bien la cocina",
-		"Narrator: Es muy soñadora y cariñosa con sus seres queridos",
-		"Narrator: Vive con Ed, su esposo y con sus dos mascotas, Lufi y Sauron",
-		"Narrator: Y asi comienza nuestra historia, al inicio de una mañana como muchas otras...",
-	])
+	await C.Narrator.say("Esta es una pequeña historia")
+	await C.Narrator.say("La historia de una chica llamada Mel")
+	await C.Narrator.say("Mel es muy hermosa y muy inteligente")
+	await C.Narrator.say("Tiene grandes dotes para el arte y se le da muy bien la cocina")
+	await C.Narrator.say("Es muy soñadora y cariñosa con sus seres queridos")
+	await C.Narrator.say("Vive con Ed, su esposo y con sus dos mascotas, Lufi y Sauron")
+	await C.Narrator.say("Es muy soñadora y cariñosa con sus seres queridos")
+	await C.Narrator.say("Y asi comienza otra dia...")
+	
 	await E.wait(1.5)
 	chapter_label.text = "TEMPRANO EN LA MAÑANA..."
 	await E.wait(1.5)

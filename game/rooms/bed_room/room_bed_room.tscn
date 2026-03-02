@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://fswcs0sppaew" path="res://game/rooms/bed_room/props/background/prop_background.tscn" id="2_puwli"]
 [ext_resource type="PackedScene" uid="uid://cyawbxy7hqjpa" path="res://game/characters/mel/character_mel.tscn" id="3_qxlar"]
 [ext_resource type="PackedScene" uid="uid://bjuwbjboqup0s" path="res://game/rooms/bed_room/markers/initial_position/marker_initial_position.tscn" id="4_ixgta"]
+[ext_resource type="PackedScene" uid="uid://vhb4uok4h51x" path="res://game/rooms/bed_room/props/bed_sheet/prop_bed_sheet.tscn" id="4_x1pos"]
+[ext_resource type="PackedScene" uid="uid://bencgv1xtdnbv" path="res://game/rooms/bed_room/markers/exit_dining_room/marker_exit_dining_room.tscn" id="6_yp1o7"]
+[ext_resource type="PackedScene" uid="uid://dasg3xr6ca1ix" path="res://game/characters/ed/character_ed.tscn" id="7_yp1o7"]
 
 [node name="RoomBedRoom" type="Node2D" unique_id=715075739]
 script = ExtResource("1_07t5b")
@@ -21,6 +24,11 @@ height = 216
 [node name="Background" parent="Props" unique_id=2017438015 instance=ExtResource("2_puwli")]
 baseline = 0
 
+[node name="BedSheet" parent="Props" unique_id=185888496 instance=ExtResource("4_x1pos")]
+position = Vector2(180, 148)
+walk_to_point = Vector2(0.22315979, -15.7404175)
+look_at_point = Vector2(0.034332275, -15.202026)
+
 [node name="Hotspots" type="Node2D" parent="." unique_id=1803161742]
 
 [node name="Regions" type="Node2D" parent="." unique_id=1912086040]
@@ -28,10 +36,17 @@ baseline = 0
 [node name="Markers" type="Node2D" parent="." unique_id=1772186368]
 
 [node name="InitialPosition" parent="Markers" unique_id=1356051812 instance=ExtResource("4_ixgta")]
-position = Vector2(94.30421, 150.92303)
+position = Vector2(123.62753, 132.81552)
+
+[node name="ExitDiningRoom" parent="Markers" unique_id=527159596 instance=ExtResource("6_yp1o7")]
+position = Vector2(318.00397, 200.11325)
 
 [node name="Characters" type="Node2D" parent="." unique_id=628236741]
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_qxlar")]
-position = Vector2(167, 147)
+position = Vector2(175, 147)
 metadata/EDITOR_TMP_COPY_OF = "Mel"
+
+[node name="CharacterEd *" parent="Characters" unique_id=852686659 instance=ExtResource("7_yp1o7")]
+position = Vector2(315.00003, 214)
+metadata/EDITOR_TMP_COPY_OF = "Ed"

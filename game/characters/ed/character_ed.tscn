@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dasg3xr6ca1ix"]
+
+[ext_resource type="Script" uid="uid://cj7qs5681c6tr" path="res://game/characters/ed/character_ed.gd" id="1_plhxc"]
+[ext_resource type="Texture2D" uid="uid://ctclf1wpba4d7" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_0.png" id="2_jbq84"]
+[ext_resource type="Texture2D" uid="uid://cs58a468t8pvp" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_1.png" id="3_1jbmi"]
+[ext_resource type="Texture2D" uid="uid://dnld82j8n7b04" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_2.png" id="4_le2gp"]
+[ext_resource type="Texture2D" uid="uid://c5cvd18pwqgp3" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_3.png" id="5_ly5c0"]
+[ext_resource type="Texture2D" uid="uid://bfkdf70kip6jl" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_4.png" id="6_xqa4b"]
+[ext_resource type="Texture2D" uid="uid://rkp8bg53pvcg" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_5.png" id="7_y2a0i"]
+[ext_resource type="Texture2D" uid="uid://x77jtuiwghtd" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_6.png" id="8_0n8qo"]
+[ext_resource type="Texture2D" uid="uid://c1w2bqbhy23ju" path="res://assets/characters/ed/Clothes 2/Character1M_2_idle_7.png" id="9_bywp6"]
+[ext_resource type="Texture2D" uid="uid://bmlgui48v17sh" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_0.png" id="10_65uor"]
+[ext_resource type="Texture2D" uid="uid://c3xiga84qad8q" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_1.png" id="11_yen6s"]
+[ext_resource type="Texture2D" uid="uid://bxwr5ajd4i6xr" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_2.png" id="12_2d4vh"]
+[ext_resource type="Texture2D" uid="uid://bkquuya1y5gac" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_3.png" id="13_heesr"]
+[ext_resource type="Texture2D" uid="uid://ckbrobnv87lop" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_4.png" id="14_xcq55"]
+[ext_resource type="Texture2D" uid="uid://c7d0bcre27i7f" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_5.png" id="15_v2af4"]
+[ext_resource type="Texture2D" uid="uid://big6pvxdbn6ji" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_6.png" id="16_4kk7o"]
+[ext_resource type="Texture2D" uid="uid://d02ljivvov5md" path="res://assets/characters/ed/Clothes 2/Character1M_2_walk_7.png" id="17_jgqqe"]
+
+[sub_resource type="Animation" id="Animation_vxxsy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_jbq84")]
+}
+
+[sub_resource type="Animation" id="Animation_65uor"]
+resource_name = "idle"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_jbq84"), ExtResource("3_1jbmi"), ExtResource("4_le2gp"), ExtResource("5_ly5c0"), ExtResource("6_xqa4b"), ExtResource("7_y2a0i"), ExtResource("8_0n8qo"), ExtResource("9_bywp6")]
+}
+
+[sub_resource type="Animation" id="Animation_nq1ms"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_65uor"), ExtResource("11_yen6s"), ExtResource("12_2d4vh"), ExtResource("13_heesr"), ExtResource("14_xcq55"), ExtResource("15_v2af4"), ExtResource("16_4kk7o"), ExtResource("17_jgqqe")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yen6s"]
+_data = {
+&"RESET": SubResource("Animation_vxxsy"),
+&"idle": SubResource("Animation_65uor"),
+&"walk": SubResource("Animation_nq1ms")
+}
+
+[node name="CharacterEd" type="Area2D" unique_id=852686659]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_plhxc")
+flips_when = 2
+walk_speed = 100.0
+dialog_pos = Vector2(-0.8705139, -85.09297)
+script_name = "Ed"
+description = "Ed"
+cursor = 8
+interaction_polygon = PackedVector2Array(8.034138, -20.4, 8.879836, 10, -10, 10, -9.744022, -9.198282, -5.919891, -12.799999, -4.2284937, -20.4)
+interaction_polygon_position = Vector2(0.4, -9.6)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=188815922]
+position = Vector2(1.5999999, -16)
+rotation = -0.001877741
+scale = Vector2(0.777474, 1.6124474)
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2037122037]
+libraries/ = SubResource("AnimationLibrary_yen6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=443175060]
+texture_filter = 1
+position = Vector2(0, -16)
+texture = ExtResource("2_jbq84")
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=269666272]
+visible = false
+position = Vector2(0.4, -9.6)
+scale = Vector2(0.9459634, 1)
+polygon = PackedVector2Array(8.034138, -20.4, 8.879836, 10, -10, 10, -9.744022, -9.198282, -5.919891, -12.799999, -4.2284937, -20.4)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1165694443]
+visible = false
+vertices = PackedVector2Array(-8.4, 0, -8.4, -3.1999998, 7.5999994, -2.7999997, 8.4, 0)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
