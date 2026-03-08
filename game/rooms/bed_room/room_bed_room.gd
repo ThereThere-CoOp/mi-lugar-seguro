@@ -11,13 +11,16 @@ var state: Data = load("res://game/rooms/bed_room/room_bed_room.tres")
 # tree but it is not visible
 func _on_room_entered() -> void:
 	C.Ed.set_alpha(0)
-	C.Mel.can_move = false
+	
+	if not state.despertar_cutscene_watched:
+		C.Mel.can_move = false
 
 
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	D.Despertar1.start()
+	if not state.despertar_cutscene_watched:
+		D.Despertar1.start()
 
 
 # What happens before Popochiu unloads the room.

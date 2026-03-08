@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bjuwbjboqup0s" path="res://game/rooms/bed_room/markers/initial_position/marker_initial_position.tscn" id="4_ixgta"]
 [ext_resource type="PackedScene" uid="uid://vhb4uok4h51x" path="res://game/rooms/bed_room/props/bed_sheet/prop_bed_sheet.tscn" id="4_x1pos"]
 [ext_resource type="PackedScene" uid="uid://7l7ggx5gnsda" path="res://game/rooms/bed_room/props/cup_coffee/prop_cup_coffee.tscn" id="5_b2jh8"]
-[ext_resource type="PackedScene" uid="uid://bencgv1xtdnbv" path="res://game/rooms/bed_room/markers/exit_dining_room/marker_exit_dining_room.tscn" id="6_yp1o7"]
+[ext_resource type="PackedScene" uid="uid://hygqfaa78knh" path="res://game/rooms/bed_room/hotspots/exit_dining_room/hotspot_exit_dining_room.tscn" id="6_b2jh8"]
 [ext_resource type="PackedScene" uid="uid://dasg3xr6ca1ix" path="res://game/characters/ed/character_ed.tscn" id="7_yp1o7"]
 
 [node name="RoomBedRoom" type="Node2D" unique_id=715075739]
@@ -19,6 +19,7 @@ height = 216
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=127929714]
 
 [node name="BedRoom" parent="WalkableAreas" unique_id=943201697 instance=ExtResource("2_6rab4")]
+interaction_polygon = [PackedVector2Array(-186, 19, -166, 16, -166, 29, -123, 29, -123, 41, -91, 39, -91, 29, -75, 29, -75, 63, 49, 67, 48, 39, 45, 12, 73, 12, 82, 4, 118, 2, 125, 11, 167, 14, 167, 36, 189, 37, 187, 103, -185, 100)]
 
 [node name="Props" type="Node2D" parent="." unique_id=1344969986]
 
@@ -36,15 +37,21 @@ interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1803161742]
 
+[node name="ExitDiningRoom" parent="Hotspots" unique_id=350996541 instance=ExtResource("6_b2jh8")]
+position = Vector2(317, 210)
+description = "Ir a la sala principal"
+baseline = -218
+walk_to_point = Vector2(-0.45483398, -2.0108948)
+look_at_point = Vector2(-0.18060303, -2.3220825)
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+interaction_polygon_position = Vector2(0, -7)
+
 [node name="Regions" type="Node2D" parent="." unique_id=1912086040]
 
 [node name="Markers" type="Node2D" parent="." unique_id=1772186368]
 
 [node name="InitialPosition" parent="Markers" unique_id=1356051812 instance=ExtResource("4_ixgta")]
 position = Vector2(123.62753, 132.81552)
-
-[node name="ExitDiningRoom" parent="Markers" unique_id=527159596 instance=ExtResource("6_yp1o7")]
-position = Vector2(318.00397, 200.11325)
 
 [node name="Characters" type="Node2D" parent="." unique_id=628236741]
 

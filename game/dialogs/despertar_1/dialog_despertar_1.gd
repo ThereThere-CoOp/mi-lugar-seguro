@@ -35,7 +35,7 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 			await C.Ed.say("Buenos dias dormilona.")
 		"grrr":
 			E.camera.shake(0.6, 1.5)
-			await C.Mel.say("Grrrrr!!!")
+			await C.Mel.say("[shake]Grrrrr!!![/shake]")
 			await C.Mel.say("Por que no me puedes despertar de manera mas tierna!!!")
 			await C.Ed.say("Es que no te despertabas.")
 			await C.Mel.say("Podrias darme un besito o dos!")

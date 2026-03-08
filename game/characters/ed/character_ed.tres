@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://cim68r4tt7dxt"]
 
-[ext_resource type="Script" path="res://game/characters/ed/character_ed_state.gd" id="1_q34ns"]
+[ext_resource type="Script" uid="uid://n43dokc8owvq" path="res://game/characters/ed/character_ed_state.gd" id="1_q34ns"]
 
 [resource]
 resource_name = "Ed"

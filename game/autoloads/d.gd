@@ -15,4 +15,3 @@ var Despertar2: PDDespertar2 : get = get_Despertar2
 func get_Despertar1() -> PDDespertar1: return get_instance("Despertar1")
 func get_Despertar2() -> PDDespertar2: return get_instance("Despertar2")
 # ---- functions
-

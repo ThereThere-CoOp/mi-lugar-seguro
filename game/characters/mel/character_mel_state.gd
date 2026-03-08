@@ -5,6 +5,11 @@ extends PopochiuCharacterData
 # own.
 # script_name and scene variables from the inherited class will not be saved.
 
+var relationship_level = 0
+
+## where Mel will go today
+## could be to the "pool" or to "work"
+var where_go_today: String = "pool"
 
 #region Virtual ####################################################################################
 # Use this to save custom data for this PopochiuCharacter when saving the game.
@@ -21,3 +26,6 @@ func _on_load(data: Dictionary) -> void:
 
 
 #endregion
+
+func increase_relationship_level(value: int) -> void:
+	relationship_level += value

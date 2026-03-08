@@ -28,6 +28,8 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 	# each one
 	match opt.id:
 		"piscina":
+			C.Mel.state.where_go_today = "pool"
+			
 			await C.Mel.say("Hoy descanso por la tarde.")
 			await C.Ed.say("Que bueno.")
 			await C.Ed.say("Podemos ir a la piscina por la tarde.")
@@ -39,6 +41,8 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 			await C.Mel.say("Vitaminas D a mí.")
 			await C.Ed.say("Yo me puedo llevar mi libro.")
 		"trabajo":
+			C.Mel.state.where_go_today = "work"
+			
 			await C.Mel.say("Si. Por desgracia.")
 			await C.Ed.say("Oh. Se me arruinaron los planes.")
 			await C.Mel.say("¿Cuales planes tenías?")
@@ -52,14 +56,19 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 			# stop()
 			stop()
 			
+	var ExitDiningRoom = R.BedRoom.get_hotspot("ExitDiningRoom")
 	await C.Mel.say("Mejor me levanto entonces y me aseo")
 	await C.Mel.say("Antes que se haga más tarde.")
 	await C.Ed.say("No olvides tomarte el café.")
 	await C.Ed.say("Que se te va a enfríar.")
 	await C.Mel.say("Si mi amor, muchas gracias.")
 	
-	await C.Mel.walk_to_marker("InitialPosition")
+	await C.Ed.walk_to(ExitDiningRoom.position)
+	await C.Ed.fade_out(0.1)
+	R.BedRoom.remove_character(C.Ed)
 	
+	await E.wait(1.5)
+	await C.Mel.walk_to_marker("InitialPosition")
 	C.Mel.can_move = true
 	E.gui.show()
 	
