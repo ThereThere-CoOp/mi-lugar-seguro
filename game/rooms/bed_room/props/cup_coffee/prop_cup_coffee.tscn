@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://7l7ggx5gnsda"]
+
+[ext_resource type="Script" uid="uid://dwodg2ti3pw2i" path="res://game/rooms/bed_room/props/cup_coffee/prop_cup_coffee.gd" id="1_kg2uq"]
+[ext_resource type="Texture2D" uid="uid://c6kwfljk55c6w" path="res://assets/environment/interior/TopDownHouse_SmallItems.png" id="2_mbwgr"]
+[ext_resource type="Texture2D" uid="uid://druh2vd2janf" path="res://assets/smoke/steam.png" id="3_m1ske"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbwgr"]
+atlas = ExtResource("2_mbwgr")
+region = Rect2(64, 96, 32, 16)
+
+[sub_resource type="Curve" id="Curve_vftq6"]
+_data = [Vector2(0, 0.5393259), 0.0, 0.0, 0, 0, Vector2(1, 0.011235952), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fh4j7"]
+curve = SubResource("Curve_vftq6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_57mcd"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+inherit_velocity_ratio = 10.0
+velocity_pivot = Vector3(0, -1, 0)
+direction = Vector3(0, -1, 0)
+spread = 40.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 3.9999976
+damping_min = 1.0
+damping_max = 2.0
+scale_min = 0.0
+scale_max = 0.29999998
+alpha_curve = SubResource("CurveTexture_fh4j7")
+turbulence_enabled = true
+turbulence_noise_strength = 0.2
+
+[node name="CupCoffee" type="Area2D" unique_id=678871989]
+visible = false
+script = ExtResource("1_kg2uq")
+texture = SubResource("AtlasTexture_mbwgr")
+frames = 2
+current_frame = 1
+script_name = "CupCoffee"
+description = "Taza de cafe"
+cursor = 1
+interaction_polygon = PackedVector2Array(-5, -2, 6, -2, 6, 8, -5, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=577422657]
+texture_filter = 1
+texture = SubResource("AtlasTexture_mbwgr")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1489704630]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1713208402]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-5, -2, 6, -2, 6, 8, -5, 8)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1875918953]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Steam" type="GPUParticles2D" parent="." unique_id=297207008]
+unique_name_in_owner = true
+texture = ExtResource("3_m1ske")
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_57mcd")
