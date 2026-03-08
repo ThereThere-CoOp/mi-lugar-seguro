@@ -10,7 +10,7 @@ func _on_start() -> void:
 	await C.Ed.say("Hice cafe.")
 	await C.Ed.face_right()
 	await C.Ed.say("Te lo voy a dejar en la mesita de noche.")
-	await E.wait(1)
+	await  C.Ed.play_animation("take")
 	CupCoffe.visible = true
 	await E.wait(0.5)
 	await C.Ed.face_left()

@@ -71,6 +71,30 @@ tracks/0/keys = {
 "values": [SubResource("AtlasTexture_le2gp"), SubResource("AtlasTexture_2d4vh"), SubResource("AtlasTexture_heesr"), SubResource("AtlasTexture_xcq55"), SubResource("AtlasTexture_v2af4"), SubResource("AtlasTexture_4kk7o"), SubResource("AtlasTexture_jgqqe"), SubResource("AtlasTexture_nq1ms")]
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtc5k"]
+atlas = ExtResource("2_jbq84")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbdes"]
+atlas = ExtResource("2_jbq84")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Animation" id="Animation_j7hnw"]
+resource_name = "take"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_jtc5k"), SubResource("AtlasTexture_kbdes")]
+}
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbq84"]
 atlas = ExtResource("2_jbq84")
 region = Rect2(0, 0, 64, 64)
@@ -150,7 +174,7 @@ region = Rect2(448, 64, 64, 64)
 
 [sub_resource type="Animation" id="Animation_nq1ms"]
 resource_name = "walk"
-length = 0.7
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -169,6 +193,7 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_vxxsy"),
 &"idle": SubResource("Animation_65uor"),
+&"take": SubResource("Animation_j7hnw"),
 &"talk": SubResource("Animation_jbq84"),
 &"walk": SubResource("Animation_nq1ms")
 }
