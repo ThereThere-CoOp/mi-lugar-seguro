@@ -7,9 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bjuwbjboqup0s" path="res://game/rooms/bed_room/markers/initial_position/marker_initial_position.tscn" id="4_ixgta"]
 [ext_resource type="PackedScene" uid="uid://vhb4uok4h51x" path="res://game/rooms/bed_room/props/bed_sheet/prop_bed_sheet.tscn" id="4_x1pos"]
 [ext_resource type="PackedScene" uid="uid://7l7ggx5gnsda" path="res://game/rooms/bed_room/props/cup_coffee/prop_cup_coffee.tscn" id="5_b2jh8"]
+[ext_resource type="PackedScene" uid="uid://bm6gsvsjughnn" path="res://game/rooms/bed_room/props/vanity_left_drawer/prop_vanity_left_drawer.tscn" id="6_1yf5u"]
 [ext_resource type="PackedScene" uid="uid://hygqfaa78knh" path="res://game/rooms/bed_room/hotspots/exit_dining_room/hotspot_exit_dining_room.tscn" id="6_b2jh8"]
+[ext_resource type="PackedScene" uid="uid://x17mje0slvar" path="res://game/rooms/bed_room/props/vanity_right_drawer/prop_vanity_right_drawer.tscn" id="7_4yxwh"]
 [ext_resource type="PackedScene" uid="uid://d24prx2b3ssy1" path="res://game/rooms/bed_room/hotspots/exit_bath_room/hotspot_exit_bath_room.tscn" id="7_vlpal"]
 [ext_resource type="PackedScene" uid="uid://dasg3xr6ca1ix" path="res://game/characters/ed/character_ed.tscn" id="7_yp1o7"]
+[ext_resource type="PackedScene" uid="uid://d0toq6d0voehy" path="res://game/rooms/bed_room/props/vanity_mirror/prop_vanity_mirror.tscn" id="8_14qo7"]
+[ext_resource type="PackedScene" uid="uid://5i1fbmakb8i4" path="res://game/rooms/bed_room/props/night_table_top_drawer/prop_night_table_top_drawer.tscn" id="9_7ncx3"]
 
 [node name="RoomBedRoom" type="Node2D" unique_id=715075739]
 script = ExtResource("1_07t5b")
@@ -34,6 +38,38 @@ look_at_point = Vector2(0.034332275, -15.202026)
 [node name="CupCoffee" parent="Props" unique_id=678871989 instance=ExtResource("5_b2jh8")]
 position = Vector2(300, 61)
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="VanityLeftDrawer" parent="Props" unique_id=804172102 instance=ExtResource("6_1yf5u")]
+position = Vector2(42, 107)
+description = "Cajon Izquierdo"
+baseline = -116
+look_at_point = Vector2(-0.32701874, 0.32700348)
+interaction_polygon = PackedVector2Array(-11, -3, 13, -3, 13, 5, -11, 5)
+
+[node name="VanityRightDrawer" parent="Props" unique_id=1458685702 instance=ExtResource("7_4yxwh")]
+position = Vector2(100, 109)
+description = "Cajon Derecho"
+baseline = -112
+walk_to_point = Vector2(0.85993195, -1.4741516)
+look_at_point = Vector2(0.9827728, -1.719841)
+interaction_polygon = PackedVector2Array(-11, -6, 13, -6, 13, 3, -11, 3)
+
+[node name="VanityMirror" parent="Props" unique_id=1372542447 instance=ExtResource("8_14qo7")]
+position = Vector2(74, 65)
+input_pickable = true
+description = "Espejo del Vanity"
+clickable = true
+walk_to_point = Vector2(-3.2374573, -0.35971832)
+look_at_point = Vector2(-2.8566284, 0)
+interaction_polygon = PackedVector2Array(-17, -18, 13, -18, 12, 18, -17, 19)
+
+[node name="NightTableTopDrawer" parent="Props" unique_id=2101304523 instance=ExtResource("9_7ncx3")]
+position = Vector2(288, 80)
+description = "Cajon de arriba"
+baseline = -90
+walk_to_point = Vector2(0.54052734, 0.4053955)
+look_at_point = Vector2(0.81073, 0.13513184)
+interaction_polygon = PackedVector2Array(-12, -4, 14, -4, 14, 4, -12, 4)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1803161742]
 

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d0toq6d0voehy"]
+
+[ext_resource type="Script" path="res://game/rooms/bed_room/props/vanity_mirror/prop_vanity_mirror.gd" id="1_fhxxg"]
+
+[node name="VanityMirror" type="Area2D" unique_id=1372542447]
+input_pickable = false
+script = ExtResource("1_fhxxg")
+script_name = "VanityMirror"
+description = "Vanity Mirror"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1400011079]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=285814257]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1898310764]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1854878533]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

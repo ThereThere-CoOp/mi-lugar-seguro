@@ -5,8 +5,6 @@ extends PopochiuProp
 # the function until the sequence of events finishes.
 
 
-@onready var steam: GPUParticles2D = %Steam
-
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
@@ -27,8 +25,11 @@ func _on_double_click() -> void:
 
 # When the node is right clicked
 func _on_right_click() -> void:
-	await C.player.face_clicked()
-	await C.player.say("Ed siempre me hace cafe por las mañanas.")
+	# Replace the call to E.command_fallback() to implement your code.
+	PopochiuUtils.e.command_fallback()
+	# For example, you can make the player character gaze at this prop and then say something:
+#	await C.player.face_clicked()
+#	await C.player.say("A deck of cards")
 
 
 # When the node is middle clicked

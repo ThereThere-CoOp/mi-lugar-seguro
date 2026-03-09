@@ -5,8 +5,6 @@ extends PopochiuProp
 # the function until the sequence of events finishes.
 
 
-@onready var steam: GPUParticles2D = %Steam
-
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
@@ -28,7 +26,8 @@ func _on_double_click() -> void:
 # When the node is right clicked
 func _on_right_click() -> void:
 	await C.player.face_clicked()
-	await C.player.say("Ed siempre me hace cafe por las mañanas.")
+	await C.player.say("Necesitamos organizar estos cajones.")
+	await C.player.say("Hay muchas cosas guardadas.")
 
 
 # When the node is middle clicked
