@@ -6,7 +6,7 @@ extends PopochiuDialog
 func _on_start() -> void:
 	await E.wait(3.5)
 	await C.Ed.fade_in(0.1)
-	await C.Ed.walk_to(C.Ed.global_position + Vector2(-40,-80))
+	await C.Ed.walk_to(C.Ed.global_position + Vector2(-70,-80))
 	await C.Ed.face_left()
 	await C.Ed.say("Buenos dias !!")
 	await C.Ed.say("Buenos dias cosi !!")

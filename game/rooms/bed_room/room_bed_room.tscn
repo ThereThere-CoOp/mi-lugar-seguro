@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://vhb4uok4h51x" path="res://game/rooms/bed_room/props/bed_sheet/prop_bed_sheet.tscn" id="4_x1pos"]
 [ext_resource type="PackedScene" uid="uid://7l7ggx5gnsda" path="res://game/rooms/bed_room/props/cup_coffee/prop_cup_coffee.tscn" id="5_b2jh8"]
 [ext_resource type="PackedScene" uid="uid://hygqfaa78knh" path="res://game/rooms/bed_room/hotspots/exit_dining_room/hotspot_exit_dining_room.tscn" id="6_b2jh8"]
+[ext_resource type="PackedScene" uid="uid://d24prx2b3ssy1" path="res://game/rooms/bed_room/hotspots/exit_bath_room/hotspot_exit_bath_room.tscn" id="7_vlpal"]
 [ext_resource type="PackedScene" uid="uid://dasg3xr6ca1ix" path="res://game/characters/ed/character_ed.tscn" id="7_yp1o7"]
 
 [node name="RoomBedRoom" type="Node2D" unique_id=715075739]
@@ -37,13 +38,18 @@ interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 [node name="Hotspots" type="Node2D" parent="." unique_id=1803161742]
 
 [node name="ExitDiningRoom" parent="Hotspots" unique_id=350996541 instance=ExtResource("6_b2jh8")]
-position = Vector2(317, 210)
+position = Vector2(338, 209)
 description = "Ir a la sala principal"
 baseline = -218
-walk_to_point = Vector2(-0.45483398, -2.0108948)
-look_at_point = Vector2(-0.18060303, -2.3220825)
-interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+walk_to_point = Vector2(0.9935303, -0.85224915)
+look_at_point = Vector2(0.10913086, -0.87376404)
 interaction_polygon_position = Vector2(0, -7)
+
+[node name="ExitBathRoom" parent="Hotspots" unique_id=1975847934 instance=ExtResource("7_vlpal")]
+position = Vector2(5, 166)
+baseline = -173
+walk_to_point = Vector2(0.26332092, -1.053299)
+look_at_point = Vector2(0.789978, -0.78996277)
 
 [node name="Regions" type="Node2D" parent="." unique_id=1912086040]
 
@@ -59,5 +65,5 @@ position = Vector2(175, 147)
 metadata/EDITOR_TMP_COPY_OF = "Mel"
 
 [node name="CharacterEd *" parent="Characters" unique_id=852686659 instance=ExtResource("7_yp1o7")]
-position = Vector2(315.00003, 214)
+position = Vector2(337.00003, 213.00002)
 metadata/EDITOR_TMP_COPY_OF = "Ed"
