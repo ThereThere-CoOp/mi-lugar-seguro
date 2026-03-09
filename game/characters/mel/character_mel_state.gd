@@ -9,7 +9,7 @@ var relationship_level = 0
 
 ## where Mel will go today
 ## could be to the "pool" or to "work"
-var where_go_today: String = "pool"
+var chosen_day_schedule: int = GameConstants.DayScheduleChoice.POOL
 
 #region Virtual ####################################################################################
 # Use this to save custom data for this PopochiuCharacter when saving the game.

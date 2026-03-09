@@ -28,7 +28,7 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 	# each one
 	match opt.id:
 		"piscina":
-			C.Mel.state.where_go_today = "pool"
+			C.Mel.state.chosen_day_schedule = GameConstants.DayScheduleChoice.POOL
 			
 			await C.Mel.say("Hoy descanso por la tarde.")
 			await C.Ed.say("Que bueno.")
@@ -41,7 +41,7 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 			await C.Mel.say("Vitaminas D a mí.")
 			await C.Ed.say("Yo me puedo llevar mi libro.")
 		"trabajo":
-			C.Mel.state.where_go_today = "work"
+			C.Mel.state.chosen_day_schedule = GameConstants.DayScheduleChoice.WORK
 			
 			await C.Mel.say("Si. Por desgracia.")
 			await C.Ed.say("Oh. Se me arruinaron los planes.")

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://hygqfaa78knh"]
 
-[ext_resource type="Script" path="res://game/rooms/bed_room/hotspots/exit_dining_room/hotspot_exit_dining_room.gd" id="1_eawq8"]
+[ext_resource type="Script" uid="uid://8wud13f227hr" path="res://game/rooms/bed_room/hotspots/exit_dining_room/hotspot_exit_dining_room.gd" id="1_eawq8"]
 
 [node name="ExitDiningRoom" type="Area2D" unique_id=350996541]
 script = ExtResource("1_eawq8")
 script_name = "ExitDiningRoom"
 description = "Exit Dining Room"
 cursor = 1
-interaction_polygon = PackedVector2Array()
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=559093723]
 visible = false
