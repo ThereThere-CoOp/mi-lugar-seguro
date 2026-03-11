@@ -25,11 +25,8 @@ func _on_double_click() -> void:
 
 # When the node is right clicked
 func _on_right_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character gaze at this prop and then say something:
-#	await C.player.face_clicked()
-#	await C.player.say("A deck of cards")
+	await C.player.face_clicked()
+	await C.player.say("Aqui guardo mis cosas de maquillaje.")
 
 
 # When the node is middle clicked

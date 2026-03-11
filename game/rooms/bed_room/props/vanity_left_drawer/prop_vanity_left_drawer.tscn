@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bm6gsvsjughnn"]
 
-[ext_resource type="Script" path="res://game/rooms/bed_room/props/vanity_left_drawer/prop_vanity_left_drawer.gd" id="1_hq2pg"]
+[ext_resource type="Script" uid="uid://dlwxpmrxrx88i" path="res://game/rooms/bed_room/props/vanity_left_drawer/prop_vanity_left_drawer.gd" id="1_hq2pg"]
 
 [node name="VanityLeftDrawer" type="Area2D" unique_id=804172102]
 script = ExtResource("1_hq2pg")
 script_name = "VanityLeftDrawer"
 description = "Vanity Left Drawer"
 cursor = 1
-interaction_polygon = PackedVector2Array()
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=682687147]
 texture_filter = 1

@@ -11,6 +11,8 @@ var relationship_level = 0
 ## could be to the "pool" or to "work"
 var chosen_day_schedule: int = GameConstants.DayScheduleChoice.POOL
 
+var current_stage: int = GameConstants.StageChoice.HOME
+
 #region Virtual ####################################################################################
 # Use this to save custom data for this PopochiuCharacter when saving the game.
 # The Dictionary must contain only JSON supported types: bool, int, float, String.
