@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dasg3xr6ca1ix" path="res://game/characters/ed/character_ed.tscn" id="7_yp1o7"]
 [ext_resource type="PackedScene" uid="uid://d0toq6d0voehy" path="res://game/rooms/bed_room/props/vanity_mirror/prop_vanity_mirror.tscn" id="8_14qo7"]
 [ext_resource type="PackedScene" uid="uid://5i1fbmakb8i4" path="res://game/rooms/bed_room/props/night_table_top_drawer/prop_night_table_top_drawer.tscn" id="9_7ncx3"]
+[ext_resource type="PackedScene" uid="uid://dp0cf3412tx13" path="res://game/rooms/bed_room/props/family_canvas/prop_family_canvas.tscn" id="10_m6ce0"]
 
 [node name="RoomBedRoom" type="Node2D" unique_id=715075739]
 script = ExtResource("1_07t5b")
@@ -70,6 +71,11 @@ baseline = -90
 walk_to_point = Vector2(0.54052734, 0.4053955)
 look_at_point = Vector2(0.81073, 0.13513184)
 interaction_polygon = PackedVector2Array(-12, -4, 14, -4, 14, 4, -12, 4)
+
+[node name="FamilyCanvas" parent="Props" unique_id=571004603 instance=ExtResource("10_m6ce0")]
+position = Vector2(176, 23)
+description = "Foto de familia"
+baseline = -30
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1803161742]
 

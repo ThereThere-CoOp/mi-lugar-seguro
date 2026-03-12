@@ -7,11 +7,19 @@ extends PopochiuCharacterData
 
 var relationship_level = 0
 
+var current_stage: int = GameConstants.StageChoice.HOME
+#####################################################################################
+## puzzles variables
+####################################################################################
+var examined_bedroom_family_canvas: bool = false
+
+####################################################################################
+## cutscenes variables
+####################################################################################
 ## where Mel will go today
 ## could be to the "pool" or to "work"
 var chosen_day_schedule: int = GameConstants.DayScheduleChoice.POOL
-
-var current_stage: int = GameConstants.StageChoice.HOME
+var despertar_cutscene_watched: bool = true
 
 #region Virtual ####################################################################################
 # Use this to save custom data for this PopochiuCharacter when saving the game.
@@ -31,3 +39,4 @@ func _on_load(data: Dictionary) -> void:
 
 func increase_relationship_level(value: int) -> void:
 	relationship_level += value
+	await C.player.play_relationship_up_cue()

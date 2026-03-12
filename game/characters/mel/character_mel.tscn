@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://rhc3i8mk121l" path="res://game/characters/mel/character_mel.gd" id="1_fkhqn"]
 [ext_resource type="Texture2D" uid="uid://m36vfbcdw6r3" path="res://game/characters/mel/mel_trabajo_sprite_atlas.tres" id="2_eyien"]
+[ext_resource type="Texture2D" uid="uid://ddm3xukupx5sn" path="res://assets/environment/interior/custom_small_items.png" id="3_5gnj8"]
+[ext_resource type="Shader" uid="uid://dbcm83kih8y6k" path="res://shaders/jitterFreePixelArt.gdshader" id="3_7egt4"]
 
 [sub_resource type="Animation" id="Animation_dipg2"]
 length = 0.001
@@ -81,6 +83,74 @@ _data = {
 [sub_resource type="AtlasTexture" id="AtlasTexture_glrqt"]
 atlas = ExtResource("2_eyien")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8cgg0"]
+shader = ExtResource("3_7egt4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7egt4"]
+atlas = ExtResource("3_5gnj8")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="Animation" id="Animation_7egt4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -26.800001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8cgg0"]
+resource_name = "relationship_up_one"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -26.8), Vector2(0, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pv7r"]
+_data = {
+&"RESET": SubResource("Animation_7egt4"),
+&"relationship_up_one": SubResource("Animation_8cgg0")
+}
+
 [node name="CharacterMel" type="Area2D" unique_id=1544624530]
 scale = Vector2(2.5, 2.5)
 input_pickable = false
@@ -120,3 +190,17 @@ visible = false
 scale = Vector2(0.60340405, 0.018054994)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="RelationshipUpCue" type="Node2D" parent="." unique_id=2034141935]
+visible = false
+position = Vector2(0, -26.800001)
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="RelationshipUpCue" unique_id=2137723920]
+material = SubResource("ShaderMaterial_8cgg0")
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_7egt4")
+
+[node name="RelationshipUpCueAnimationPlayer" type="AnimationPlayer" parent="RelationshipUpCue" unique_id=2069042798]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_6pv7r")

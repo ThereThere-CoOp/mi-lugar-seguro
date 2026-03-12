@@ -8,6 +8,8 @@ const Data := preload('character_mel_state.gd')
 
 var state: Data = load("res://game/characters/mel/character_mel.tres")
 
+@onready var RelationShipUpCuePlayer: AnimationPlayer = %RelationshipUpCueAnimationPlayer
+
 
 #region Virtual ####################################################################################
 # When the room in which this node is located finishes being added to the tree
@@ -71,6 +73,7 @@ func _play_walk(target_pos: Vector2) -> void:
 # Use it to play the talk animation for the character
 func _play_talk() -> void:
 	super()
+	
 
 
 # Use it to play the grab animation for the character
@@ -96,5 +99,6 @@ func _on_movement_ended() -> void:
 #func on_look_at() -> void:
 	#pass
 
-
+func play_relationship_up_cue() -> void:
+	RelationShipUpCuePlayer.play("relationship_up_one")
 #endregion
