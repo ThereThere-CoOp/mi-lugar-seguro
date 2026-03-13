@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://c3874jct2r238"]
+
+[ext_resource type="Script" path="res://game/inventory_items/lipstick/inventory_item_lipstick_state.gd" id="1_0jvcr"]
+
+[resource]
+resource_name = "Lipstick"
+script = ExtResource("1_0jvcr")
+script_name = "Lipstick"
+scene = "res://game/inventory_items/lipstick/inventory_item_lipstick.tscn"

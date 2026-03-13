@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ciqdm4lnbaf4l"]
+
+[ext_resource type="Script" uid="uid://bo36l5oybe3v3" path="res://game/inventory_items/lipstick/inventory_item_lipstick.gd" id="1_e7rjg"]
+[ext_resource type="Texture2D" uid="uid://ddm3xukupx5sn" path="res://assets/environment/interior/custom_small_items.png" id="1_gpwiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuiwk"]
+atlas = ExtResource("1_gpwiy")
+region = Rect2(0, 0, 16, 16)
+
+[node name="ItemLipstick" type="TextureRect" unique_id=192694721]
+texture_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+texture = SubResource("AtlasTexture_wuiwk")
+stretch_mode = 5
+script = ExtResource("1_e7rjg")
+script_name = "Lipstick"
+description = "Lapiz labial"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1450958565]

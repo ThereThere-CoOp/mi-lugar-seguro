@@ -8,10 +8,13 @@ extends PopochiuProp
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
-	await C.player.walk_to_clicked()
-	await C.player.say("Agarrare mi kit de maquillaje.")
-	await C.player.say("Lo puedo usar con el espejo para arreglarme.")
-	await  I.Makeup.add()
+	if not I.is_item_in_inventory("Makeup"):
+		await C.player.walk_to_clicked()
+		await C.player.say("Agarrare mi kit de maquillaje.")
+		await C.player.say("Lo puedo usar con el espejo para arreglarme.")
+		await  I.Makeup.add()
+	else:
+		await C.player.say("No necesito mas nada de aqui.")
 
 
 func _on_double_click() -> void:

@@ -16,5 +16,6 @@ description = "Bed Room"
 interaction_polygon = [PackedVector2Array(-184, 32, -126, 32, -123, 41, -91, 39, -90, 31, -78, 31, -77, 64, 49, 67, 48, 12, 73, 12, 82, 4, 116, 4, 123, 13, 167, 14, 167, 36, 189, 37, 187, 103, -184, 103)]
 
 [node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=1609240134]
+visible = false
 modulate = Color(0, 1, 0, 1)
 navigation_polygon = SubResource("NavigationPolygon_8ck7d")

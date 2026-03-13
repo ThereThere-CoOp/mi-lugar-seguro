@@ -43,14 +43,30 @@ func _on_item_used(item: PopochiuInventoryItem) -> void:
 				await C.player.say("Hoy debo arreglarme un poco mejor.")
 				await C.player.say("Probablemente haya visita en el trabajo.")
 			
-			await C.Narrator.say("Mel se maquilla frente al espejo.")
 			if C.Mel.state.chosen_day_schedule == GameConstants.DayScheduleChoice.POOL:
-				await C.Narrator.say("Ya esta maquillada para ir a la piscina.")
+				await C.Narrator.say("Mel se maquilla para ir a la piscina.")
 			else:
-				await C.Narrator.say("Ya esta maquillada para ir al trabajo.")
+				await C.Narrator.say("Mel se maquilla para ir al trabajo.")
 				
-			await C.Narrator.say("Con o sin maquillaje se ve preciosa.")
+			await C.Narrator.say("No importa si es con o sin maquillaje.")
+			await C.Narrator.say("De cualquier manera se ve preciosa.")
+
 			C.Mel.state.increase_relationship_level(1)
+			C.Mel.state.applied_makeup = true
+		else:
+			await C.player.say("Ya me he maquillado.")
+			
+	if item == I.Lipstick:
+		if not C.Mel.state.applied_lipstick:
+			await C.player.walk_to_clicked()
+			
+			await C.player.say("Este es mi color favorito.")
+				
+			await C.Narrator.say("Mel se pinta sus labios.")
+			await C.Narrator.say("Realmente realza lo hermosos que son.")
+
+			C.Mel.state.increase_relationship_level(1)
+			C.Mel.state.applied_lipstick = true
 		else:
 			await C.player.say("Ya me he maquillado.")
 			
