@@ -15,7 +15,8 @@ func _on_click() -> void:
 # When the item is right clicked in the inventory
 func _on_right_click() -> void:
 	# Replace the call to E.command_fallback() to implement your code.
-	E.command_fallback()
+	await C.Mel.say("Mi kit de maquillaje.")
+	await C.Mel.say("Apto para todas las ocasiones.")
 
 
 # When the item is middle clicked in the inventory
