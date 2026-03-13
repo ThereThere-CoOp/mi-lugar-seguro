@@ -66,6 +66,7 @@ popochiu-skip={
 [popochiu]
 
 pixel/pixel_art_textures=true
+pixel/pixel_perfect=true
 
 [rendering]
 

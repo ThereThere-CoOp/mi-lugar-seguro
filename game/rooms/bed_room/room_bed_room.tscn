@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d0toq6d0voehy" path="res://game/rooms/bed_room/props/vanity_mirror/prop_vanity_mirror.tscn" id="8_14qo7"]
 [ext_resource type="PackedScene" uid="uid://5i1fbmakb8i4" path="res://game/rooms/bed_room/props/night_table_top_drawer/prop_night_table_top_drawer.tscn" id="9_7ncx3"]
 [ext_resource type="PackedScene" uid="uid://dp0cf3412tx13" path="res://game/rooms/bed_room/props/family_canvas/prop_family_canvas.tscn" id="10_m6ce0"]
+[ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="16_san5h"]
 
 [node name="RoomBedRoom" type="Node2D" unique_id=715075739]
 script = ExtResource("1_07t5b")
@@ -25,6 +26,7 @@ height = 216
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=127929714]
 
 [node name="BedRoom" parent="WalkableAreas" unique_id=943201697 instance=ExtResource("2_6rab4")]
+interaction_polygon = [PackedVector2Array(-184, 32, -126, 32, -123, 41, -91, 39, -90, 31, -78, 31, -77, 64, 49, 67, 48, 12, 73, 12, 82, 4, 116, 4, 123, 13, 167, 14, 167, 36, 189, 37, 187, 103, -184, 103)]
 
 [node name="Props" type="Node2D" parent="." unique_id=1344969986]
 
@@ -109,3 +111,9 @@ metadata/EDITOR_TMP_COPY_OF = "Mel"
 [node name="CharacterEd *" parent="Characters" unique_id=852686659 instance=ExtResource("7_yp1o7")]
 position = Vector2(337.00003, 213.00002)
 metadata/EDITOR_TMP_COPY_OF = "Ed"
+
+[node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("16_san5h")]
+position = Vector2(156, 45)
+walk_to_point = Vector2(-5.2322693, -0.12608337)
+look_at_point = Vector2(-6.2924805, -0.57307434)
+metadata/EDITOR_TMP_COPY_OF = "Narrator"

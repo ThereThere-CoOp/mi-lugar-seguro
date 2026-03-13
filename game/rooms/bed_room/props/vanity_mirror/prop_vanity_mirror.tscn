@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0toq6d0voehy"]
 
-[ext_resource type="Script" path="res://game/rooms/bed_room/props/vanity_mirror/prop_vanity_mirror.gd" id="1_fhxxg"]
+[ext_resource type="Script" uid="uid://c8m8sxt8v42fn" path="res://game/rooms/bed_room/props/vanity_mirror/prop_vanity_mirror.gd" id="1_fhxxg"]
 
 [node name="VanityMirror" type="Area2D" unique_id=1372542447]
 input_pickable = false
@@ -9,7 +9,7 @@ script_name = "VanityMirror"
 description = "Vanity Mirror"
 clickable = false
 cursor = 1
-interaction_polygon = PackedVector2Array()
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1400011079]
 texture_filter = 1

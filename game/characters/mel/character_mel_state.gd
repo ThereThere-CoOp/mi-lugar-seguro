@@ -13,6 +13,9 @@ var current_stage: int = GameConstants.StageChoice.HOME
 ####################################################################################
 var examined_bedroom_family_canvas: bool = false
 
+var washed_face: bool = false
+var applied_makeup: bool = false
+var brushed_hair: bool = false
 ####################################################################################
 ## cutscenes variables
 ####################################################################################

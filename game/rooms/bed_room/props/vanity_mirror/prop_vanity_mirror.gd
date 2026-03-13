@@ -8,13 +8,8 @@ extends PopochiuProp
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character walk to this prop, gaze at it, and then say
-	# something:
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("Not picking that up!")
+	await C.player.walk_to_clicked()
+	await C.player.say("El espejo de mi vanity. Lo uso para maquillarme y peinarme.")
 
 
 func _on_double_click() -> void:
@@ -36,15 +31,29 @@ func _on_middle_click() -> void:
 
 
 # When the node is clicked and there is an inventory item selected
-func _on_item_used(_item: PopochiuInventoryItem) -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character say something when the Key item is used in this
-	# prop. Note that you have to change the name of the `_item` parameter to `item`.
-#	if item == I.Key:
-#		await C.player.say("I can't do that")
-
-
+func _on_item_used(item: PopochiuInventoryItem) -> void:
+	if item == I.Makeup:
+		if not C.Mel.state.applied_makeup:
+			await C.player.walk_to_clicked()
+			
+			if C.Mel.state.chosen_day_schedule == GameConstants.DayScheduleChoice.POOL:
+				await C.player.say("Ya que vamos a la piscina no usare tanto maquillaje.")
+				await C.player.say("Solo un poco de base, por si me meto en el agua.")
+			else:
+				await C.player.say("Hoy debo arreglarme un poco mejor.")
+				await C.player.say("Probablemente haya visita en el trabajo.")
+			
+			await C.Narrator.say("Mel se maquilla frente al espejo.")
+			if C.Mel.state.chosen_day_schedule == GameConstants.DayScheduleChoice.POOL:
+				await C.Narrator.say("Ya esta maquillada para ir a la piscina.")
+			else:
+				await C.Narrator.say("Ya esta maquillada para ir al trabajo.")
+				
+			await C.Narrator.say("Con o sin maquillaje se ve preciosa.")
+			C.Mel.state.increase_relationship_level(1)
+		else:
+			await C.player.say("Ya me he maquillado.")
+			
 # When an inventory item linked to this Prop (link_to_item) is removed from
 # the inventory (i.e. when it is used in something that makes use of the object).
 func _on_linked_item_removed() -> void:

@@ -8,13 +8,10 @@ extends PopochiuProp
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character walk to this prop, gaze at it, and then say
-	# something:
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("Not picking that up!")
+	await C.player.walk_to_clicked()
+	await C.player.say("Agarrare mi kit de maquillaje.")
+	await C.player.say("Lo puedo usar con el espejo para arreglarme.")
+	await  I.Makeup.add()
 
 
 func _on_double_click() -> void:
@@ -36,7 +33,7 @@ func _on_middle_click() -> void:
 
 
 # When the node is clicked and there is an inventory item selected
-func _on_item_used(_item: PopochiuInventoryItem) -> void:
+func _on_item_used(item: PopochiuInventoryItem) -> void:
 	# Replace the call to E.command_fallback() to implement your code.
 	PopochiuUtils.e.command_fallback()
 	# For example, you can make the player character say something when the Key item is used in this

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://05sec2c6oxb4"]
+
+[ext_resource type="Texture2D" uid="uid://ddm3xukupx5sn" path="res://assets/environment/interior/custom_small_items.png" id="1_342rk"]
+[ext_resource type="Script" uid="uid://d0jt27nklspju" path="res://game/inventory_items/makeup/inventory_item_makeup.gd" id="1_tdod1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha1pp"]
+atlas = ExtResource("1_342rk")
+region = Rect2(16, 0, 16, 16)
+
+[node name="ItemMakeup" type="TextureRect" unique_id=1187408203]
+texture_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+texture = SubResource("AtlasTexture_ha1pp")
+stretch_mode = 5
+script = ExtResource("1_tdod1")
+script_name = "Makeup"
+description = "Kit de maquillaje"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2128692379]
