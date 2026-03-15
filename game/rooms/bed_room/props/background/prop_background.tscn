@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://w570c2bafoyn" path="res://game/rooms/bed_room/props/background/prop_background.gd" id="1_txcf2"]
 [ext_resource type="Shader" uid="uid://dbcm83kih8y6k" path="res://shaders/jitterFreePixelArt.gdshader" id="2_awrtv"]
-[ext_resource type="TileSet" uid="uid://dgyp482gi46ew" path="res://game/rooms/dining_room_tile_set.tres" id="2_cyuk8"]
+[ext_resource type="TileSet" uid="uid://dgyp482gi46ew" path="res://game/rooms/home_tileset.tres" id="2_cyuk8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ksj6"]
 shader = ExtResource("2_awrtv")
@@ -25,6 +25,7 @@ cursor = 1
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=862088567]
+visible = false
 texture_filter = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2074077816]

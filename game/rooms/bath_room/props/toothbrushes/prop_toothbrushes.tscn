@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ct7hoihoa4yjo"]
+
+[ext_resource type="Script" uid="uid://c8abm1pfq7ky4" path="res://game/rooms/bath_room/props/toothbrushes/prop_toothbrushes.gd" id="1_tyr0h"]
+
+[node name="Toothbrushes" type="Area2D" unique_id=250680007]
+script = ExtResource("1_tyr0h")
+script_name = "Toothbrushes"
+description = "Cepillos de dientes"
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169143207]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1547795084]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1195697084]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1915906358]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

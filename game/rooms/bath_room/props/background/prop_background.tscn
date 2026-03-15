@@ -1,0 +1,67 @@
+[gd_scene format=4 uid="uid://cq52h0ouejldq"]
+
+[ext_resource type="Script" uid="uid://y0ux1ol403fm" path="res://game/rooms/bath_room/props/background/prop_background.gd" id="1_bp7gp"]
+[ext_resource type="Shader" uid="uid://dbcm83kih8y6k" path="res://shaders/jitterFreePixelArt.gdshader" id="2_n0be3"]
+[ext_resource type="TileSet" uid="uid://dgyp482gi46ew" path="res://game/rooms/home_tileset.tres" id="3_4y07q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qkjjr"]
+shader = ExtResource("2_n0be3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n0be3"]
+shader = ExtResource("2_n0be3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1squ1"]
+shader = ExtResource("2_n0be3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4y07q"]
+shader = ExtResource("2_n0be3")
+
+[node name="Background" type="Area2D" unique_id=1643373172]
+z_index = -1
+input_pickable = false
+script = ExtResource("1_bp7gp")
+script_name = "Background"
+description = "Background"
+clickable = false
+baseline = -108
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=137396693]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2074854728]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=414645580]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1645955969]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Tilemaps" type="Node2D" parent="." unique_id=54897798]
+scale = Vector2(1.5, 1.5)
+
+[node name="Floor" type="TileMapLayer" parent="Tilemaps" unique_id=1298378424]
+material = SubResource("ShaderMaterial_qkjjr")
+tile_map_data = PackedByteArray("AAADAAQAAAAPAAMAAAAIAAQAAAAPAAMAAAAEAAQAAAAOAAMAAAAFAAQAAAAOAAMAAAAGAAQAAAAOAAMAAAAHAAQAAAAOAAMAAAAEAAMAAAAOAAIAAAAFAAMAAAAOAAIAAAAGAAMAAAAOAAIAAAAHAAMAAAAOAAIAAAADAAMAAAAPAAIAAAAIAAMAAAAPAAIAAAADAAAAAAALAAEAAAAIAAAAAAALAAEAAAAHAAAAAAAKAAEAAAAGAAAAAAAKAAEAAAADAAEAAAALAAIAAAAEAAEAAAAKAAIAAAAFAAEAAAAKAAIAAAAGAAEAAAAKAAIAAAAHAAEAAAAKAAIAAAAIAAEAAAALAAIAAAAEAAAAAAAKAAEAAAAFAAAAAAAKAAEAAAADAAIAAAAPAAEAAAAEAAIAAAAOAAEAAAAFAAIAAAAOAAEAAAAGAAIAAAAOAAEAAAAHAAIAAAAOAAEAAAAIAAIAAAAPAAEAAAABAAAAAAAKAAEAAAACAAAAAAAKAAEAAAAKAAAAAAAMAAEAAAAJAAAAAAALAAEAAAAJAAEAAAALAAIAAAACAAEAAAALAAIAAAABAAEAAAAKAAIAAAACAAIAAAAOAAEAAAAJAAIAAAAOAAEAAAABAAIAAAAOAAEAAAAKAAIAAAAQAAEAAAACAAMAAAAOAAIAAAAJAAMAAAAOAAIAAAAKAAMAAAAQAAIAAAABAAMAAAAOAAIAAAABAAQAAAAOAAMAAAABAAUAAAAOAAMAAAABAAYAAAAOAAMAAAABAAcAAAAOAAMAAAABAAgAAAAOAAQAAAACAAgAAAAOAAQAAAADAAgAAAAOAAQAAAAEAAgAAAAOAAQAAAAFAAgAAAAOAAQAAAAGAAgAAAAOAAQAAAAHAAgAAAAOAAQAAAAIAAgAAAAOAAQAAAAJAAgAAAAOAAQAAAAKAAgAAAAQAAQAAAAKAAcAAAAQAAMAAAAKAAYAAAAQAAMAAAAKAAUAAAAQAAMAAAAKAAQAAAAPAAMAAAADAAUAAAAOAAMAAAAEAAUAAAAPAAMAAAACAAQAAAAOAAMAAAAJAAQAAAAOAAMAAAAFAAUAAAAPAAMAAAAGAAUAAAAPAAMAAAAHAAUAAAAPAAMAAAAIAAUAAAAPAAMAAAAJAAUAAAAPAAMAAAAJAAYAAAAPAAMAAAAJAAcAAAAPAAMAAAAIAAcAAAAPAAMAAAAHAAcAAAAPAAMAAAAGAAcAAAAPAAMAAAAFAAcAAAAPAAMAAAAEAAcAAAAPAAMAAAADAAcAAAAPAAMAAAACAAcAAAAPAAMAAAACAAYAAAAPAAMAAAACAAUAAAAPAAMAAAADAAYAAAAPAAMAAAAEAAYAAAAPAAMAAAAFAAYAAAAPAAMAAAAGAAYAAAAPAAMAAAAHAAYAAAAPAAMAAAAIAAYAAAAPAAMAAAAKAAEAAAAMAAIAAAAAAAAAAAAJAAEAAAAAAAEAAAAJAAIAAAAAAAIAAAANAAEAAAAAAAMAAAANAAIAAAAAAAQAAAANAAMAAAAAAAUAAAANAAMAAAAAAAYAAAANAAMAAAAAAAcAAAANAAMAAAAAAAgAAAANAAQAAAA=")
+tile_set = ExtResource("3_4y07q")
+
+[node name="Furniture" type="TileMapLayer" parent="Tilemaps" unique_id=414907913]
+material = SubResource("ShaderMaterial_n0be3")
+position = Vector2(-6, 0.6666667)
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAAEAAQAIABAAAAABAAIAAQAIABEAAAACAAEAAQABABAAAAACAAIAAQABABEAAAADAAEAAQACABAAAAADAAIAAQACABEAAAAEAAIAAQADAAEAAAAEAAEAAQADAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAEAAAAGAAEAAQABAAAAAAAGAAIAAQABAAEAAAA=")
+tile_set = ExtResource("3_4y07q")
+
+[node name="FurnitureSmaller" type="TileMapLayer" parent="Tilemaps" unique_id=1577141477]
+material = SubResource("ShaderMaterial_1squ1")
+tile_set = ExtResource("3_4y07q")
+
+[node name="SmallItems" type="TileMapLayer" parent="Tilemaps" unique_id=42541378]
+material = SubResource("ShaderMaterial_4y07q")
+tile_map_data = PackedByteArray("AAAGAAIAAwADAAAAAAAAAAIAAwACAAAAAAAFAAEAAwAAAAAAAAAAAAMAAwAHAAAAAAAGAAEAAwAGAAAAAAAKAAUAAQAKAAUAAAAKAAQAAQAKAAQAAAAKAAYAAQAKAAYAAAAAAAUAAQAHAAIAAAAAAAYAAQAHAAMAAAA=")
+tile_set = ExtResource("3_4y07q")

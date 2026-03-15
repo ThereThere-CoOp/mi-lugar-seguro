@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dlpbptucmy3p2"]
+
+[ext_resource type="Script" uid="uid://cs6sxit2c4vba" path="res://game/rooms/bath_room/walkable_areas/bath_floor/walkable_area_bath_floor.gd" id="1_bq48l"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bq48l"]
+vertices = PackedVector2Array(-140, 94, -140, -1, -106, 8, -85, 95, 109, -1, 112, 95, 28, 94, -10, 3, -67, 0)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 6, 3, 2, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-140, -1, -106, 8, -67, 0, -10, 3, 109, -1, 112, 95, 28, 94, -85, 95, -140, 94)])
+agent_radius = 0.0
+
+[node name="BathFloor" type="Node2D" unique_id=600965418]
+position = Vector2(192, 108)
+script = ExtResource("1_bq48l")
+script_name = "BathFloor"
+description = "Bath Floor"
+interaction_polygon = [PackedVector2Array(-140, -1, -106, 8, -67, 0, -10, 3, 109, -1, 112, 95, 28, 94, -85, 95, -140, 94)]
+
+[node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=851229499]
+visible = false
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_bq48l")

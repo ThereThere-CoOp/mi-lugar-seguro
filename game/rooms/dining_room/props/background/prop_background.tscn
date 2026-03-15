@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5l0idgk7wunl" path="res://game/rooms/dining_room/props/background/prop_background.gd" id="1_j2w2u"]
 [ext_resource type="Shader" uid="uid://dbcm83kih8y6k" path="res://shaders/jitterFreePixelArt.gdshader" id="2_om31v"]
-[ext_resource type="TileSet" uid="uid://dgyp482gi46ew" path="res://game/rooms/dining_room_tile_set.tres" id="2_y6mnw"]
+[ext_resource type="TileSet" uid="uid://dgyp482gi46ew" path="res://game/rooms/home_tileset.tres" id="2_y6mnw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cipre"]
 shader = ExtResource("2_om31v")

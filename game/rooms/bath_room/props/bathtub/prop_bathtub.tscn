@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://w8or0wjta3mx"]
+
+[ext_resource type="Script" uid="uid://dx1kkp0isb2gl" path="res://game/rooms/bath_room/props/bathtub/prop_bathtub.gd" id="1_4qtyv"]
+[ext_resource type="Texture2D" uid="uid://drdbk0rosiid8" path="res://assets/environment/interior/TopDownHouse_FurnitureState1.png" id="2_abdfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inhe0"]
+atlas = ExtResource("2_abdfl")
+region = Rect2(80, 256, 48, 32)
+
+[node name="Bathtub" type="Area2D" unique_id=1065388596]
+script = ExtResource("1_4qtyv")
+obstacle_polygon = [Vector2(-24, -10), Vector2(20, -10), Vector2(20, 16), Vector2(-21, 16)]
+script_name = "Bathtub"
+description = "Tina de baño"
+cursor = 1
+interaction_polygon = PackedVector2Array(-23, -8, 20, -8, 20, 15, -20, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=607863394]
+texture_filter = 1
+texture = SubResource("AtlasTexture_inhe0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=761229340]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=868343703]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-23, -8, 20, -8, 20, 15, -20, 16)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=525321808]
+vertices = PackedVector2Array(-24, -10, 20, -10, 20, 16, -21, 16)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
