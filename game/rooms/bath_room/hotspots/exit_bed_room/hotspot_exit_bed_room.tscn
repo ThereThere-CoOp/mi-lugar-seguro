@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://chp7s1a2gcala"]
+
+[ext_resource type="Script" uid="uid://cn8mumwee874k" path="res://game/rooms/bath_room/hotspots/exit_bed_room/hotspot_exit_bed_room.gd" id="1_mfo1c"]
+
+[node name="ExitBedRoom" type="Area2D" unique_id=854283101]
+script = ExtResource("1_mfo1c")
+script_name = "ExitBedRoom"
+description = "Ir al cuarto"
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2024320341]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

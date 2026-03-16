@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ct7hoihoa4yjo" path="res://game/rooms/bath_room/props/toothbrushes/prop_toothbrushes.tscn" id="5_vi4g4"]
 [ext_resource type="PackedScene" uid="uid://cmdcp7s08g6eu" path="res://game/rooms/bath_room/props/bath_mirror/prop_bath_mirror.tscn" id="7_hb7c8"]
 [ext_resource type="PackedScene" uid="uid://b0y8s3eyxjhgd" path="res://game/rooms/bath_room/props/bath_sink/prop_bath_sink.tscn" id="7_ll1y7"]
+[ext_resource type="PackedScene" uid="uid://chp7s1a2gcala" path="res://game/rooms/bath_room/hotspots/exit_bed_room/hotspot_exit_bed_room.tscn" id="8_ahewu"]
 [ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="9_hb7c8"]
+[ext_resource type="PackedScene" uid="uid://cjctaoh6fufap" path="res://game/rooms/bath_room/hotspots/exit_closet/hotspot_exit_closet.tscn" id="9_xpdmf"]
 
 [node name="RoomBathRoom" type="Node2D" unique_id=787104357]
 script = ExtResource("1_dn64p")
@@ -19,6 +21,7 @@ height = 216
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=51963064]
 
 [node name="BathFloor" parent="WalkableAreas" unique_id=600965418 instance=ExtResource("2_fpu4o")]
+interaction_polygon = [PackedVector2Array(-120, 3, -106, 8, -67, 0, -10, 3, 92, -13, 96, 87, 36, 88, -72, 86, -121, 86)]
 
 [node name="Props" type="Node2D" parent="." unique_id=1423614792]
 
@@ -58,6 +61,20 @@ baseline = -23
 interaction_polygon = PackedVector2Array(-8.666664, -12, 8.666664, -12, 8.666664, 12, -8.666664, 12)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=634448547]
+
+[node name="ExitBedRoom" parent="Hotspots" unique_id=854283101 instance=ExtResource("8_ahewu")]
+position = Vector2(305, 121)
+baseline = -138
+walk_to_point = Vector2(-0.53796387, -0.7635803)
+look_at_point = Vector2(-0.7635498, -1.1854248)
+interaction_polygon = PackedVector2Array(-8, -36, 5, -36, 4, 40, -8, 40)
+
+[node name="ExitCloset" parent="Hotspots" unique_id=1978839043 instance=ExtResource("9_xpdmf")]
+position = Vector2(55, 137)
+baseline = -158
+walk_to_point = Vector2(2.418293, -0.094818115)
+look_at_point = Vector2(1.07584, -0.12916565)
+interaction_polygon = PackedVector2Array(-7, -26, 15, -26, 14, 22, -7, 22)
 
 [node name="Regions" type="Node2D" parent="." unique_id=1474296326]
 

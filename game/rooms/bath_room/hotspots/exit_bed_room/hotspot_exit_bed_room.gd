@@ -9,7 +9,7 @@ extends PopochiuHotspot
 # When the node is clicked
 func _on_click() -> void:
 	await C.player.walk_to_clicked()
-	await R.goto_room("BathRoom")
+	await R.goto_room("BedRoom")
 
 
 func _on_double_click() -> void:
@@ -23,7 +23,7 @@ func _on_double_click() -> void:
 # When the node is right clicked
 func _on_right_click() -> void:
 	await  C.player.face_clicked()
-	await C.player.say("Por ahi se va al baño.")
+	await C.player.say("Por ahi se va al cuarto.")
 
 
 # When the node is middle clicked

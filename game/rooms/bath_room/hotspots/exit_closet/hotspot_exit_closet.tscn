@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjctaoh6fufap"]
+
+[ext_resource type="Script" uid="uid://cv0p8nqbs6qas" path="res://game/rooms/bath_room/hotspots/exit_closet/hotspot_exit_closet.gd" id="1_cqxwg"]
+
+[node name="ExitCloset" type="Area2D" unique_id=1978839043]
+script = ExtResource("1_cqxwg")
+script_name = "ExitCloset"
+description = "Ir al closet"
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2081510186]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

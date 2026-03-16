@@ -10,7 +10,18 @@ var state: Data = load("res://game/rooms/bath_room/room_bath_room.tres")
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	var exit_bedroom_hotspot = R.BathRoom.get_hotspot("ExitBedRoom")
+	C.Mel.face_left()
+	
+	match C.player.last_room:
+		"BedRoom":
+			C.Mel.position = exit_bedroom_hotspot.position
+		"Closet":
+			var exit_closet_hotspot = R.BathRoom.get_hotspot("ExitClosetRoom")
+			C.Mel.face_right()
+			C.Mel.position = exit_closet_hotspot.position
+		_:
+			C.Mel.position = exit_bedroom_hotspot.position
 
 
 # What happens when the room changing transition finishes. At this point the room

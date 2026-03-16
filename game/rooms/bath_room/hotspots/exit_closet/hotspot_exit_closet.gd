@@ -8,8 +8,13 @@ extends PopochiuHotspot
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
-	await C.player.walk_to_clicked()
-	await R.goto_room("BathRoom")
+	# Replace the call to E.command_fallback() with your code.
+	PopochiuUtils.e.command_fallback()
+	# For example, you can make the player character walk to this hotspot, gaze at it, and then say
+	# something:
+#	await C.player.walk_to_clicked()
+#	await C.player.face_clicked()
+#	await C.player.say("What a nice view")
 
 
 func _on_double_click() -> void:
@@ -23,7 +28,7 @@ func _on_double_click() -> void:
 # When the node is right clicked
 func _on_right_click() -> void:
 	await  C.player.face_clicked()
-	await C.player.say("Por ahi se va al baño.")
+	await C.player.say("Por ahi se va al closet.")
 
 
 # When the node is middle clicked
