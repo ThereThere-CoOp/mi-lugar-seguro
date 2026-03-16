@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cmdcp7s08g6eu"]
+
+[ext_resource type="Script" uid="uid://ofuhgjq75oal" path="res://game/rooms/bath_room/props/bath_mirror/prop_bath_mirror.gd" id="1_ak6ku"]
+[ext_resource type="Texture2D" uid="uid://up0g5xbmyu8u" path="res://assets/environment/interior/TopDown_CustomFurniture.png" id="2_wq2l5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pigfj"]
+atlas = ExtResource("2_wq2l5")
+region = Rect2(142.98108, 15.467125, 18.579193, 24.061558)
+
+[node name="BathMirror" type="Area2D" unique_id=1772198638]
+script = ExtResource("1_ak6ku")
+texture = SubResource("AtlasTexture_pigfj")
+script_name = "BathMirror"
+description = "Espejo del baño"
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1568807136]
+texture_filter = 1
+texture = SubResource("AtlasTexture_pigfj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1864576444]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1051218108]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1408125334]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

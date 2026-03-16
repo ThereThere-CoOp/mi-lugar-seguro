@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cyawbxy7hqjpa" path="res://game/characters/mel/character_mel.tscn" id="3_cne27"]
 [ext_resource type="PackedScene" uid="uid://w8or0wjta3mx" path="res://game/rooms/bath_room/props/bathtub/prop_bathtub.tscn" id="4_fs554"]
 [ext_resource type="PackedScene" uid="uid://ct7hoihoa4yjo" path="res://game/rooms/bath_room/props/toothbrushes/prop_toothbrushes.tscn" id="5_vi4g4"]
+[ext_resource type="PackedScene" uid="uid://cmdcp7s08g6eu" path="res://game/rooms/bath_room/props/bath_mirror/prop_bath_mirror.tscn" id="7_hb7c8"]
+[ext_resource type="PackedScene" uid="uid://b0y8s3eyxjhgd" path="res://game/rooms/bath_room/props/bath_sink/prop_bath_sink.tscn" id="7_ll1y7"]
 
 [node name="RoomBathRoom" type="Node2D" unique_id=787104357]
 script = ExtResource("1_dn64p")
@@ -40,6 +42,19 @@ walk_to_point = Vector2(10.196228, -44.593067)
 look_at_point = Vector2(10.933289, -53.19228)
 interaction_polygon = PackedVector2Array(2, -66, 21, -67, 22, -46, 1, -46)
 interaction_polygon_position = Vector2(0, 2)
+
+[node name="BathSink" parent="Props" unique_id=1991677238 instance=ExtResource("7_ll1y7")]
+position = Vector2(146, 57)
+baseline = -70
+walk_to_point = Vector2(0.33503723, 45.78804)
+look_at_point = Vector2(-0.07815552, -1.1837883)
+interaction_polygon = PackedVector2Array(-22, -19, 22, -19, 22, 21, -22, 22)
+
+[node name="BathMirror" parent="Props" unique_id=1772198638 instance=ExtResource("7_hb7c8")]
+position = Vector2(146, 21)
+scale = Vector2(1.5, 1.5)
+baseline = -23
+interaction_polygon = PackedVector2Array(-8.666664, -12, 8.666664, -12, 8.666664, 12, -8.666664, 12)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=634448547]
 
