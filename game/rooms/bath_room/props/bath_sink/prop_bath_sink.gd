@@ -8,13 +8,21 @@ extends PopochiuProp
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character walk to this prop, gaze at it, and then say
-	# something:
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("Not picking that up!")
+	await C.player.walk_to_clicked()
+	
+	if C.Mel.state.washed_face:
+		await C.player.say("Ya me he lavado la cara")
+	elif C.Mel.state.applied_makeup:
+		await C.player.say("Ya me he maquillado.")
+		await C.player.say("Mejor no me lavo la cara.")
+	else:
+		await C.Narrator.say("Mel se lava la cara")
+		await C.Narrator.say("Debido que esta es una produccion")
+		await C.Narrator.say("de bajo presupuesto")
+		await C.Narrator.say("no se pudo agregar esta animacion")
+		
+		C.Mel.state.washed_face = true
+		C.Mel.state.increase_relationship_level(1)
 
 
 func _on_double_click() -> void:

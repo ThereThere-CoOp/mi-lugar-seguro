@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://byjawai2w2l0u" path="res://game/characters/narrator/character_narrator.gd" id="1_2vbps"]
 
 [node name="CharacterNarrator" type="Area2D" unique_id=275102184]
+input_pickable = false
 script = ExtResource("1_2vbps")
 can_move = false
 script_name = "Narrator"
 description = "Narrator"
+clickable = false
 cursor = 8
 interaction_polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 

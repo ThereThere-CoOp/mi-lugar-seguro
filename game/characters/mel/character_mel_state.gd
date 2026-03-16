@@ -15,6 +15,7 @@ var examined_bedroom_family_canvas: bool = false
 
 # make up and morning routine
 var washed_face: bool = false
+var washed_teeth: bool = false
 var applied_makeup: bool = false
 var applied_lipstick: bool = false
 var brushed_hair: bool = false

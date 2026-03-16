@@ -36,13 +36,19 @@ func _on_middle_click() -> void:
 
 
 # When the node is clicked and there is an inventory item selected
-func _on_item_used(_item: PopochiuInventoryItem) -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character say something when the Key item is used in this
-	# prop. Note that you have to change the name of the `_item` parameter to `item`.
-#	if item == I.Key:
-#		await C.player.say("I can't do that")
+func _on_item_used(item: PopochiuInventoryItem) -> void:
+	await C.Mel.walk_to_clicked()
+	if item == I.Lipstick:
+		if C.Mel.state.applied_lipstick:
+			await C.Mel.say("Ya me he pintado los labios")
+		else:
+			await C.Mel.say("Mejor uso mi vanity.")
+			
+	if item == I.Makeup:
+		if C.Mel.state.applied_makeup:
+			await C.Mel.say("Ya me he maquillado")
+		else:
+			await C.Mel.say("Mejor uso mi vanity.")
 
 
 # When an inventory item linked to this Prop (link_to_item) is removed from

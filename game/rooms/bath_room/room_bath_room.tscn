@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ct7hoihoa4yjo" path="res://game/rooms/bath_room/props/toothbrushes/prop_toothbrushes.tscn" id="5_vi4g4"]
 [ext_resource type="PackedScene" uid="uid://cmdcp7s08g6eu" path="res://game/rooms/bath_room/props/bath_mirror/prop_bath_mirror.tscn" id="7_hb7c8"]
 [ext_resource type="PackedScene" uid="uid://b0y8s3eyxjhgd" path="res://game/rooms/bath_room/props/bath_sink/prop_bath_sink.tscn" id="7_ll1y7"]
+[ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="9_hb7c8"]
 
 [node name="RoomBathRoom" type="Node2D" unique_id=787104357]
 script = ExtResource("1_dn64p")
@@ -67,3 +68,9 @@ interaction_polygon = PackedVector2Array(-8.666664, -12, 8.666664, -12, 8.666664
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_cne27")]
 position = Vector2(215, 147.00002)
 metadata/EDITOR_TMP_COPY_OF = "Mel"
+
+[node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("9_hb7c8")]
+position = Vector2(191, 38)
+walk_to_point = Vector2(-40.46193, -16.716492)
+look_at_point = Vector2(-5.7189026, -16.93445)
+metadata/EDITOR_TMP_COPY_OF = "Narrator"
