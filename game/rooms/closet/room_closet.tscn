@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dwvx2f5fmcn4f"]
+
+[ext_resource type="Script" path="res://game/rooms/closet/room_closet.gd" id="1_t2ey4"]
+
+[node name="RoomCloset" type="Node2D" unique_id=1542378727]
+script = ExtResource("1_t2ey4")
+script_name = "Closet"
+width = 384
+height = 216
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=1787126610]
+
+[node name="Props" type="Node2D" parent="." unique_id=238316017]
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=832937897]
+
+[node name="Regions" type="Node2D" parent="." unique_id=976704550]
+
+[node name="Markers" type="Node2D" parent="." unique_id=1649307419]
+
+[node name="Characters" type="Node2D" parent="." unique_id=1710893303]

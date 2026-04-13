@@ -23,7 +23,6 @@ func _on_room_transition_finished() -> void:
 	await C.Narrator.say("Tiene grandes dotes para el arte y se le da muy bien la cocina")
 	await C.Narrator.say("Es muy soñadora y cariñosa con sus seres queridos")
 	await C.Narrator.say("Vive con Ed, su esposo y con sus dos mascotas, Lufi y Sauron")
-	await C.Narrator.say("Es muy soñadora y cariñosa con sus seres queridos")
 	await C.Narrator.say("Y asi comienza otra dia...")
 	
 	await E.wait(1.5)

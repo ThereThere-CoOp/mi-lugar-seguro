@@ -21,7 +21,6 @@ height = 216
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=51963064]
 
 [node name="BathFloor" parent="WalkableAreas" unique_id=600965418 instance=ExtResource("2_fpu4o")]
-interaction_polygon = [PackedVector2Array(-120, 3, -106, 8, -67, 0, -10, 3, 92, -13, 96, 87, 36, 88, -72, 86, -121, 86)]
 
 [node name="Props" type="Node2D" parent="." unique_id=1423614792]
 

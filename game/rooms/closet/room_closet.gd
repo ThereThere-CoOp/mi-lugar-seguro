@@ -1,27 +1,16 @@
 @tool
 extends PopochiuRoom
 
-const Data := preload('room_bath_room_state.gd')
+const Data := preload('room_closet_state.gd')
 
-var state: Data = load("res://game/rooms/bath_room/room_bath_room.tres")
+var state: Data = load("res://game/rooms/closet/room_closet.tres")
 
 
 #region Virtual ####################################################################################
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	var exit_bedroom_hotspot = R.BathRoom.get_hotspot("ExitBedRoom")
-	C.Mel.face_left()
-	
-	match C.player.last_room:
-		"BedRoom":
-			C.Mel.position = exit_bedroom_hotspot.position + Vector2(-10, 0)
-		"Closet":
-			var exit_closet_hotspot = R.BathRoom.get_hotspot("ExitClosetRoom")
-			C.Mel.face_right()
-			C.Mel.position = exit_closet_hotspot.position
-		_:
-			C.Mel.position = exit_bedroom_hotspot.position
+	pass
 
 
 # What happens when the room changing transition finishes. At this point the room
