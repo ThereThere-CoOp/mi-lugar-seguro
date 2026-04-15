@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://dp0v4vy31c02a"]
+
+[ext_resource type="Script" uid="uid://v5q4tjdkdvvx" path="res://game/rooms/closet/props/background/prop_background.gd" id="1_wqykk"]
+[ext_resource type="Shader" uid="uid://dbcm83kih8y6k" path="res://shaders/jitterFreePixelArt.gdshader" id="2_uj5ay"]
+[ext_resource type="TileSet" uid="uid://dgyp482gi46ew" path="res://game/rooms/home_tileset.tres" id="3_3xoii"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7dj8"]
+shader = ExtResource("2_uj5ay")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v387p"]
+shader = ExtResource("2_uj5ay")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0edyd"]
+shader = ExtResource("2_uj5ay")
+
+[node name="Background" type="Area2D" unique_id=468550477]
+z_index = -1
+input_pickable = false
+script = ExtResource("1_wqykk")
+script_name = "Background"
+description = "Background"
+clickable = false
+baseline = -108
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142704447]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=304493760]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=915304029]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1284285901]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=1819915733]
+
+[node name="FloorWall" type="TileMapLayer" parent="TileMaps" unique_id=249028206]
+material = SubResource("ShaderMaterial_t7dj8")
+tile_map_data = PackedByteArray("AAAFAAQAAAABAAQAAAAGAAQAAAACAAQAAAAHAAQAAAADAAQAAAAIAAQAAAADAAQAAAAFAAUAAAABAAUAAAAGAAUAAAACAAUAAAAHAAUAAAACAAUAAAAIAAUAAAADAAUAAAAIAAYAAAADAAYAAAAIAAcAAAACAAYAAAAFAAcAAAABAAYAAAAFAAYAAAABAAYAAAAGAAYAAAACAAYAAAAHAAYAAAACAAYAAAAGAAcAAAACAAYAAAAHAAcAAAACAAYAAAAJAAQAAAAEAAQAAAAJAAUAAAAEAAUAAAAJAAcAAAAEAAYAAAAJAAYAAAAEAAYAAAAFAAMAAAABAAMAAAAFAAIAAAABAAMAAAAFAAEAAAABAAMAAAAFAAAAAAABAAEAAAAGAAAAAAACAAEAAAAHAAAAAAACAAEAAAAIAAAAAAACAAEAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAIAAAAJAAIAAAAEAAIAAAAJAAMAAAAEAAMAAAAGAAEAAAACAAIAAAAGAAIAAAACAAIAAAAHAAEAAAACAAIAAAAHAAIAAAACAAIAAAAIAAEAAAADAAIAAAAIAAIAAAADAAIAAAAGAAMAAAACAAMAAAAHAAMAAAACAAMAAAAIAAMAAAADAAMAAAAFAAgAAAABAAcAAAAJAAgAAAAEAAcAAAAIAAgAAAADAAcAAAAHAAgAAAADAAcAAAAGAAgAAAADAAcAAAA=")
+tile_set = ExtResource("3_3xoii")
+
+[node name="Objects" type="TileMapLayer" parent="TileMaps" unique_id=1389150739]
+material = SubResource("ShaderMaterial_v387p")
+tile_map_data = PackedByteArray("AAAJAAUAAQAHAAIAAAAJAAYAAQAHAAMAAAAFAAEAAQAIAA8AAAAGAAEAAQAJAA8AAAAHAAEAAQAJAA8AAAAIAAEAAQAJAA8AAAAJAAEAAQAKAA8AAAAFAAgAAwAHAAIAAAAGAAgAAwAGAAIAAAAFAAUAAwAGAAcAAAA=")
+tile_set = ExtResource("3_3xoii")
+
+[node name="UpperObjects" type="TileMapLayer" parent="TileMaps" unique_id=1092311581]
+material = SubResource("ShaderMaterial_0edyd")
+tile_map_data = PackedByteArray("AAAJAAEAAwAGAAIAAAAIAAEAAwAEAAEAAAAGAAEAAwAHAAIAAAA=")
+tile_set = ExtResource("3_3xoii")

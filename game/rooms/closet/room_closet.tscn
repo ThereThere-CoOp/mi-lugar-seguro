@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://dwvx2f5fmcn4f"]
 
-[ext_resource type="Script" path="res://game/rooms/closet/room_closet.gd" id="1_t2ey4"]
+[ext_resource type="Script" uid="uid://ddiqfm24db6o" path="res://game/rooms/closet/room_closet.gd" id="1_t2ey4"]
+[ext_resource type="PackedScene" uid="uid://dp0v4vy31c02a" path="res://game/rooms/closet/props/background/prop_background.tscn" id="2_chtsp"]
+[ext_resource type="PackedScene" uid="uid://cyawbxy7hqjpa" path="res://game/characters/mel/character_mel.tscn" id="3_gh3qf"]
+[ext_resource type="PackedScene" uid="uid://btcwuw2feeirx" path="res://game/rooms/closet/props/clothes/prop_clothes.tscn" id="3_msold"]
 
 [node name="RoomCloset" type="Node2D" unique_id=1542378727]
+position = Vector2(2, 4)
 script = ExtResource("1_t2ey4")
 script_name = "Closet"
 width = 384
@@ -12,6 +16,15 @@ height = 216
 
 [node name="Props" type="Node2D" parent="." unique_id=238316017]
 
+[node name="Background" parent="Props" unique_id=468550477 instance=ExtResource("2_chtsp")]
+position = Vector2(10, -4)
+scale = Vector2(1.5, 1.5)
+baseline = -1
+
+[node name="Clothes" parent="Props" unique_id=1053005574 instance=ExtResource("3_msold")]
+position = Vector2(191, 73)
+scale = Vector2(1.8, 1.8)
+
 [node name="Hotspots" type="Node2D" parent="." unique_id=832937897]
 
 [node name="Regions" type="Node2D" parent="." unique_id=976704550]
@@ -19,3 +32,21 @@ height = 216
 [node name="Markers" type="Node2D" parent="." unique_id=1649307419]
 
 [node name="Characters" type="Node2D" parent="." unique_id=1710893303]
+
+[node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_gh3qf")]
+position = Vector2(182, 170)
+metadata/EDITOR_TMP_COPY_OF = "Mel"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1244640199]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=141714804]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

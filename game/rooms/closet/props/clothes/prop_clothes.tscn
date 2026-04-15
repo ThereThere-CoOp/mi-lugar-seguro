@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://btcwuw2feeirx"]
+
+[ext_resource type="Script" uid="uid://baqais1rmxbnk" path="res://game/rooms/closet/props/clothes/prop_clothes.gd" id="1_misjf"]
+[ext_resource type="Texture2D" uid="uid://up0g5xbmyu8u" path="res://assets/environment/interior/TopDown_CustomFurniture.png" id="2_17qot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdoc4"]
+atlas = ExtResource("2_17qot")
+region = Rect2(80, 80, 64, 48)
+
+[node name="Clothes" type="Area2D" unique_id=1053005574]
+input_pickable = false
+script = ExtResource("1_misjf")
+texture = SubResource("AtlasTexture_kdoc4")
+script_name = "Clothes"
+description = "Clothes"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1438168511]
+texture_filter = 1
+texture = SubResource("AtlasTexture_kdoc4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=170326703]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2028393170]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1030212450]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
