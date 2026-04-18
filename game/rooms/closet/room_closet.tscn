@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ddiqfm24db6o" path="res://game/rooms/closet/room_closet.gd" id="1_t2ey4"]
 [ext_resource type="PackedScene" uid="uid://dp0v4vy31c02a" path="res://game/rooms/closet/props/background/prop_background.tscn" id="2_chtsp"]
+[ext_resource type="PackedScene" uid="uid://cdlj72r6voums" path="res://game/rooms/closet/walkable_areas/floor_closet/walkable_area_floor_closet.tscn" id="2_f7dxh"]
 [ext_resource type="PackedScene" uid="uid://cyawbxy7hqjpa" path="res://game/characters/mel/character_mel.tscn" id="3_gh3qf"]
 [ext_resource type="PackedScene" uid="uid://btcwuw2feeirx" path="res://game/rooms/closet/props/clothes/prop_clothes.tscn" id="3_msold"]
+[ext_resource type="PackedScene" uid="uid://by7nkjclf2ye7" path="res://game/rooms/closet/hotspots/exit_bath_room/hotspot_exit_bath_room.tscn" id="4_fkp8a"]
 
 [node name="RoomCloset" type="Node2D" unique_id=1542378727]
-position = Vector2(2, 4)
 script = ExtResource("1_t2ey4")
 script_name = "Closet"
 width = 384
@@ -14,18 +15,36 @@ height = 216
 
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=1787126610]
 
+[node name="FloorCloset" parent="WalkableAreas" unique_id=124751698 instance=ExtResource("2_f7dxh")]
+interaction_polygon = [PackedVector2Array(-23, -38, 51, -38, 52, 43, 1, 43, -8, 23, -41, 16, -50, -16, -23, -21)]
+
 [node name="Props" type="Node2D" parent="." unique_id=238316017]
 
 [node name="Background" parent="Props" unique_id=468550477 instance=ExtResource("2_chtsp")]
-position = Vector2(10, -4)
+position = Vector2(11, 0)
 scale = Vector2(1.5, 1.5)
 baseline = -1
 
 [node name="Clothes" parent="Props" unique_id=1053005574 instance=ExtResource("3_msold")]
-position = Vector2(191, 73)
+position = Vector2(192, 77)
 scale = Vector2(1.8, 1.8)
+input_pickable = true
+description = "Ropa"
+clickable = true
+baseline = -39
+walk_to_point = Vector2(-1.2590027, 10.611664)
+look_at_point = Vector2(-0.899292, 9.892235)
+interaction_polygon = PackedVector2Array(-31.111115, -9.444443, 31.111115, -10, 31.666672, 20.000004, -30.555557, 20.000004)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=832937897]
+
+[node name="ExitBathRoom" parent="Hotspots" unique_id=1483141226 instance=ExtResource("4_fkp8a")]
+position = Vector2(239, 147)
+description = "Ir al cuarto"
+baseline = -154
+walk_to_point = Vector2(0.77279663, 0.28399658)
+look_at_point = Vector2(0.59724426, 0.48635864)
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Regions" type="Node2D" parent="." unique_id=976704550]
 

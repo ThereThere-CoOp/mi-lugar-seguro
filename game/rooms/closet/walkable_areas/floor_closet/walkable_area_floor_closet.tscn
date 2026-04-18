@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cdlj72r6voums"]
+
+[ext_resource type="Script" uid="uid://d0xcqep7o7we3" path="res://game/rooms/closet/walkable_areas/floor_closet/walkable_area_floor_closet.gd" id="1_vuw72"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vuw72"]
+vertices = PackedVector2Array(-41, 16, -50, -16, -23, -21, -8, 23, -23, -38, 51, -38, 52, 43, 1, 43)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 3, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-23, -38, 51, -38, 52, 43, 1, 43, -8, 23, -41, 16, -50, -16, -23, -21)])
+agent_radius = 0.0
+
+[node name="FloorCloset" type="Node2D" unique_id=124751698]
+position = Vector2(192, 108)
+script = ExtResource("1_vuw72")
+script_name = "FloorCloset"
+description = "Floor Closet"
+interaction_polygon = [PackedVector2Array(-23, -38, 51, -38, 52, 43, 1, 43, -8, 23, -41, 16, -50, -16, -23, -21)]
+interaction_polygon_position = Vector2(-7, 60)
+
+[node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=507839031]
+visible = false
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-7, 60)
+navigation_polygon = SubResource("NavigationPolygon_vuw72")

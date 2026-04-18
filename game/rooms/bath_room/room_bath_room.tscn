@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cjctaoh6fufap" path="res://game/rooms/bath_room/hotspots/exit_closet/hotspot_exit_closet.tscn" id="9_xpdmf"]
 
 [node name="RoomBathRoom" type="Node2D" unique_id=787104357]
-position = Vector2(7, 1)
 script = ExtResource("1_dn64p")
 script_name = "BathRoom"
 width = 384
@@ -22,18 +21,17 @@ height = 216
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=51963064]
 
 [node name="BathFloor" parent="WalkableAreas" unique_id=600965418 instance=ExtResource("2_fpu4o")]
-position = Vector2(199, 109)
 
 [node name="Props" type="Node2D" parent="." unique_id=1423614792]
 
 [node name="Background" parent="Props" unique_id=1643373172 instance=ExtResource("2_cx4kx")]
-position = Vector2(53, -9)
+position = Vector2(60, -10)
 baseline = -20
 walk_to_point = Vector2(122.00925, 178.12653)
 look_at_point = Vector2(132.23782, 58.2129)
 
 [node name="Bathtub" parent="Props" unique_id=1065388596 instance=ExtResource("4_fs554")]
-position = Vector2(182, 169)
+position = Vector2(189, 168)
 scale = Vector2(2.5, 2.5)
 baseline = 11
 walk_to_point = Vector2(11.136658, 11.344406)
@@ -41,7 +39,7 @@ look_at_point = Vector2(-0.5935364, -9.100861)
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Toothbrushes" parent="Props" unique_id=250680007 instance=ExtResource("5_vi4g4")]
-position = Vector2(199, 109)
+position = Vector2(206, 108)
 baseline = -71
 walk_to_point = Vector2(10.196228, -44.593067)
 look_at_point = Vector2(10.933289, -53.19228)
@@ -49,14 +47,14 @@ interaction_polygon = PackedVector2Array(2, -66, 21, -67, 22, -46, 1, -46)
 interaction_polygon_position = Vector2(0, 2)
 
 [node name="BathSink" parent="Props" unique_id=1991677238 instance=ExtResource("7_ll1y7")]
-position = Vector2(153, 58)
+position = Vector2(160, 57)
 baseline = -70
 walk_to_point = Vector2(0.33503723, 45.78804)
 look_at_point = Vector2(-0.07815552, -1.1837883)
 interaction_polygon = PackedVector2Array(-22, -19, 22, -19, 22, 21, -22, 22)
 
 [node name="BathMirror" parent="Props" unique_id=1772198638 instance=ExtResource("7_hb7c8")]
-position = Vector2(153, 22)
+position = Vector2(160, 21)
 scale = Vector2(1.5, 1.5)
 baseline = -23
 interaction_polygon = PackedVector2Array(-8.666664, -12, 8.666664, -12, 8.666664, 12, -8.666664, 12)
@@ -64,14 +62,14 @@ interaction_polygon = PackedVector2Array(-8.666664, -12, 8.666664, -12, 8.666664
 [node name="Hotspots" type="Node2D" parent="." unique_id=634448547]
 
 [node name="ExitBedRoom" parent="Hotspots" unique_id=854283101 instance=ExtResource("8_ahewu")]
-position = Vector2(312, 122)
+position = Vector2(319, 121)
 baseline = -138
 walk_to_point = Vector2(-0.53796387, -0.7635803)
 look_at_point = Vector2(-0.7635498, -1.1854248)
 interaction_polygon = PackedVector2Array(-8, -36, 5, -36, 4, 40, -8, 40)
 
 [node name="ExitCloset" parent="Hotspots" unique_id=1978839043 instance=ExtResource("9_xpdmf")]
-position = Vector2(62, 138)
+position = Vector2(69, 137)
 baseline = -158
 walk_to_point = Vector2(2.418293, -0.094818115)
 look_at_point = Vector2(1.07584, -0.12916565)
@@ -84,11 +82,11 @@ interaction_polygon = PackedVector2Array(-7, -26, 15, -26, 14, 22, -7, 22)
 [node name="Characters" type="Node2D" parent="." unique_id=1835244466]
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_cne27")]
-position = Vector2(215, 147.00002)
+position = Vector2(222, 146.00002)
 metadata/EDITOR_TMP_COPY_OF = "Mel"
 
 [node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("9_hb7c8")]
-position = Vector2(191, 38)
+position = Vector2(198, 37)
 walk_to_point = Vector2(-40.46193, -16.716492)
 look_at_point = Vector2(-5.7189026, -16.93445)
 metadata/EDITOR_TMP_COPY_OF = "Narrator"

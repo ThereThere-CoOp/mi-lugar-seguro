@@ -9,7 +9,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-120, 3, -106, 8, -67, 
 agent_radius = 0.0
 
 [node name="BathFloor" type="Node2D" unique_id=600965418]
-position = Vector2(199, 109)
+position = Vector2(206, 108)
 script = ExtResource("1_bq48l")
 script_name = "BathFloor"
 description = "Bath Floor"
