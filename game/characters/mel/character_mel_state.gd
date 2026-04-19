@@ -9,7 +9,7 @@ var relationship_level = 0
 
 var current_stage: int = GameConstants.StageChoice.HOME
 
-var current_clothes: int = GameConstants.MelChlothesChoice.PAYAMA
+var current_clothes: int = GameConstants.MelChlothesChoice.PAJAMA
 #####################################################################################
 ## puzzles variables
 ####################################################################################

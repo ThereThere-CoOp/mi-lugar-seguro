@@ -8,6 +8,12 @@ const Data := preload('character_mel_state.gd')
 
 var state: Data = load("res://game/characters/mel/character_mel.tres")
 
+@export var clothes_atlas: Dictionary = {
+	GameConstants.MelChlothesChoice.BIKINI: "res://game/characters/mel/mel_bikini_sprite_atlas.tres",
+	GameConstants.MelChlothesChoice.DIARY: "res://game/characters/mel/mel_trabajo_sprite_atlas.tres",
+	GameConstants.MelChlothesChoice.PAJAMA: "res://game/characters/mel/mel_piyama_sprite_atlas.tres",
+}
+
 @onready var RelationShipUpCuePlayer: AnimationPlayer = %RelationshipUpCueAnimationPlayer
 
 
@@ -98,6 +104,14 @@ func _on_movement_ended() -> void:
 # for look_at, you could have the function:
 #func on_look_at() -> void:
 	#pass
+	
+func change_clothes(clothes_id: int) -> void:
+	var texture: Texture2D = load(clothes_atlas.get(clothes_id, 1))
+	var sprite: Sprite2D = get_node("Sprite2D")
+	sprite.texture = texture
+	state.current_clothes = clothes_id
+	
+	
 
 func play_relationship_up_cue() -> void:
 	RelationShipUpCuePlayer.play("relationship_up_one")

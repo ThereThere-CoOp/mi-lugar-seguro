@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://ca4ck3gho1p02"]
+
+[ext_resource type="Texture2D" uid="uid://blqjtx1lhgfg6" path="res://assets/characters/mel/mel_piyama.png" id="1_jncgc"]
+
+[resource]
+atlas = ExtResource("1_jncgc")

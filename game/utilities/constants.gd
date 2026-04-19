@@ -15,6 +15,6 @@ enum DayScheduleChoice {
 
 enum MelChlothesChoice {
   BIKINI,
-  PAYAMA,
+  PAJAMA,
   DIARY,
 }
