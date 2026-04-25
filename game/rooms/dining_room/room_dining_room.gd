@@ -10,7 +10,7 @@ var state: Data = load("res://game/rooms/dining_room/room_dining_room.tres")
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	GameHelpers.set_main_cam_limits_from_room(self)
 
 
 # What happens when the room changing transition finishes. At this point the room

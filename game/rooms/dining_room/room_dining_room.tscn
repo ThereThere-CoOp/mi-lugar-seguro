@@ -10,6 +10,10 @@ script = ExtResource("1_7vr1q")
 script_name = "DiningRoom"
 width = 384
 height = 216
+limit_left = -64.0
+limit_right = 416.0
+limit_top = 0.0
+limit_bottom = 216.0
 
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=1669335760]
 
@@ -18,6 +22,7 @@ height = 216
 [node name="Props" type="Node2D" parent="." unique_id=1191494412]
 
 [node name="Background" parent="Props" unique_id=1561339571 instance=ExtResource("2_8l3ps")]
+position = Vector2(-64, 0)
 baseline = 0
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1266283428]
@@ -29,5 +34,10 @@ baseline = 0
 [node name="Characters" type="Node2D" parent="." unique_id=1174253765]
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_h7v82")]
-position = Vector2(98, 164)
+position = Vector2(89.00001, 164)
+clothes_atlas = {
+0: "res://game/characters/mel/mel_bikini_sprite_atlas.tres",
+1: "res://game/characters/mel/mel_piyama_sprite_atlas.tres",
+2: "res://game/characters/mel/mel_trabajo_sprite_atlas.tres"
+}
 metadata/EDITOR_TMP_COPY_OF = "Mel"

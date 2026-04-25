@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cjmw3hba1dm7b" path="res://game/rooms/dining_room/walkable_areas/dining_room/walkable_area_dining_room.gd" id="1_wn3tk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wn3tk"]
-vertices = PackedVector2Array(-40, 68, -39, -40, 73, -37, 80, -21, 332, 70, 246, -22, 332, -38, 247, -39)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 4, 5, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-39, -40, 73, -37, 80, -21, 246, -22, 247, -39, 332, -38, 332, 70, -40, 68)])
+vertices = PackedVector2Array(422, -33, 422, 68, -40, 68, 249, -16, -40, -14, 28, -16, 82, -14, 253, -35, 37, -33, 73, -37)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(3, 7, 0), PackedInt32Array(6, 3, 2), PackedInt32Array(6, 5, 8, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(28, -16, 37, -33, 73, -37, 82, -14, 249, -16, 253, -35, 422, -33, 422, 68, -40, 68, -40, -14)])
 agent_radius = 0.0
 
 [node name="DiningRoom" type="Node2D" unique_id=1044030738]
@@ -13,10 +13,11 @@ position = Vector2(192, 108)
 script = ExtResource("1_wn3tk")
 script_name = "DiningRoom"
 description = "Dining Room"
-interaction_polygon = [PackedVector2Array(-39, -40, 73, -37, 80, -21, 246, -22, 247, -39, 332, -38, 332, 70, -40, 68)]
-interaction_polygon_position = Vector2(-145, 33)
+interaction_polygon = [PackedVector2Array(28, -16, 37, -33, 73, -37, 82, -14, 249, -16, 253, -35, 422, -33, 422, 68, -40, 68, -40, -14)]
+interaction_polygon_position = Vector2(-208, 32)
 
 [node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=1763103867]
+visible = false
 modulate = Color(0, 1, 0, 1)
-position = Vector2(-145, 33)
+position = Vector2(-208, 32)
 navigation_polygon = SubResource("NavigationPolygon_wn3tk")
