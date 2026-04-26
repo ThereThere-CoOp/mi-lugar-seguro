@@ -7,3 +7,4 @@
 resource_name = "sfx_door_opening"
 script = ExtResource("2_hcxdc")
 audio = ExtResource("1_1yygv")
+volume = -10.0

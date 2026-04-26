@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://sy7fk1h5dnha"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/hotspots/ed_computer/hotspot_ed_computer.gd" id="1_743ty"]
+
+[node name="EdComputer" type="Area2D" unique_id=2077542609]
+script = ExtResource("1_743ty")
+script_name = "EdComputer"
+description = "Ed Computer"
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1871088393]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

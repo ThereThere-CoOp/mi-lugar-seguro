@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://qcsukortyexq"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/props/small_couch/prop_small_couch.gd" id="1_3hrrg"]
+
+[node name="SmallCouch" type="Area2D" unique_id=1052603392]
+input_pickable = false
+script = ExtResource("1_3hrrg")
+script_name = "SmallCouch"
+description = "Small Couch"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1051330988]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1531571571]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1263537665]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1702101915]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

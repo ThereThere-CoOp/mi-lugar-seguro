@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c8m6n7h78vby8"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/props/table/prop_table.gd" id="1_j8v1c"]
+
+[node name="Table" type="Area2D" unique_id=507822424]
+input_pickable = false
+script = ExtResource("1_j8v1c")
+script_name = "Table"
+description = "Table"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1446222255]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1897476621]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1610667832]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1146034590]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

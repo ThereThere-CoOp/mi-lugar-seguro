@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://3r3bwquv1j0a"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/props/fridge/prop_fridge.gd" id="1_v4t6r"]
+
+[node name="Fridge" type="Area2D" unique_id=2108134102]
+input_pickable = false
+script = ExtResource("1_v4t6r")
+script_name = "Fridge"
+description = "Fridge"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=88437178]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=235814769]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1641542800]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1395705062]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
