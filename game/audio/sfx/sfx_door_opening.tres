@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AudioCueSound" format=3 uid="uid://byssvqytkv4wi"]
+
+[ext_resource type="AudioStream" uid="uid://g3i55ikcyk4p" path="res://game/audio/sfx/sfx_door_opening.ogg" id="1_1yygv"]
+[ext_resource type="Script" uid="uid://xx6t1nkiyuwa" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_hcxdc"]
+
+[resource]
+resource_name = "sfx_door_opening"
+script = ExtResource("2_hcxdc")
+audio = ExtResource("1_1yygv")

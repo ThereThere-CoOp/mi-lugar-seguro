@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dub1pavngxayc" path="res://game/rooms/dining_room/props/background/prop_background.tscn" id="2_8l3ps"]
 [ext_resource type="PackedScene" uid="uid://b0iic84ftcbqm" path="res://game/rooms/dining_room/walkable_areas/dining_room/walkable_area_dining_room.tscn" id="2_a40g8"]
 [ext_resource type="PackedScene" uid="uid://cyawbxy7hqjpa" path="res://game/characters/mel/character_mel.tscn" id="3_h7v82"]
+[ext_resource type="PackedScene" uid="uid://duo0wrhkn01y" path="res://game/rooms/dining_room/props/door_bed_room/prop_door_bed_room.tscn" id="4_5grgn"]
+[ext_resource type="Texture2D" uid="uid://dvo8yj741iwtk" path="res://assets/environment/interior/white_door.png" id="5_5qkeb"]
 
 [node name="RoomDiningRoom" type="Node2D" unique_id=1499937107]
 script = ExtResource("1_7vr1q")
@@ -24,6 +26,17 @@ limit_bottom = 216.0
 [node name="Background" parent="Props" unique_id=1561339571 instance=ExtResource("2_8l3ps")]
 position = Vector2(-64, 0)
 baseline = 0
+
+[node name="DoorBedRoom" parent="Props" unique_id=1172579501 instance=ExtResource("4_5grgn")]
+position = Vector2(296, 72)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_5qkeb")
+frames = 2
+description = "Ir al cuarto"
+baseline = -48
+walk_to_point = Vector2(10.2699585, -8.953247)
+look_at_point = Vector2(11.323303, -8.689911)
+interaction_polygon = PackedVector2Array(-12, -28.666666, 11.333328, -28.666666, 12, 16, -12, 16)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1266283428]
 

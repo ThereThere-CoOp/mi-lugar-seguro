@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioCueSound" format=3 uid="uid://d0fidy8nbcehx"]
+
+[ext_resource type="AudioStream" uid="uid://dtkwe3okfdycn" path="res://game/rooms/closet/props/clothes/sfx_clothes.ogg" id="1_gbd17"]
+[ext_resource type="Script" uid="uid://xx6t1nkiyuwa" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_emyfr"]
+
+[resource]
+resource_name = "sfx_clothes"
+script = ExtResource("2_emyfr")
+audio = ExtResource("1_gbd17")
+volume = -20.0

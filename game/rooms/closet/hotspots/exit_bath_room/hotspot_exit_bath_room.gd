@@ -9,6 +9,7 @@ extends PopochiuHotspot
 # When the node is clicked
 func _on_click() -> void:
 	await C.player.walk_to_clicked()
+	await A.sfx_door_opening.play()
 	await R.goto_room("BathRoom")
 
 

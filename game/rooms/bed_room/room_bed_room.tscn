@@ -105,6 +105,11 @@ position = Vector2(123.62753, 132.81552)
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_qxlar")]
 position = Vector2(175, 147)
+clothes_atlas = {
+0: "res://game/characters/mel/mel_bikini_sprite_atlas.tres",
+1: "res://game/characters/mel/mel_piyama_sprite_atlas.tres",
+2: "res://game/characters/mel/mel_trabajo_sprite_atlas.tres"
+}
 metadata/EDITOR_TMP_COPY_OF = "Mel"
 
 [node name="CharacterEd *" parent="Characters" unique_id=852686659 instance=ExtResource("7_yp1o7")]

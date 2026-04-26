@@ -83,6 +83,11 @@ interaction_polygon = PackedVector2Array(-7, -26, 15, -26, 14, 22, -7, 22)
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_cne27")]
 position = Vector2(222, 146.00002)
+clothes_atlas = {
+0: "res://game/characters/mel/mel_bikini_sprite_atlas.tres",
+1: "res://game/characters/mel/mel_piyama_sprite_atlas.tres",
+2: "res://game/characters/mel/mel_trabajo_sprite_atlas.tres"
+}
 metadata/EDITOR_TMP_COPY_OF = "Mel"
 
 [node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("9_hb7c8")]

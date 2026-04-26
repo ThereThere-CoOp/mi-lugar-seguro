@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://duo0wrhkn01y"]
+
+[ext_resource type="Script" uid="uid://bfov5vwtdcetx" path="res://game/rooms/dining_room/props/door_bed_room/prop_door_bed_room.gd" id="1_mpkbm"]
+
+[node name="DoorBedRoom" type="Area2D" unique_id=1172579501]
+script = ExtResource("1_mpkbm")
+script_name = "DoorBedRoom"
+description = "Door Bed Room"
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2063273342]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=407966332]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=928097524]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1061301458]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

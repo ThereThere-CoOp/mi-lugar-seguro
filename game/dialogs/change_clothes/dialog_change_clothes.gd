@@ -9,7 +9,9 @@ func _change_clothes(clothes_id: int):
 		await C.Mel.say("Ya tengo puesta esa ropa.")
 		return
 	
-	await T.play_transition("fade", 2, PopochiuTransitionLayer.PLAY_MODE.OUT)
+	
+	await T.play_transition("fade", 1, PopochiuTransitionLayer.PLAY_MODE.OUT)
+	await A.sfx_clothes.play(true)
 	C.Mel.change_clothes(clothes_id)
 	await T.play_transition("fade", 2, PopochiuTransitionLayer.PLAY_MODE.IN)
 	
