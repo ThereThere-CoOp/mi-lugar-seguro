@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cjmw3hba1dm7b" path="res://game/rooms/dining_room/walkable_areas/dining_room/walkable_area_dining_room.gd" id="1_wn3tk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wn3tk"]
-vertices = PackedVector2Array(-183, -36, -103, -40, -103, -11, -182, 163, 420, 162, -14, -11, -15, -39, 63, -40, 82, -14, 253, -35, 422, -33, 249, -16)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 4, 11), PackedInt32Array(11, 4, 5, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-14, -11, -15, -39, 63, -40, 82, -14, 249, -16, 253, -35, 422, -33, 420, 162, -182, 163, -183, -36, -103, -40, -103, -11)])
+vertices = PackedVector2Array(-182, 163, -183, -12, -165, -12, 420, 162, 253, -35, 422, -33, 249, -16, -8, -10, -7, -31, 64, -31, 82, -14, -158, -38, -123, -38, -119, -12, -103, -11)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 2), PackedInt32Array(3, 2, 13, 14), PackedInt32Array(3, 14, 7), PackedInt32Array(6, 3, 7, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -10, -7, -31, 64, -31, 82, -14, 249, -16, 253, -35, 422, -33, 420, 162, -182, 163, -183, -12, -165, -12, -158, -38, -123, -38, -119, -12, -103, -11)])
 agent_radius = 0.0
 
 [node name="DiningRoom" type="Node2D" unique_id=1044030738]
@@ -13,7 +13,7 @@ position = Vector2(192, 108)
 script = ExtResource("1_wn3tk")
 script_name = "DiningRoom"
 description = "Dining Room"
-interaction_polygon = [PackedVector2Array(-14, -11, -15, -39, 63, -40, 82, -14, 249, -16, 253, -35, 422, -33, 420, 162, -182, 163, -183, -36, -103, -40, -103, -11)]
+interaction_polygon = [PackedVector2Array(-8, -10, -7, -31, 64, -31, 82, -14, 249, -16, 253, -35, 422, -33, 420, 162, -182, 163, -183, -12, -165, -12, -158, -38, -123, -38, -119, -12, -103, -11)]
 interaction_polygon_position = Vector2(-208, 32)
 
 [node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=1763103867]

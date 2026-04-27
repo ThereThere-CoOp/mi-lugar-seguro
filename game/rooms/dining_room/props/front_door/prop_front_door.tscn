@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://5gj2rduutruo"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/props/front_door/prop_front_door.gd" id="1_857ct"]
+
+[node name="FrontDoor" type="Area2D" unique_id=760306597]
+script = ExtResource("1_857ct")
+script_name = "FrontDoor"
+description = "Front Door"
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2001939370]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1796784446]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=913633771]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1964293227]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

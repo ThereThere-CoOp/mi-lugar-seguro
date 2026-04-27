@@ -17,7 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://b6ol0vr151p1d" path="res://assets/environment/interior/TopDownHouse_FurnitureState2.png" id="14_82xeo"]
 [ext_resource type="PackedScene" uid="uid://qcsukortyexq" path="res://game/rooms/dining_room/props/small_couch/prop_small_couch.tscn" id="15_cyqk7"]
 [ext_resource type="PackedScene" uid="uid://brcj8d33bmr4b" path="res://game/rooms/dining_room/props/record_player/prop_record_player.tscn" id="16_y8mgr"]
+[ext_resource type="Texture2D" uid="uid://bd36vgotv8j8n" path="res://game/rooms/dining_room/props/record_player/tocadiscos.png" id="17_63ocn"]
 [ext_resource type="PackedScene" uid="uid://sy7fk1h5dnha" path="res://game/rooms/dining_room/hotspots/ed_computer/hotspot_ed_computer.tscn" id="17_5707q"]
+[ext_resource type="PackedScene" uid="uid://cvq7gxdxuucv5" path="res://game/rooms/dining_room/props/chair_d_1/prop_chair_d_1.tscn" id="17_cl00h"]
+[ext_resource type="PackedScene" uid="uid://dnwdl7n6yx6hc" path="res://game/rooms/dining_room/props/chair_d_2/prop_chair_d_2.tscn" id="18_j742t"]
+[ext_resource type="PackedScene" uid="uid://dc12adw7gnphp" path="res://game/rooms/dining_room/props/living_lamp/prop_living_lamp.tscn" id="19_cwxxs"]
+[ext_resource type="Texture2D" uid="uid://dmr2m6m08q8bl" path="res://assets/environment/interior/living_lamp.png" id="20_jr4tx"]
+[ext_resource type="PackedScene" uid="uid://5gj2rduutruo" path="res://game/rooms/dining_room/props/front_door/prop_front_door.tscn" id="21_5vj17"]
+[ext_resource type="PackedScene" uid="uid://svn8didfhv5l" path="res://game/rooms/dining_room/props/small_cabinet_d/prop_small_cabinet_d.tscn" id="22_onnda"]
+[ext_resource type="Texture2D" uid="uid://bdy3is3i56hp8" path="res://assets/environment/interior/small_cabinet.png" id="23_ca15b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fl5k"]
 atlas = ExtResource("11_m2pwj")
@@ -35,24 +43,35 @@ region = Rect2(82.794876, 42.71498, 26.309929, 21.256039)
 atlas = ExtResource("11_m2pwj")
 region = Rect2(173.93391, 115.93683, 27.284088, 38.61313)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwxxs"]
+atlas = ExtResource("11_m2pwj")
+region = Rect2(143.98697, 3.0654526, 15.662552, 29.41972)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j742t"]
+atlas = ExtResource("11_m2pwj")
+region = Rect2(160.03548, 7.295059, 16.56218, 24.330221)
+
 [node name="RoomDiningRoom" type="Node2D" unique_id=1499937107]
 script = ExtResource("1_7vr1q")
 script_name = "DiningRoom"
 width = 384
 height = 216
-limit_left = -208.0
-limit_right = 416.0
+limit_left = -204.0
+limit_right = 420.0
 limit_top = 0.0
 limit_bottom = 312.0
 
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=1669335760]
 
 [node name="DiningRoom" parent="WalkableAreas" unique_id=1044030738 instance=ExtResource("2_a40g8")]
+interaction_polygon = [PackedVector2Array(-8, -10, -7, -31, 64, -31, 82, -14, 249, -16, 253, -35, 422, -33, 420, 162, -182, 163, -183, -12, -165, -12, -158, -38, -123, -38, -119, -12, -103, -11)]
 
 [node name="Props" type="Node2D" parent="." unique_id=1191494412]
 
 [node name="Background" parent="Props" unique_id=1561339571 instance=ExtResource("2_8l3ps")]
 position = Vector2(-60, 0)
+obstacle_polygon = [Vector2(448, 309), Vector2(475, 309), Vector2(474, 289), Vector2(446, 289)]
+description = "Lampara"
 baseline = 0
 
 [node name="DoorBedRoom" parent="Props" unique_id=1172579501 instance=ExtResource("4_5grgn")]
@@ -93,23 +112,23 @@ baseline = -85
 interaction_polygon = PackedVector2Array(-13.333334, -17.333336, 13.333334, -18, 15.333334, 18.666664, -14, 18.666664)
 
 [node name="Table" parent="Props" unique_id=507822424 instance=ExtResource("10_tqcal")]
-position = Vector2(51, 201)
+position = Vector2(16.000004, 196)
 scale = Vector2(2.5, 2.5)
 texture = SubResource("AtlasTexture_0fl5k")
 obstacle = true
-obstacle_polygon = [Vector2(-28, 20), Vector2(27.599997, 18.400002), Vector2(27.199999, -6), Vector2(-26.8, -5.5999985)]
+obstacle_polygon = [Vector2(-23.199999, 19.199997), Vector2(27.599997, 18.400002), Vector2(27.199999, -6), Vector2(-27.199999, -12), Vector2(-41.6, -9.599998), Vector2(-42.399998, 10), Vector2(-27.599998, 11.199997)]
 baseline = 10
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Couch" parent="Props" unique_id=1924067817 instance=ExtResource("12_0fl5k")]
-position = Vector2(333, 267.00003)
+position = Vector2(320.00003, 267)
 scale = Vector2(2.5, 2.5)
 texture = SubResource("AtlasTexture_wbabo")
 obstacle_polygon = [Vector2(-27.999992, -1.199997), Vector2(-25.19999, 16.799995), Vector2(26.800003, 17.599998), Vector2(27.600006, -2.4000015)]
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="CoffeTable" parent="Props" unique_id=477803246 instance=ExtResource("13_wbabo")]
-position = Vector2(331, 194)
+position = Vector2(315, 200)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_82xeo")
 obstacle = true
@@ -117,7 +136,7 @@ obstacle_polygon = [Vector2(-14.5, -13.5), Vector2(14.5, -14), Vector2(14.5, 14.
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="SmallCouch" parent="Props" unique_id=1052603392 instance=ExtResource("15_cyqk7")]
-position = Vector2(232, 218)
+position = Vector2(204, 218)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_cyqk7")
 obstacle = true
@@ -126,8 +145,65 @@ baseline = -9
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="RecordPlayer" parent="Props" unique_id=636135525 instance=ExtResource("16_y8mgr")]
-position = Vector2(192, 108)
+position = Vector2(148, 279)
+scale = Vector2(2, 2)
+input_pickable = true
+texture = ExtResource("17_63ocn")
+frames = 2
+obstacle = true
+obstacle_polygon = [Vector2(-19.5, -6), Vector2(-5.5, -5), Vector2(20, -5.5), Vector2(20.5, 15), Vector2(-21, 15)]
 description = "Tocadiscos"
+clickable = true
+baseline = -7
+interaction_polygon = PackedVector2Array(-13.5, -4, 15.5, -10.5, 13.5, 14, -14.5, 14)
+
+[node name="ChairD1" parent="Props" unique_id=269118794 instance=ExtResource("17_cl00h")]
+position = Vector2(-67, 187)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_cwxxs")
+obstacle = true
+obstacle_polygon = [Vector2(-10.5, -8), Vector2(9, -7.5), Vector2(10, 16.5), Vector2(-11, 16)]
+baseline = -10
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ChairD2" parent="Props" unique_id=612943867 instance=ExtResource("18_j742t")]
+position = Vector2(-6, 236)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_j742t")
+obstacle = true
+obstacle_polygon = [Vector2(-11.5, -3.5), Vector2(10.5, -4), Vector2(10.5, 14.5), Vector2(-12, 14.5)]
+baseline = -12
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="LivingLamp" parent="Props" unique_id=648213989 instance=ExtResource("19_cwxxs")]
+position = Vector2(401, 261)
+scale = Vector2(2, 2)
+texture = ExtResource("20_jr4tx")
+frames = 2
+obstacle = true
+interaction_polygon = PackedVector2Array(-8.5, -22.5, 7.5, -23, 7, 22.5, -6, 23)
+
+[node name="FrontDoor" parent="Props" unique_id=760306597 instance=ExtResource("21_5vj17")]
+position = Vector2(-156, 72)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_5qkeb")
+frames = 2
+baseline = -48
+walk_to_point = Vector2(0, -2.6333084)
+look_at_point = Vector2(11.849884, -8.163261)
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="SmallCabinetD" parent="Props" unique_id=1760179326 instance=ExtResource("22_onnda")]
+position = Vector2(-184, 280)
+scale = Vector2(2, 2)
+input_pickable = true
+texture = ExtResource("23_ca15b")
+frames = 2
+obstacle = true
+obstacle_polygon = [Vector2(-9, -7.5), Vector2(8.5, -7.5), Vector2(8.5, 15), Vector2(-9.5, 15)]
+description = "Gabinete"
+clickable = true
+baseline = -16
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1266283428]

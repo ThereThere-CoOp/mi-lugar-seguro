@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cvq7gxdxuucv5"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/props/chair_d_1/prop_chair_d_1.gd" id="1_8toyv"]
+
+[node name="ChairD1" type="Area2D" unique_id=269118794]
+input_pickable = false
+script = ExtResource("1_8toyv")
+script_name = "ChairD1"
+description = "Chair D 1"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1438198742]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=508406820]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=635438339]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1581083895]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://svn8didfhv5l"]
+
+[ext_resource type="Script" path="res://game/rooms/dining_room/props/small_cabinet_d/prop_small_cabinet_d.gd" id="1_2luvs"]
+
+[node name="SmallCabinetD" type="Area2D" unique_id=1760179326]
+input_pickable = false
+script = ExtResource("1_2luvs")
+script_name = "SmallCabinetD"
+description = "Small Cabinet D"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1477629646]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=499672607]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1966560940]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1600069546]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true
