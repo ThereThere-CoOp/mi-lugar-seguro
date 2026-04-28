@@ -152,7 +152,6 @@ _data = {
 scale = Vector2(2.5, 2.5)
 input_pickable = false
 script = ExtResource("1_fkhqn")
-clothes_atlas = null
 flips_when = 2
 dialog_pos = Vector2(1.8838768, -80.11241)
 script_name = "Mel"

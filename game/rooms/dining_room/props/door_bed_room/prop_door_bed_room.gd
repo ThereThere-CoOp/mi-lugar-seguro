@@ -10,7 +10,7 @@ extends PopochiuProp
 func _on_click() -> void:
 	await C.Mel.walk_to_clicked()
 	await set_current_frame(1)
-	await  A.sfx_door_opening.play()
+	await A.sfx_door_opening.play()
 	await R.goto_room("BedRoom")
 
 

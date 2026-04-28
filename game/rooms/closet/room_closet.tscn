@@ -53,11 +53,6 @@ interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_gh3qf")]
 position = Vector2(182, 170)
-clothes_atlas = {
-0: "res://game/characters/mel/mel_bikini_sprite_atlas.tres",
-1: "res://game/characters/mel/mel_piyama_sprite_atlas.tres",
-2: "res://game/characters/mel/mel_trabajo_sprite_atlas.tres"
-}
 metadata/EDITOR_TMP_COPY_OF = "Mel"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1244640199]
