@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://d0toq6d0voehy" path="res://game/rooms/bed_room/props/vanity_mirror/prop_vanity_mirror.tscn" id="8_14qo7"]
 [ext_resource type="PackedScene" uid="uid://5i1fbmakb8i4" path="res://game/rooms/bed_room/props/night_table_top_drawer/prop_night_table_top_drawer.tscn" id="9_7ncx3"]
 [ext_resource type="PackedScene" uid="uid://dp0cf3412tx13" path="res://game/rooms/bed_room/props/family_canvas/prop_family_canvas.tscn" id="10_m6ce0"]
+[ext_resource type="PackedScene" uid="uid://k40xkvjeqqfd" path="res://game/rooms/bed_room/props/bed_lamp/prop_bed_lamp.tscn" id="11_defo2"]
+[ext_resource type="Texture2D" uid="uid://dmr2m6m08q8bl" path="res://assets/environment/interior/living_lamp.png" id="12_poj1n"]
 [ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="16_san5h"]
 
 [node name="RoomBedRoom" type="Node2D" unique_id=715075739]
@@ -78,6 +80,19 @@ position = Vector2(176, 23)
 description = "Foto de familia"
 baseline = -30
 
+[node name="BedLamp" parent="Props" unique_id=1558915901 instance=ExtResource("11_defo2")]
+position = Vector2(255, 75)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_poj1n")
+frames = 2
+obstacle = true
+obstacle_polygon = [Vector2(-9.333328, 10.666668), Vector2(8, 11.333336), Vector2(6.6666718, 27.333336), Vector2(-8.6666565, 27.333336)]
+description = "Encender lampara"
+baseline = -35
+walk_to_point = Vector2(-1.053299, 28.703117)
+look_at_point = Vector2(-0.52664185, 29.229782)
+interaction_polygon = PackedVector2Array(-8, -23.333332, 6, -22.666666, 6, 22.666672, -6, 22.666672)
+
 [node name="Hotspots" type="Node2D" parent="." unique_id=1803161742]
 
 [node name="ExitDiningRoom" parent="Hotspots" unique_id=350996541 instance=ExtResource("6_b2jh8")]
@@ -105,11 +120,6 @@ position = Vector2(123.62753, 132.81552)
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_qxlar")]
 position = Vector2(175, 147)
-clothes_atlas = {
-0: "res://game/characters/mel/mel_bikini_sprite_atlas.tres",
-1: "res://game/characters/mel/mel_piyama_sprite_atlas.tres",
-2: "res://game/characters/mel/mel_trabajo_sprite_atlas.tres"
-}
 metadata/EDITOR_TMP_COPY_OF = "Mel"
 
 [node name="CharacterEd *" parent="Characters" unique_id=852686659 instance=ExtResource("7_yp1o7")]

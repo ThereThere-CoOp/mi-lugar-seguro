@@ -7,3 +7,4 @@
 resource_name = "sfx_controller_button_press"
 script = ExtResource("2_ymgj8")
 audio = ExtResource("1_tu642")
+volume = -10.0

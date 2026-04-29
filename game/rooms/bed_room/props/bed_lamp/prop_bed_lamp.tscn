@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://k40xkvjeqqfd"]
+
+[ext_resource type="Script" path="res://game/rooms/bed_room/props/bed_lamp/prop_bed_lamp.gd" id="1_ruhn6"]
+
+[node name="BedLamp" type="Area2D" unique_id=1558915901]
+script = ExtResource("1_ruhn6")
+script_name = "BedLamp"
+description = "Bed Lamp"
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=376722921]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=296976399]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=862936522]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1001214924]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

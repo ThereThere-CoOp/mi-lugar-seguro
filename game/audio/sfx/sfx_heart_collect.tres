@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioCueSound" format=3 uid="uid://c0wswlpwq2inr"]
+
+[ext_resource type="AudioStream" uid="uid://d0f60ow03hrxw" path="res://game/audio/sfx/sfx_heart_collect.ogg" id="1_ihitg"]
+[ext_resource type="Script" uid="uid://xx6t1nkiyuwa" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_5hmg0"]
+
+[resource]
+resource_name = "sfx_heart_collect"
+script = ExtResource("2_5hmg0")
+audio = ExtResource("1_ihitg")
+volume = -10.0

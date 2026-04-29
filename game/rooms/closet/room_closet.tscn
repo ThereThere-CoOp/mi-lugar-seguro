@@ -41,8 +41,8 @@ interaction_polygon = PackedVector2Array(-31.111115, -9.444443, 31.111115, -10, 
 position = Vector2(239, 147)
 description = "Ir al cuarto"
 baseline = -154
-walk_to_point = Vector2(0.77279663, 0.28399658)
-look_at_point = Vector2(0.59724426, 0.48635864)
+walk_to_point = Vector2(-12.24884, 0.40682983)
+look_at_point = Vector2(2.5628052, 0.60920715)
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Regions" type="Node2D" parent="." unique_id=976704550]

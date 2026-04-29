@@ -5,33 +5,28 @@ extends PopochiuHotspot
 # the function until the sequence of events finishes.
 
 
+func _describe_computer():
+	await C.Mel.say("Es la compu de Ed")
+	await C.Mel.say("Es donde trabaja")
+	await C.Mel.say("y hace sus videojuegos.")
+	
+	
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() with your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character walk to this hotspot, gaze at it, and then say
-	# something:
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("What a nice view")
+	await C.player.walk_to_clicked()
+	_describe_computer()
 
 
 func _on_double_click() -> void:
-	# Replace the call to E.command_fallback() with your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you could make the player instantly goto another room on an exit hotspot instead
-	# of waiting for the player to walk there.
-#	await R.current = R.NewRoom
+	await C.player.walk_to_clicked()
+	_describe_computer()
 
 
 # When the node is right clicked
 func _on_right_click() -> void:
-	# Replace the call to E.command_fallback() with your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character gaze at this hotspot and then say something:
-#	await C.player.face_clicked()
-#	await C.player.say("A window")
+	C.player.face_clicked()
+	_describe_computer()
 
 
 # When the node is middle clicked

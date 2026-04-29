@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioCueSound" format=3 uid="uid://ctouo7raf6twy"]
+
+[ext_resource type="AudioStream" uid="uid://bthiago1k25o2" path="res://game/audio/sfx/sfx_whistle.ogg" id="1_bjaql"]
+[ext_resource type="Script" uid="uid://xx6t1nkiyuwa" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_10clg"]
+
+[resource]
+resource_name = "sfx_whistle"
+script = ExtResource("2_10clg")
+audio = ExtResource("1_bjaql")
+volume = -10.0

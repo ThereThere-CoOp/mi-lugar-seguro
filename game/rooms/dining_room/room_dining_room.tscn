@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://5gj2rduutruo" path="res://game/rooms/dining_room/props/front_door/prop_front_door.tscn" id="21_5vj17"]
 [ext_resource type="PackedScene" uid="uid://svn8didfhv5l" path="res://game/rooms/dining_room/props/small_cabinet_d/prop_small_cabinet_d.tscn" id="22_onnda"]
 [ext_resource type="Texture2D" uid="uid://bdy3is3i56hp8" path="res://assets/environment/interior/small_cabinet.png" id="23_ca15b"]
+[ext_resource type="PackedScene" uid="uid://45lyy62px3ih" path="res://game/rooms/dining_room/props/mel_painting/prop_mel_painting.tscn" id="25_70dt3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fl5k"]
 atlas = ExtResource("11_m2pwj")
@@ -50,6 +51,8 @@ region = Rect2(143.98697, 3.0654526, 15.662552, 29.41972)
 [sub_resource type="AtlasTexture" id="AtlasTexture_j742t"]
 atlas = ExtResource("11_m2pwj")
 region = Rect2(160.03548, 7.295059, 16.56218, 24.330221)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70dt3"]
 
 [node name="RoomDiningRoom" type="Node2D" unique_id=1499937107]
 script = ExtResource("1_7vr1q")
@@ -191,6 +194,7 @@ position = Vector2(-156, 72)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_5qkeb")
 frames = 2
+description = "Salir de la casa"
 baseline = -48
 walk_to_point = Vector2(0, -2.6333084)
 look_at_point = Vector2(11.849884, -8.163261)
@@ -209,14 +213,22 @@ clickable = true
 baseline = -16
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
+[node name="MelPainting" parent="Props" unique_id=1106668864 instance=ExtResource("25_70dt3")]
+position = Vector2(192, 108)
+input_pickable = true
+texture = SubResource("AtlasTexture_70dt3")
+description = "Pintura de Mel"
+clickable = true
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
 [node name="Hotspots" type="Node2D" parent="." unique_id=1266283428]
 
 [node name="EdComputer" parent="Hotspots" unique_id=2077542609 instance=ExtResource("17_5707q")]
 position = Vector2(409, 82)
 description = "Computadora de Ed"
 baseline = 3
-walk_to_point = Vector2(-2.2923431, 3.3238983)
-look_at_point = Vector2(-1.0315552, 2.9227371)
+walk_to_point = Vector2(-13.878906, 46.246902)
+look_at_point = Vector2(-2.8747559, 4.766083)
 interaction_polygon = PackedVector2Array(-35, -12, 12, -12, 12, 16, -34, 5)
 
 [node name="Regions" type="Node2D" parent="." unique_id=477507962]

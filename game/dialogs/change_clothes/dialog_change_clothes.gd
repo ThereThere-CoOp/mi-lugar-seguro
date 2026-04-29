@@ -13,7 +13,7 @@ func _change_clothes(clothes_id: int):
 	await T.play_transition("fade", 1, PopochiuTransitionLayer.PLAY_MODE.OUT)
 	await A.sfx_clothes.play(true)
 	C.Mel.change_clothes(clothes_id)
-	await T.play_transition("fade", 2, PopochiuTransitionLayer.PLAY_MODE.IN)
+	await T.play_transition("fade", 1.5, PopochiuTransitionLayer.PLAY_MODE.IN)
 	
 	
 #region Virtual ####################################################################################
@@ -33,7 +33,8 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 		"work":
 			_change_clothes(GameConstants.MelChlothesChoice.DIARY)
 		"bikini":
-			_change_clothes(GameConstants.MelChlothesChoice.BIKINI)
+			await _change_clothes(GameConstants.MelChlothesChoice.BIKINI)
+			await A.sfx_whistle.play()
 		"none":
 			stop()
 		_:

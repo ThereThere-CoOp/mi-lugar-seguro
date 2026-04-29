@@ -115,4 +115,5 @@ func change_clothes(clothes_id: int) -> void:
 
 func play_relationship_up_cue() -> void:
 	RelationShipUpCuePlayer.play("relationship_up_one")
+	await A.sfx_heart_collect.play()
 #endregion
