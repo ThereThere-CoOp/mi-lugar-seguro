@@ -2,19 +2,26 @@ class_name GameConstants
 extends Node
 
 enum StageChoice {
-  HOME,
-  POOL,
-  WORK,
-  ENDING_SCENE,
+	HOME,
+	POOL,
+	WORK,
+	ENDING_SCENE,
 }
 
 enum DayScheduleChoice {
-  POOL,
-  WORK,
+	POOL,
+	WORK,
 }
 
 enum MelChlothesChoice {
-  BIKINI,
-  PAJAMA,
-  DIARY,
+	BIKINI,
+	PAJAMA,
+	DIARY,
+}
+
+enum ThermostatConfigurationChoice {
+	OFF,
+	BALANCED,
+	HOT,
+	COLD,
 }
