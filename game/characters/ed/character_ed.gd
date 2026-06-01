@@ -22,6 +22,7 @@ var _last_selected_waling_marker_name: String = ""
 
 func _get_walk_points() -> void:
 	# if is_random_walking:
+	walking_markers = []
 	var markers = R.current.get_markers()
 	
 	for marker: Marker2D in markers:
