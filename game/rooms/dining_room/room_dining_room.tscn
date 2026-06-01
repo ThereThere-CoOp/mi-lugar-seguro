@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://svn8didfhv5l" path="res://game/rooms/dining_room/props/small_cabinet_d/prop_small_cabinet_d.tscn" id="22_onnda"]
 [ext_resource type="Texture2D" uid="uid://bdy3is3i56hp8" path="res://assets/environment/interior/small_cabinet.png" id="23_ca15b"]
 [ext_resource type="PackedScene" uid="uid://45lyy62px3ih" path="res://game/rooms/dining_room/props/mel_painting/prop_mel_painting.tscn" id="25_70dt3"]
+[ext_resource type="PackedScene" uid="uid://dla7fo02sjrs7" path="res://game/rooms/dining_room/props/thermostat/prop_thermostat.tscn" id="26_rf6pu"]
+[ext_resource type="Texture2D" uid="uid://bxgr6ia073mca" path="res://game/rooms/dining_room/props/thermostat/thermostat.png" id="27_4aauf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fl5k"]
 atlas = ExtResource("11_m2pwj")
@@ -67,6 +69,7 @@ limit_bottom = 312.0
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=1669335760]
 
 [node name="DiningRoom" parent="WalkableAreas" unique_id=1044030738 instance=ExtResource("2_a40g8")]
+interaction_polygon = [PackedVector2Array(-12, -12, -10, -34, 11, -34, 19, -13, 82, -14, 249, -16, 253, -35, 422, -33, 420, 162, -182, 163, -183, -12, -165, -12, -158, -38, -123, -38, -119, -12, -103, -11)]
 
 [node name="Props" type="Node2D" parent="." unique_id=1191494412]
 
@@ -220,6 +223,16 @@ texture = SubResource("AtlasTexture_70dt3")
 description = "Pintura de Mel"
 clickable = true
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Thermostat" parent="Props" unique_id=324035627 instance=ExtResource("26_rf6pu")]
+position = Vector2(-15, 60)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("27_4aauf")
+frames = 4
+description = "Termostato"
+baseline = -62
+look_at_point = Vector2(0.61569214, 0.6156807)
+interaction_polygon = PackedVector2Array(-8.666668, -5.333332, 8.666667, -5.333332, 8.666667, 8.666668, -8.666668, 8.666668)
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1266283428]
 
