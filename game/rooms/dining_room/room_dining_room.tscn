@@ -29,6 +29,10 @@
 [ext_resource type="PackedScene" uid="uid://45lyy62px3ih" path="res://game/rooms/dining_room/props/mel_painting/prop_mel_painting.tscn" id="25_70dt3"]
 [ext_resource type="PackedScene" uid="uid://dla7fo02sjrs7" path="res://game/rooms/dining_room/props/thermostat/prop_thermostat.tscn" id="26_rf6pu"]
 [ext_resource type="Texture2D" uid="uid://bxgr6ia073mca" path="res://game/rooms/dining_room/props/thermostat/thermostat.png" id="27_4aauf"]
+[ext_resource type="PackedScene" uid="uid://3iwund00woh1" path="res://game/rooms/dining_room/markers/walk_ed_1/marker_walk_ed_1.tscn" id="29_arpqi"]
+[ext_resource type="PackedScene" uid="uid://b6ye14f3gjd8p" path="res://game/rooms/dining_room/markers/walk_ed_2/marker_walk_ed_2.tscn" id="30_qyw3g"]
+[ext_resource type="PackedScene" uid="uid://dasg3xr6ca1ix" path="res://game/characters/ed/character_ed.tscn" id="30_ycgae"]
+[ext_resource type="PackedScene" uid="uid://buwcwssl1duj" path="res://game/rooms/dining_room/markers/walk_ed_3/marker_walk_ed_3.tscn" id="31_kgwfu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fl5k"]
 atlas = ExtResource("11_m2pwj")
@@ -248,8 +252,23 @@ interaction_polygon = PackedVector2Array(-35, -12, 12, -12, 12, 16, -34, 5)
 
 [node name="Markers" type="Node2D" parent="." unique_id=62722895]
 
+[node name="WalkEd1" parent="Markers" unique_id=1263554537 instance=ExtResource("29_arpqi")]
+position = Vector2(381.09875, 143.56186)
+
+[node name="WalkEd2" parent="Markers" unique_id=878986879 instance=ExtResource("30_qyw3g")]
+position = Vector2(-143.83768, 147.81969)
+
+[node name="WalkEd3" parent="Markers" unique_id=1251376501 instance=ExtResource("31_kgwfu")]
+position = Vector2(-58.939102, 277.79712)
+
 [node name="Characters" type="Node2D" parent="." unique_id=1174253765]
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_h7v82")]
 position = Vector2(89.00001, 164)
 metadata/EDITOR_TMP_COPY_OF = "Mel"
+
+[node name="CharacterEd *" parent="Characters" unique_id=852686659 instance=ExtResource("30_ycgae")]
+position = Vector2(252, 159)
+is_random_walking = false
+waiting_range = Vector2(1, 10)
+metadata/EDITOR_TMP_COPY_OF = "Ed"

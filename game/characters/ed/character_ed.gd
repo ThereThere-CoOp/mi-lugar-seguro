@@ -4,26 +4,63 @@ extends PopochiuCharacter
 # Use await E.queue([]) if you want to pause the execution of
 # the function until the sequence of events finishes.
 
+@export var is_random_walking: bool = true
+
+@export var walking_markers: Array[Marker2D] = []
+
+@export var waiting_range: Vector2 = Vector2(1, 10)
+
 const Data := preload('character_ed_state.gd')
 
 var state: Data = load("res://game/characters/ed/character_ed.tres")
 
+@onready var _walking_timer = %RandomWalkingTimer
 
+var _is_random_walking_disabled = false
+
+var _last_selected_waling_marker_name: String = ""
+
+func _get_walk_points() -> void:
+	if is_random_walking:
+		var markers = R.current.get_markers()
+		
+		for marker: Marker2D in markers:
+			if marker.name.begins_with("WalkEd"):
+				walking_markers.append(marker)
+				
+				
+func _handle_random_walking():
+	if len(walking_markers) > 0:
+		if is_random_walking and not _is_random_walking_disabled:
+			var index = randi_range(0, len(walking_markers) - 1)
+			var selected_marker = walking_markers[index]
+			
+			while selected_marker.name == _last_selected_waling_marker_name:
+				index = randi_range(0, len(walking_markers) - 1)
+				selected_marker = walking_markers[index]
+			
+			_last_selected_waling_marker_name = selected_marker.name
+			await walk_to_marker(selected_marker.name)
+
+
+func _setup_walking_timer() -> void:
+	_walking_timer.stop()
+	_walking_timer.wait_time = randf_range(waiting_range.x, waiting_range.y)
+	_walking_timer.start()
+	
+	
 #region Virtual ####################################################################################
 # When the room in which this node is located finishes being added to the tree
 func _on_room_set() -> void:
-	pass
+	_get_walk_points()
+	_setup_walking_timer()
 
 
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	E.command_fallback()
-	# For example, you can make the player character walk to this character, gaze at it, and then
-	# say something:
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("Hi!")
+	_is_random_walking_disabled = true
+	_is_random_walking_disabled = false
+	_setup_walking_timer()
 
 
 func _on_double_click() -> void:
@@ -80,12 +117,13 @@ func _play_grab() -> void:
 
 # Called when the character starts moving
 func _on_movement_started() -> void:
-	pass
+	_is_random_walking_disabled = true
 
 
 # Called when the character stops moving
 func _on_movement_ended() -> void:
-	pass
+	_is_random_walking_disabled = false
+	_setup_walking_timer()
 
 
 #endregion
@@ -98,3 +136,11 @@ func _on_movement_ended() -> void:
 
 
 #endregion
+
+func _process(delta: float) -> void:
+	super(delta)
+		
+
+
+func _on_random_walking_timer_timeout() -> void:
+	_handle_random_walking()

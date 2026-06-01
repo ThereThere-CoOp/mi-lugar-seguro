@@ -70,7 +70,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_nq1ms"]
 resource_name = "walk"
-length = 0.8
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -79,10 +79,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [8, 9, 10, 11, 12, 13, 14, 15]
+"values": [8, 9, 10, 11, 12, 13, 14]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yen6s"]
@@ -100,13 +100,15 @@ atlas = ExtResource("2_jbq84")
 [node name="CharacterEd" type="Area2D" unique_id=852686659]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_plhxc")
+is_random_walking = null
+waiting_range = null
 flips_when = 2
 walk_speed = 100.0
 dialog_pos = Vector2(-0.8705139, -85.09297)
 script_name = "Ed"
 description = "Ed"
 cursor = 8
-interaction_polygon = PackedVector2Array(8.034138, -20.4, 8.879836, 10, -10, 10, -9.744022, -9.198282, -5.919891, -12.799999, -4.2284937, -20.4)
+interaction_polygon = PackedVector2Array(8.034138, -20.4, 8.879836, 10, -10, 10, -9.744022, -9.198282, -8.879837, -12.799999, -6.34274, -20.4)
 interaction_polygon_position = Vector2(0.4, -9.6)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=188815922]
@@ -130,10 +132,16 @@ frame = 16
 visible = false
 position = Vector2(0.4, -9.6)
 scale = Vector2(0.9459634, 1)
-polygon = PackedVector2Array(8.034138, -20.4, 8.879836, 10, -10, 10, -9.744022, -9.198282, -5.919891, -12.799999, -4.2284937, -20.4)
+polygon = PackedVector2Array(8.034138, -20.4, 8.879836, 10, -10, 10, -9.744022, -9.198282, -8.879837, -12.799999, -6.34274, -20.4)
 
 [node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1165694443]
 visible = false
-vertices = PackedVector2Array(-8.4, 0, -8.4, -3.1999998, 7.5999994, -2.7999997, 8.4, 0)
+vertices = PackedVector2Array(-8.799999, 0.79999995, -8.799999, -4.3999996, 7.9999995, -4.3999996, 8.799999, 1.1999999)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="RandomWalkingTimer" type="Timer" parent="." unique_id=771046556]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="RandomWalkingTimer" to="." method="_on_random_walking_timer_timeout"]

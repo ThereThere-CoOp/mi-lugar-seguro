@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://buwcwssl1duj"]
+
+[node name="WalkEd3" type="Marker2D" unique_id=1251376501]
+visible = false
