@@ -24,6 +24,7 @@ func _check_player_entering():
 func _on_room_entered() -> void:
 	GameHelpers.set_main_cam_limits_from_room(self)
 	_check_player_entering()
+	C.Ed.is_random_walking = true
 
 
 # What happens when the room changing transition finishes. At this point the room

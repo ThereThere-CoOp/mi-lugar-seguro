@@ -4,7 +4,7 @@ extends PopochiuCharacter
 # Use await E.queue([]) if you want to pause the execution of
 # the function until the sequence of events finishes.
 
-@export var is_random_walking: bool = true
+@export var is_random_walking: bool = false
 
 @export var walking_markers: Array[Marker2D] = []
 
@@ -21,12 +21,12 @@ var _is_random_walking_disabled = false
 var _last_selected_waling_marker_name: String = ""
 
 func _get_walk_points() -> void:
-	if is_random_walking:
-		var markers = R.current.get_markers()
-		
-		for marker: Marker2D in markers:
-			if marker.name.begins_with("WalkEd"):
-				walking_markers.append(marker)
+	# if is_random_walking:
+	var markers = R.current.get_markers()
+	
+	for marker: Marker2D in markers:
+		if marker.name.begins_with("WalkEd"):
+			walking_markers.append(marker)
 				
 				
 func _handle_random_walking():
