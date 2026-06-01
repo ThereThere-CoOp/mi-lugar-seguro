@@ -5,25 +5,27 @@ extends PopochiuDialog
 var thermostat_prop = R.DiningRoom.get_prop("Thermostat")
 
 
-func _disable_options() -> void:
+func _handle_options() -> void:
+	turn_on_options(["balanced", "hot", "cold"])
+	
 	match C.Mel.state.thermostat_configuration:
 		GameConstants.ThermostatConfigurationChoice.COLD:
 			turn_off_options(["cold"])
-			turn_on_options(["balanced", "hot", "none"])
 		GameConstants.ThermostatConfigurationChoice.BALANCED:
 			turn_off_options(["balanced"])
-			turn_on_options(["cold", "hot", "none"])
+			# turn_on_options(["cold", "hot", "none"])
 		GameConstants.ThermostatConfigurationChoice.HOT:
 			turn_off_options(["hot"])
-			turn_on_options(["cold", "balanced", "none"])
+			# turn_on_options(["cold", "balanced", "none"])
 		_:
-			turn_on_options(["cold", "balanced", "none", "hot"])
+			pass
+			# turn_on_options(["cold", "balanced", "none", "hot"])
 			
 			
 #region Virtual ####################################################################################
 func _on_start() -> void:
 	await C.Mel.say("¿Cual temperatura debo programar?")
-	_disable_options()
+	_handle_options()
 
 
 func _option_selected(opt: PopochiuDialogOption) -> void:
@@ -36,19 +38,27 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 		"cold":
 			await C.player.say("Bajare un poco la temperatura.")
 			C.Mel.state.thermostat_configuration = GameConstants.ThermostatConfigurationChoice.COLD
-			C.Mel.state.thermostat_cold = true
+			
+			C.Mel.state.thermostat_cold_talked = false
+			
 			await A.sfx_controller_button_press.play()
 			thermostat_prop.set_current_frame(3)
 		"balanced":
 			await C.player.say("Pondre la temperatura en medio.")
 			C.Mel.state.thermostat_configuration = GameConstants.ThermostatConfigurationChoice.BALANCED
 			C.Mel.state.thermostat_balanced = true
+			
+			C.Mel.state.thermostat_cold_talked = false
+			C.Mel.state.thermostat_hot_talked = false
+			
 			await A.sfx_controller_button_press.play()
 			thermostat_prop.set_current_frame(1)
 		"hot":
 			await C.player.say("Pondre la calefaccion.")
+			
+			C.Mel.state.thermostat_hot_talked = false
+			
 			C.Mel.state.thermostat_configuration = GameConstants.ThermostatConfigurationChoice.HOT
-			C.Mel.state.thermostat_hot = true
 			await A.sfx_controller_button_press.play()
 			thermostat_prop.set_current_frame(2)
 		"none":

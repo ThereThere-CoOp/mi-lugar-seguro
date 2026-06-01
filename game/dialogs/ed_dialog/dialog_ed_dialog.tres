@@ -1,0 +1,28 @@
+[gd_resource type="Resource" format=3 uid="uid://cli744uael7dv"]
+
+[ext_resource type="Script" uid="uid://brxefo54wpm32" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_6j1n2"]
+[ext_resource type="Script" uid="uid://cq6fdaj5iy7rq" path="res://game/dialogs/ed_dialog/dialog_ed_dialog.gd" id="2_05fhl"]
+
+[sub_resource type="Resource" id="Resource_6j1n2"]
+resource_name = "leave"
+script = ExtResource("1_6j1n2")
+id = "leave"
+text = "Marcharte"
+
+[sub_resource type="Resource" id="Resource_05fhl"]
+resource_name = "cold"
+script = ExtResource("1_6j1n2")
+id = "cold"
+text = "Pareces tener frio"
+
+[sub_resource type="Resource" id="Resource_qr253"]
+resource_name = "hot"
+script = ExtResource("1_6j1n2")
+id = "hot"
+text = "Te veo acalorado"
+
+[resource]
+resource_name = "EdDialog"
+script = ExtResource("2_05fhl")
+script_name = "EdDialog"
+options = Array[ExtResource("1_6j1n2")]([SubResource("Resource_6j1n2"), SubResource("Resource_05fhl"), SubResource("Resource_qr253")])

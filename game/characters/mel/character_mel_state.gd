@@ -16,9 +16,14 @@ var current_clothes: int = GameConstants.MelChlothesChoice.PAJAMA
 var examined_bedroom_family_canvas: bool = false
 
 var thermostat_configuration: int = GameConstants.ThermostatConfigurationChoice.OFF
-var thermostat_cold: bool = false
-var thermostat_balanced: bool = false
-var thermostat_hot: bool = false
+
+var thermostat_cold_talked: bool = false
+var thermostat_hot_talked: bool = false
+
+var thermostat_cold_resolved: bool = false
+var thermostat_balanced_resolved: bool = false
+var thermostat_hot_resolved: bool = false
+
 
 # make up and morning routine
 var washed_face: bool = false

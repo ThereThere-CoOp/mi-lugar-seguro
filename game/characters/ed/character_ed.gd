@@ -60,6 +60,13 @@ func _on_room_set() -> void:
 # When the node is clicked
 func _on_click() -> void:
 	_is_random_walking_disabled = true
+	C.Ed.stop_walking()
+	_walking_timer.stop()
+	C.player.face_clicked()
+	C.Ed.face_direction(C.player.look_at_point)
+	
+	await D.EdDialog.start()
+	
 	_is_random_walking_disabled = false
 	_setup_walking_timer()
 
