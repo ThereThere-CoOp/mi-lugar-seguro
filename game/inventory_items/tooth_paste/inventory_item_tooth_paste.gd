@@ -1,8 +1,8 @@
 extends PopochiuInventoryItem
 
-const Data := preload('inventory_item_toothbrush_state.gd')
+const Data := preload('inventory_item_tooth_paste_state.gd')
 
-var state: Data = load("res://game/inventory_items/toothbrush/inventory_item_toothbrush.tres")
+var state: Data = load("res://game/inventory_items/tooth_paste/inventory_item_tooth_paste.tres")
 
 
 #region Virtual ####################################################################################
@@ -14,7 +14,8 @@ func _on_click() -> void:
 
 # When the item is right clicked in the inventory
 func _on_right_click() -> void:
-	await C.player.say("Es mi cepillo de dientes.")
+	# Replace the call to E.command_fallback() to implement your code.
+	E.command_fallback()
 
 
 # When the item is middle clicked in the inventory
@@ -25,14 +26,13 @@ func _on_middle_click() -> void:
 
 # When the item is clicked and there is another inventory item selected
 func _on_item_used(item: PopochiuInventoryItem) -> void:
-	if item == I.ToothPaste:
+	if item == I.Toothbrush:
 		await C.player.say("Ahora puedo lavarme los dientes en el lavamanos")
 		I.Toothbrush.remove()
 		I.ToothPaste.remove()
 		I.ToothbrushWithPaste.add()
 	else:
 		await C.player.say("No puedo usarlo de esta manera")
-
 
 # Actions to execute after the item is added to the Inventory
 func _on_added_to_inventory() -> void:

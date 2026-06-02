@@ -9,20 +9,9 @@ extends PopochiuProp
 # When the node is clicked
 func _on_click() -> void:
 	await C.player.walk_to_clicked()
-	
-	if C.Mel.state.washed_face:
-		await C.player.say("Ya me he lavado la cara")
-	elif C.Mel.state.applied_makeup:
-		await C.player.say("Ya me he maquillado.")
-		await C.player.say("Mejor no me lavo la cara.")
-	else:
-		await C.Narrator.say("Mel se lava la cara")
-		await C.Narrator.say("Debido que esta es una produccion")
-		await C.Narrator.say("de bajo presupuesto")
-		await C.Narrator.say("no se pudo agregar esta animacion")
-		
-		C.Mel.state.washed_face = true
-		C.Mel.state.increase_relationship_level(1)
+	await C.player.face_clicked()
+	await C.player.say("Puedo usarla con el cepillo")
+	await I.ToothPaste.add()
 
 
 func _on_double_click() -> void:
@@ -33,9 +22,11 @@ func _on_double_click() -> void:
 
 # When the node is right clicked
 func _on_right_click() -> void:
-	await C.player.face_clicked()
-	await C.Mel.say("Lo puedo usar para lavarme la cara")
-	await C.Mel.say("O para lavarme los dientes")
+	# Replace the call to E.command_fallback() to implement your code.
+	PopochiuUtils.e.command_fallback()
+	# For example, you can make the player character gaze at this prop and then say something:
+#	await C.player.face_clicked()
+#	await C.player.say("A deck of cards")
 
 
 # When the node is middle clicked
@@ -45,17 +36,13 @@ func _on_middle_click() -> void:
 
 
 # When the node is clicked and there is an inventory item selected
-func _on_item_used(item: PopochiuInventoryItem) -> void:
-	if item == I.ToothbrushWithPaste:
-		await C.player.walk_to_clicked()
-		await C.player.face_clicked()
-		await C.Narrator.say("Meli se lava los dientes")
-		await C.Narrator.say("Su hermosa sonrisa brillara mas ahora")
-		I.ToothbrushWithPaste.remove()
-		C.Mel.state.increase_relationship_level(2)
-	else:
-		await C.player.say("No puede usar esto aqui")
-		
+func _on_item_used(_item: PopochiuInventoryItem) -> void:
+	# Replace the call to E.command_fallback() to implement your code.
+	PopochiuUtils.e.command_fallback()
+	# For example, you can make the player character say something when the Key item is used in this
+	# prop. Note that you have to change the name of the `_item` parameter to `item`.
+#	if item == I.Key:
+#		await C.player.say("I can't do that")
 
 
 # When an inventory item linked to this Prop (link_to_item) is removed from

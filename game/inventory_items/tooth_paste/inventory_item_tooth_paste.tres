@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://b5l432djh6lu"]
+
+[ext_resource type="Script" path="res://game/inventory_items/tooth_paste/inventory_item_tooth_paste_state.gd" id="1_5i3gx"]
+
+[resource]
+resource_name = "ToothPaste"
+script = ExtResource("1_5i3gx")
+script_name = "ToothPaste"
+scene = "res://game/inventory_items/tooth_paste/inventory_item_tooth_paste.tscn"

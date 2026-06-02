@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dsik723d00xyx"]
+
+[ext_resource type="Script" uid="uid://bjbtwlqqln50q" path="res://game/inventory_items/toothbrush_with_paste/inventory_item_toothbrush_with_paste.gd" id="1_4ym1p"]
+[ext_resource type="Texture2D" uid="uid://ddm3xukupx5sn" path="res://assets/environment/interior/custom_small_items.png" id="1_8qfvn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs0d6"]
+atlas = ExtResource("1_8qfvn")
+region = Rect2(96, 32, 16, 16)
+
+[node name="ItemToothbrushWithPaste" type="TextureRect" unique_id=1464427437]
+texture_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+texture = SubResource("AtlasTexture_bs0d6")
+stretch_mode = 5
+script = ExtResource("1_4ym1p")
+script_name = "ToothbrushWithPaste"
+description = "Cepillo de diente con pasta"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1758031630]

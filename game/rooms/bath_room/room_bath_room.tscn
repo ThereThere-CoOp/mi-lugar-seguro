@@ -9,8 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://cmdcp7s08g6eu" path="res://game/rooms/bath_room/props/bath_mirror/prop_bath_mirror.tscn" id="7_hb7c8"]
 [ext_resource type="PackedScene" uid="uid://b0y8s3eyxjhgd" path="res://game/rooms/bath_room/props/bath_sink/prop_bath_sink.tscn" id="7_ll1y7"]
 [ext_resource type="PackedScene" uid="uid://chp7s1a2gcala" path="res://game/rooms/bath_room/hotspots/exit_bed_room/hotspot_exit_bed_room.tscn" id="8_ahewu"]
+[ext_resource type="PackedScene" uid="uid://d2mld0j3mom4m" path="res://game/rooms/bath_room/props/tooth_paste/prop_tooth_paste.tscn" id="8_pluoc"]
 [ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="9_hb7c8"]
+[ext_resource type="Texture2D" uid="uid://ddm3xukupx5sn" path="res://assets/environment/interior/custom_small_items.png" id="9_jd8gl"]
 [ext_resource type="PackedScene" uid="uid://cjctaoh6fufap" path="res://game/rooms/bath_room/hotspots/exit_closet/hotspot_exit_closet.tscn" id="9_xpdmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pluoc"]
+atlas = ExtResource("9_jd8gl")
+region = Rect2(64, 0, 16, 16)
 
 [node name="RoomBathRoom" type="Node2D" unique_id=787104357]
 script = ExtResource("1_dn64p")
@@ -59,6 +65,16 @@ scale = Vector2(1.5, 1.5)
 baseline = -23
 interaction_polygon = PackedVector2Array(-8.666664, -12, 8.666664, -12, 8.666664, 12, -8.666664, 12)
 
+[node name="ToothPaste" parent="Props" unique_id=2079351626 instance=ExtResource("8_pluoc")]
+position = Vector2(253, 59)
+texture = SubResource("AtlasTexture_pluoc")
+link_to_item = "ToothPaste"
+description = "Pasta de Diente"
+baseline = -6
+walk_to_point = Vector2(0.6940613, 9.002495)
+look_at_point = Vector2(-0.5453186, 7.635933)
+interaction_polygon = PackedVector2Array(-6, -7, 9, -7, 7, 9, -8, 9)
+
 [node name="Hotspots" type="Node2D" parent="." unique_id=634448547]
 
 [node name="ExitBedRoom" parent="Hotspots" unique_id=854283101 instance=ExtResource("8_ahewu")]
@@ -83,11 +99,6 @@ interaction_polygon = PackedVector2Array(-7, -26, 15, -26, 14, 22, -7, 22)
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_cne27")]
 position = Vector2(222, 146.00002)
-clothes_atlas = {
-0: "res://game/characters/mel/mel_bikini_sprite_atlas.tres",
-1: "res://game/characters/mel/mel_piyama_sprite_atlas.tres",
-2: "res://game/characters/mel/mel_trabajo_sprite_atlas.tres"
-}
 metadata/EDITOR_TMP_COPY_OF = "Mel"
 
 [node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("9_hb7c8")]
