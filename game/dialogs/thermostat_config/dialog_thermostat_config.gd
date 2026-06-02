@@ -46,10 +46,6 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 		"balanced":
 			await C.player.say("Pondre la temperatura en medio.")
 			C.Mel.state.thermostat_configuration = GameConstants.ThermostatConfigurationChoice.BALANCED
-			C.Mel.state.thermostat_balanced = true
-			
-			C.Mel.state.thermostat_cold_talked = false
-			C.Mel.state.thermostat_hot_talked = false
 			
 			await A.sfx_controller_button_press.play()
 			thermostat_prop.set_current_frame(1)

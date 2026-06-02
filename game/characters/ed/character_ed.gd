@@ -62,8 +62,9 @@ func _on_click() -> void:
 	_is_random_walking_disabled = true
 	C.Ed.stop_walking()
 	_walking_timer.stop()
-	C.player.face_clicked()
-	C.Ed.face_direction(C.player.look_at_point)
+	await C.player.walk_to_clicked()
+	await C.Ed.face_direction(C.player.position)
+	await C.player.face_clicked()
 	
 	await D.EdDialog.start()
 	

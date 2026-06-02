@@ -279,4 +279,6 @@ metadata/EDITOR_TMP_COPY_OF = "Mel"
 position = Vector2(254, 167)
 is_random_walking = false
 waiting_range = Vector2(1, 10)
+walk_to_point = Vector2(23.699799, -1.4363708)
+look_at_point = Vector2(-0.95758057, -11.012039)
 metadata/EDITOR_TMP_COPY_OF = "Ed"

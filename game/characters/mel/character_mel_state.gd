@@ -59,3 +59,12 @@ func _on_load(data: Dictionary) -> void:
 func increase_relationship_level(value: int) -> void:
 	relationship_level += value
 	await C.player.play_relationship_up_cue()
+	
+func is_temperature_cold() -> bool:
+	return thermostat_configuration == GameConstants.ThermostatConfigurationChoice.COLD
+	
+func is_temperature_hot() -> bool:
+	return thermostat_configuration == GameConstants.ThermostatConfigurationChoice.HOT
+	
+func is_temperature_balanced() -> bool:
+	return thermostat_configuration == GameConstants.ThermostatConfigurationChoice.BALANCED
