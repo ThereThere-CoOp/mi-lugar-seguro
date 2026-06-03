@@ -161,11 +161,14 @@ input_pickable = true
 texture = ExtResource("17_63ocn")
 frames = 2
 obstacle = true
-obstacle_polygon = [Vector2(-19.5, -6), Vector2(-5.5, -5), Vector2(20, -5.5), Vector2(20.5, 15), Vector2(-21, 15)]
+obstacle_polygon = [Vector2(-15, 3), Vector2(-3, 3.5), Vector2(17.5, 2.5), Vector2(15, 16), Vector2(-16, 15.5)]
 description = "Tocadiscos"
 clickable = true
-baseline = -7
-interaction_polygon = PackedVector2Array(-13.5, -4, 15.5, -10.5, 13.5, 14, -14.5, 14)
+baseline = 1
+walk_to_point = Vector2(2.2289276, -8.547424)
+look_at_point = Vector2(-8.481949, -7.7108765)
+always_on_top = true
+interaction_polygon = PackedVector2Array(-16, -9.5, 15.5, -10.5, 14.5, 15.5, -15, 15)
 
 [node name="ChairD1" parent="Props" unique_id=269118794 instance=ExtResource("17_cl00h")]
 position = Vector2(-67, 187)

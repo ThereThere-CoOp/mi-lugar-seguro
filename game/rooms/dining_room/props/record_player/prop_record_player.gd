@@ -5,31 +5,31 @@ extends PopochiuProp
 # the function until the sequence of events finishes.
 
 
+func _click_handle() -> void:
+	E.queue([
+		C.Mel.queue_say("Algunos de los discos que tenemos incluye"),
+		C.Mel.queue_say("Pink Floyd"),
+		C.Mel.queue_say("Rock de los 80"),
+		C.Mel.queue_say("Reparto en vena"),
+	])
+	
+	
 #region Virtual ####################################################################################
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character walk to this prop, gaze at it, and then say
-	# something:
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("Not picking that up!")
+	await C.Mel.walk_to_clicked()
+	_click_handle()
 
 
 func _on_double_click() -> void:
-	# Replace the call to E.command_fallback() with your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you could make the player instantly do something instead of walking there first
+	await C.Mel.walk_to_clicked()
+	_click_handle()
 
 
 # When the node is right clicked
 func _on_right_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	PopochiuUtils.e.command_fallback()
-	# For example, you can make the player character gaze at this prop and then say something:
-#	await C.player.face_clicked()
-#	await C.player.say("A deck of cards")
+	await C.Mel.walk_to_clicked()
+	_click_handle()
 
 
 # When the node is middle clicked
