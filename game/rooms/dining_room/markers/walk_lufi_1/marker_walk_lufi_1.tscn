@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bh37n8lom4h7m"]
+
+[node name="WalkLufi1" type="Marker2D" unique_id=1897820653]
+visible = false

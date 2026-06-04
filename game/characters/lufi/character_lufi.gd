@@ -8,11 +8,12 @@ const Data := preload('character_lufi_state.gd')
 
 var state: Data = load("res://game/characters/lufi/character_lufi.tres")
 
+@onready var npc_behavior: NPCBehavior = %NpcBehavior
 
 #region Virtual ####################################################################################
 # When the room in which this node is located finishes being added to the tree
 func _on_room_set() -> void:
-	pass
+	npc_behavior.setup()
 
 
 # When the node is clicked
@@ -80,12 +81,12 @@ func _play_grab() -> void:
 
 # Called when the character starts moving
 func _on_movement_started() -> void:
-	pass
+	npc_behavior.stop()
 
 
 # Called when the character stops moving
 func _on_movement_ended() -> void:
-	pass
+	npc_behavior.start()
 
 
 #endregion

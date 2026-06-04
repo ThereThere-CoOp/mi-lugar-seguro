@@ -35,6 +35,11 @@
 [ext_resource type="PackedScene" uid="uid://buwcwssl1duj" path="res://game/rooms/dining_room/markers/walk_ed_3/marker_walk_ed_3.tscn" id="31_kgwfu"]
 [ext_resource type="PackedScene" uid="uid://irc8aeyj6um2" path="res://game/rooms/dining_room/markers/walk_ed_4/marker_walk_ed_4.tscn" id="32_n2b8n"]
 [ext_resource type="PackedScene" uid="uid://bi7kqo8wd2e5i" path="res://game/rooms/dining_room/markers/walk_ed_5/marker_walk_ed_5.tscn" id="33_kcoqk"]
+[ext_resource type="PackedScene" uid="uid://bh37n8lom4h7m" path="res://game/rooms/dining_room/markers/walk_lufi_1/marker_walk_lufi_1.tscn" id="34_fys0x"]
+[ext_resource type="PackedScene" uid="uid://dyyj7oj6ffrf3" path="res://game/rooms/dining_room/markers/walk_lufi_2/marker_walk_lufi_2.tscn" id="35_ni21n"]
+[ext_resource type="PackedScene" uid="uid://ddsdb2uo6xj6d" path="res://game/rooms/dining_room/markers/walk_lufi_3/marker_walk_lufi_3.tscn" id="36_crssu"]
+[ext_resource type="PackedScene" uid="uid://dffjnjf1rup5r" path="res://game/rooms/dining_room/markers/walk_lufi_4/marker_walk_lufi_4.tscn" id="37_khhld"]
+[ext_resource type="PackedScene" uid="uid://dga4hma33kgh3" path="res://game/characters/lufi/character_lufi.tscn" id="40_u143j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fl5k"]
 atlas = ExtResource("11_m2pwj")
@@ -272,6 +277,18 @@ position = Vector2(152.3852, 114.830124)
 [node name="WalkEd5" parent="Markers" unique_id=2009431949 instance=ExtResource("33_kcoqk")]
 position = Vector2(97.74414, 235.04047)
 
+[node name="WalkLufi1" parent="Markers" unique_id=1897820653 instance=ExtResource("34_fys0x")]
+position = Vector2(351.27875, 106.497375)
+
+[node name="WalkLufi2" parent="Markers" unique_id=631444981 instance=ExtResource("35_ni21n")]
+position = Vector2(217.54468, 281.5537)
+
+[node name="WalkLufi3" parent="Markers" unique_id=540413016 instance=ExtResource("36_crssu")]
+position = Vector2(-134.82193, 286.06158)
+
+[node name="WalkLufi4" parent="Markers" unique_id=904520034 instance=ExtResource("37_khhld")]
+position = Vector2(-185.91133, 207.17357)
+
 [node name="Characters" type="Node2D" parent="." unique_id=1174253765]
 
 [node name="CharacterMel *" parent="Characters" unique_id=1544624530 instance=ExtResource("3_h7v82")]
@@ -283,3 +300,7 @@ position = Vector2(254, 167)
 walk_to_point = Vector2(23.699799, -1.4363708)
 look_at_point = Vector2(-0.95758057, -11.012039)
 metadata/EDITOR_TMP_COPY_OF = "Ed"
+
+[node name="CharacterLufi *" parent="Characters" unique_id=1077740800 instance=ExtResource("40_u143j")]
+position = Vector2(322, 146)
+metadata/EDITOR_TMP_COPY_OF = "Lufi"

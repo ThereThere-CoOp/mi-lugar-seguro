@@ -25,6 +25,7 @@ func _on_room_entered() -> void:
 	GameHelpers.set_main_cam_limits_from_room(self)
 	_check_player_entering()
 	C.Ed.npc_behavior.start()
+	C.Lufi.npc_behavior.start()
 
 
 # What happens when the room changing transition finishes. At this point the room

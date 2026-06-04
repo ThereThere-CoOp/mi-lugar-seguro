@@ -57,7 +57,7 @@ func _handle_behavior():
 		
 		GameConstants.NPCBehaviorChoice.RANDOM_WALKING:
 			var idle_or_walk = randf_range(0,1)
-			if idle_or_walk < 0.3:
+			if idle_or_walk < 0.5:
 				_handle_random_idle()
 			else:
 				# is gonna walk baby

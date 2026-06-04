@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2v8qfts7p3tf" path="res://game/characters/lufi/character_lufi.gd" id="1_en0l1"]
 [ext_resource type="Texture2D" uid="uid://vciq4dgyttgf" path="res://game/characters/lufi/lufi_sprite_atlas.tres" id="2_w2tpx"]
+[ext_resource type="PackedScene" uid="uid://6friri1j2jcw" path="res://game/components/components/NPCBehavior.tscn" id="3_wrdp3"]
 
 [sub_resource type="Animation" id="Animation_w2tpx"]
 resource_name = "RESET"
@@ -35,6 +36,22 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
+[sub_resource type="Animation" id="Animation_heulq"]
+resource_name = "licking"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 31, 32, 33, 34]
+}
+
 [sub_resource type="Animation" id="Animation_q4lda"]
 resource_name = "walk"
 length = 0.8
@@ -56,13 +73,16 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_w2tpx"),
 &"idle": SubResource("Animation_wrdp3"),
+&"licking": SubResource("Animation_heulq"),
 &"walk": SubResource("Animation_q4lda")
 }
 
 [node name="CharacterLufi" type="Area2D" unique_id=1077740800]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_en0l1")
 flips_when = 2
-dialog_pos = Vector2(0, -19.026375)
+walk_speed = 100.0
+dialog_pos = Vector2(0, -25.86398)
 script_name = "Lufi"
 description = "Lufi"
 cursor = 8
@@ -80,7 +100,7 @@ texture_filter = 1
 position = Vector2(0, -8)
 texture = ExtResource("2_w2tpx")
 hframes = 10
-vframes = 3
+vframes = 5
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=894860618]
 visible = false
@@ -92,3 +112,10 @@ visible = false
 vertices = PackedVector2Array(-11, -6, 9, -6, 9, 1, -11, 2)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="NpcBehavior" parent="." unique_id=1036270269 instance=ExtResource("3_wrdp3")]
+unique_name_in_owner = true
+character = "Lufi"
+behavior = 1
+idle_animations = Array[String](["idle", "licking"])
+walking_point_suffix = "WalkLufi"
