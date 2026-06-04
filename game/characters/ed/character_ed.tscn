@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cj7qs5681c6tr" path="res://game/characters/ed/character_ed.gd" id="1_plhxc"]
 [ext_resource type="Texture2D" uid="uid://tqnce5ybox4m" path="res://assets/characters/ed/ed.png" id="2_jbq84"]
+[ext_resource type="PackedScene" uid="uid://6friri1j2jcw" path="res://game/components/components/NPCBehavior.tscn" id="3_j7hnw"]
 
 [sub_resource type="Animation" id="Animation_vxxsy"]
 length = 0.001
@@ -100,8 +101,6 @@ atlas = ExtResource("2_jbq84")
 [node name="CharacterEd" type="Area2D" unique_id=852686659]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_plhxc")
-is_random_walking = null
-waiting_range = null
 flips_when = 2
 walk_speed = 100.0
 dialog_pos = Vector2(-0.8705139, -85.09297)
@@ -140,8 +139,6 @@ vertices = PackedVector2Array(-8.799999, 0.79999995, -8.799999, -4.3999996, 7.99
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
-[node name="RandomWalkingTimer" type="Timer" parent="." unique_id=771046556]
+[node name="NpcBehavior" parent="." unique_id=1036270269 instance=ExtResource("3_j7hnw")]
 unique_name_in_owner = true
-one_shot = true
-
-[connection signal="timeout" from="RandomWalkingTimer" to="." method="_on_random_walking_timer_timeout"]
+behavior = 1

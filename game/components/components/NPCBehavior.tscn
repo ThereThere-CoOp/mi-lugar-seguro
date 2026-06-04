@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://6friri1j2jcw"]
+
+[ext_resource type="Script" uid="uid://cdyf80dku4ihr" path="res://game/components/components/NpcBehavior.gd" id="1_teni3"]
+
+[node name="NpcBehavior" type="Node" unique_id=1036270269]
+script = ExtResource("1_teni3")
+
+[node name="Timer" type="Timer" parent="." unique_id=1640080636]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

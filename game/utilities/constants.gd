@@ -25,3 +25,8 @@ enum ThermostatConfigurationChoice {
 	HOT,
 	COLD,
 }
+
+enum NPCBehaviorChoice {
+	STATIC,
+	RANDOM_WALKING,
+}
