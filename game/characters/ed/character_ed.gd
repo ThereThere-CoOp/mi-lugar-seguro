@@ -14,19 +14,21 @@ var state: Data = load("res://game/characters/ed/character_ed.tres")
 #region Virtual ####################################################################################
 # When the room in which this node is located finishes being added to the tree
 func _on_room_set() -> void:
+	D.dialog_finished.connect(_on_ed_dialog_finnished)
+	
 	npc_behavior.setup()
 
 
 # When the node is clicked
 func _on_click() -> void:
-	npc_behavior.stop()
 	await C.player.walk_to_clicked()
 	await C.Ed.face_direction(C.player.position)
 	await C.player.face_clicked()
 	
+	npc_behavior.stop()
+	npc_behavior.current_state = GameConstants.NPCBehaviorStateChoice.TALKING
 	await D.EdDialog.start()
-	
-	npc_behavior.start()
+	# npc_behavior.start()
 
 
 func _on_double_click() -> void:
@@ -83,12 +85,12 @@ func _play_grab() -> void:
 
 # Called when the character starts moving
 func _on_movement_started() -> void:
-	npc_behavior.stop()
+	super()
 
 
 # Called when the character stops moving
 func _on_movement_ended() -> void:
-	npc_behavior.start()
+	super()
 
 
 #endregion
@@ -101,6 +103,6 @@ func _on_movement_ended() -> void:
 
 
 #endregion
-
-func _process(delta: float) -> void:
-	super(delta)
+func _on_ed_dialog_finnished(dialog: PopochiuDialog) -> void:
+	if dialog.script_name == "EdDialog":
+		npc_behavior.current_state = GameConstants.NPCBehaviorStateChoice.IDLE

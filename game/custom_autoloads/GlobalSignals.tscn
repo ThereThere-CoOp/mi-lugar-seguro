@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bamnswsyf3cdr"]
+
+[ext_resource type="Script" uid="uid://c36jieyagpb3n" path="res://game/custom_autoloads/global_signals.gd" id="1_fjotb"]
+
+[node name="GlobalSignals" type="Node" unique_id=1777636627]
+script = ExtResource("1_fjotb")

@@ -18,6 +18,8 @@ extends Node
 var _character: PopochiuCharacter
 
 var _last_selected_waling_marker_name: String = ""
+
+var current_state: GameConstants.NPCBehaviorStateChoice = GameConstants.NPCBehaviorStateChoice.IDLE
 # Called when the node enters the scene tree for the first time.
 
 func _get_walk_points() -> void:
@@ -31,7 +33,6 @@ func _get_walk_points() -> void:
 			
 			
 func _setup_timer() -> void:
-	_timer.stop()
 	_timer.wait_time = randf_range(waiting_range.x, waiting_range.y)
 	_timer.start()
 
@@ -46,6 +47,7 @@ func _ready() -> void:
 
 
 func _handle_random_idle() -> void:
+	current_state = GameConstants.NPCBehaviorStateChoice.IDLE
 	var idle_index = randi_range(0, len(idle_animations) -  1)
 	_character.play_animation(idle_animations[idle_index])
 	
@@ -72,18 +74,16 @@ func _handle_behavior():
 							selected_marker = _walking_markers[index]
 						
 						_last_selected_waling_marker_name = selected_marker.name
+						current_state = GameConstants.NPCBehaviorStateChoice.WALKING
 						await _character.walk_to_marker(selected_marker.name)
-
+						current_state = GameConstants.NPCBehaviorStateChoice.IDLE
 
 func stop() -> void:
-	_timer.stop()
 	_character.stop_walking()
 		
 	if _character.current_animation != "idle":
 		_character.idle()
 	
-func start() -> void:
-	_setup_timer()
-	
 func _on_timer_timeout() -> void:
-	_handle_behavior()
+	if current_state == GameConstants.NPCBehaviorStateChoice.IDLE:
+		_handle_behavior()

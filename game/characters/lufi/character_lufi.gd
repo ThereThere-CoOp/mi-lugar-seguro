@@ -81,12 +81,12 @@ func _play_grab() -> void:
 
 # Called when the character starts moving
 func _on_movement_started() -> void:
-	npc_behavior.stop()
+	super()
 
 
 # Called when the character stops moving
 func _on_movement_ended() -> void:
-	npc_behavior.start()
+	super()
 
 
 #endregion

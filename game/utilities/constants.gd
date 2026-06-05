@@ -30,3 +30,9 @@ enum NPCBehaviorChoice {
 	STATIC,
 	RANDOM_WALKING,
 }
+
+enum NPCBehaviorStateChoice {
+	IDLE,
+	WALKING,
+	TALKING,
+}
