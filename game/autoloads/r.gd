@@ -7,6 +7,7 @@ const PRBedRoom := preload("res://game/rooms/bed_room/room_bed_room.gd")
 const PRPrologue := preload("res://game/rooms/prologue/room_prologue.gd")
 const PRBathRoom := preload("res://game/rooms/bath_room/room_bath_room.gd")
 const PRCloset := preload("res://game/rooms/closet/room_closet.gd")
+const PRLimonchi := preload("res://game/rooms/limonchi/room_limonchi.gd")
 # ---- classes
 
 # nodes ----
@@ -15,6 +16,7 @@ var BedRoom: PRBedRoom : get = get_BedRoom
 var Prologue: PRPrologue : get = get_Prologue
 var BathRoom: PRBathRoom : get = get_BathRoom
 var Closet: PRCloset : get = get_Closet
+var Limonchi: PRLimonchi : get = get_Limonchi
 # ---- nodes
 
 # functions ----
@@ -23,4 +25,5 @@ func get_BedRoom() -> PRBedRoom: return get_runtime_room("BedRoom")
 func get_Prologue() -> PRPrologue: return get_runtime_room("Prologue")
 func get_BathRoom() -> PRBathRoom: return get_runtime_room("BathRoom")
 func get_Closet() -> PRCloset: return get_runtime_room("Closet")
+func get_Limonchi() -> PRLimonchi: return get_runtime_room("Limonchi")
 # ---- functions

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d0j7cgcey2yhv"]
+
+[ext_resource type="Script" uid="uid://c4uv3g3grp4gk" path="res://game/rooms/limonchi/room_limonchi.gd" id="1_x4k3n"]
+[ext_resource type="PackedScene" uid="uid://bgkd5y8wl26sv" path="res://game/rooms/limonchi/props/background/prop_background.tscn" id="2_87b4x"]
+[ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="3_6mgtl"]
+
+[node name="RoomLimonchi" type="Node2D" unique_id=335088505]
+script = ExtResource("1_x4k3n")
+script_name = "Limonchi"
+has_player = false
+width = 384
+height = 216
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=2005356687]
+
+[node name="Props" type="Node2D" parent="." unique_id=303665963]
+
+[node name="Background" parent="Props" unique_id=1951595019 instance=ExtResource("2_87b4x")]
+position = Vector2(181, 194)
+baseline = -118
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=622242542]
+
+[node name="Regions" type="Node2D" parent="." unique_id=730773363]
+
+[node name="Markers" type="Node2D" parent="." unique_id=547889223]
+
+[node name="Characters" type="Node2D" parent="." unique_id=883415638]
+
+[node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("3_6mgtl")]
+position = Vector2(192, 108)
+metadata/EDITOR_TMP_COPY_OF = "Narrator"

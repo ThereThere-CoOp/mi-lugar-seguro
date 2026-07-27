@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://bk21422ccmeki"]
+
+[ext_resource type="Script" path="res://game/rooms/limonchi/room_limonchi_state.gd" id="1_j5xhy"]
+
+[resource]
+resource_name = "Limonchi"
+script = ExtResource("1_j5xhy")
+script_name = "Limonchi"
+scene = "res://game/rooms/limonchi/room_limonchi.tscn"
