@@ -16,7 +16,8 @@ height = 216
 [node name="Props" type="Node2D" parent="." unique_id=303665963]
 
 [node name="Background" parent="Props" unique_id=1951595019 instance=ExtResource("2_87b4x")]
-position = Vector2(181, 194)
+position = Vector2(192, 107)
+scale = Vector2(0.23, 0.23)
 baseline = -118
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=622242542]

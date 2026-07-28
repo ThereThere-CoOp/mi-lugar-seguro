@@ -7,6 +7,7 @@ const PDDespertar2 := preload("res://game/dialogs/despertar_2/dialog_despertar_2
 const PDChangeClothes := preload("res://game/dialogs/change_clothes/dialog_change_clothes.gd")
 const PDThermostatConfig := preload("res://game/dialogs/thermostat_config/dialog_thermostat_config.gd")
 const PDEdDialog := preload("res://game/dialogs/ed_dialog/dialog_ed_dialog.gd")
+const PDSmartphone := preload("res://game/dialogs/smartphone/dialog_smartphone.gd")
 # ---- classes
 
 # nodes ----
@@ -15,6 +16,7 @@ var Despertar2: PDDespertar2 : get = get_Despertar2
 var ChangeClothes: PDChangeClothes : get = get_ChangeClothes
 var ThermostatConfig: PDThermostatConfig : get = get_ThermostatConfig
 var EdDialog: PDEdDialog : get = get_EdDialog
+var Smartphone: PDSmartphone : get = get_Smartphone
 # ---- nodes
 
 # functions ----
@@ -23,4 +25,5 @@ func get_Despertar2() -> PDDespertar2: return get_instance("Despertar2")
 func get_ChangeClothes() -> PDChangeClothes: return get_instance("ChangeClothes")
 func get_ThermostatConfig() -> PDThermostatConfig: return get_instance("ThermostatConfig")
 func get_EdDialog() -> PDEdDialog: return get_instance("EdDialog")
+func get_Smartphone() -> PDSmartphone: return get_instance("Smartphone")
 # ---- functions

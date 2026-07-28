@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://c4w3i0cf4wb2i"]
+
+[ext_resource type="Script" path="res://game/rooms/smartphone/room_smartphone_state.gd" id="1_jtgcx"]
+
+[resource]
+resource_name = "Smartphone"
+script = ExtResource("1_jtgcx")
+script_name = "Smartphone"
+scene = "res://game/rooms/smartphone/room_smartphone.tscn"

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://8wc4a5g8m1kb"]
+
+[ext_resource type="Script" uid="uid://b2r8cb8d8u5kx" path="res://game/rooms/smartphone/props/background/prop_background.gd" id="1_ipups"]
+[ext_resource type="Shader" uid="uid://dbcm83kih8y6k" path="res://shaders/jitterFreePixelArt.gdshader" id="2_anv0j"]
+[ext_resource type="Texture2D" uid="uid://b0b6xm7805srw" path="res://game/rooms/smartphone/props/background/phone_screen.png" id="3_43tbm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pj4d"]
+shader = ExtResource("2_anv0j")
+
+[node name="Background" type="Area2D" unique_id=1589766782]
+z_index = -1
+input_pickable = false
+script = ExtResource("1_ipups")
+script_name = "Background"
+description = "Background"
+clickable = false
+baseline = -108
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420382837]
+texture_filter = 1
+material = SubResource("ShaderMaterial_1pj4d")
+texture = ExtResource("3_43tbm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=597144171]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=4454265]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=799595676]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://rhgxudhkhybq"]
+
+[ext_resource type="Script" uid="uid://cogrmh4q2313v" path="res://game/rooms/smartphone/room_smartphone.gd" id="1_k8r6o"]
+[ext_resource type="PackedScene" uid="uid://8wc4a5g8m1kb" path="res://game/rooms/smartphone/props/background/prop_background.tscn" id="2_tbx18"]
+[ext_resource type="PackedScene" uid="uid://bpr0wk6806to3" path="res://game/characters/narrator/character_narrator.tscn" id="3_hp0gx"]
+
+[node name="RoomSmartphone" type="Node2D" unique_id=630303991]
+script = ExtResource("1_k8r6o")
+script_name = "Smartphone"
+has_player = false
+width = 384
+height = 216
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=1564876547]
+
+[node name="Props" type="Node2D" parent="." unique_id=1925946769]
+
+[node name="Background" parent="Props" unique_id=1589766782 instance=ExtResource("2_tbx18")]
+position = Vector2(192, 108)
+scale = Vector2(0.23, 0.23)
+baseline = -473
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=741864650]
+
+[node name="Regions" type="Node2D" parent="." unique_id=237050540]
+
+[node name="Markers" type="Node2D" parent="." unique_id=1066750704]
+
+[node name="Characters" type="Node2D" parent="." unique_id=957445360]
+
+[node name="CharacterNarrator *" parent="Characters" unique_id=275102184 instance=ExtResource("3_hp0gx")]
+position = Vector2(192, 108)
+metadata/EDITOR_TMP_COPY_OF = "Narrator"

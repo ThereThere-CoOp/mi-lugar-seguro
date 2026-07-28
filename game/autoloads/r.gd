@@ -8,6 +8,7 @@ const PRPrologue := preload("res://game/rooms/prologue/room_prologue.gd")
 const PRBathRoom := preload("res://game/rooms/bath_room/room_bath_room.gd")
 const PRCloset := preload("res://game/rooms/closet/room_closet.gd")
 const PRLimonchi := preload("res://game/rooms/limonchi/room_limonchi.gd")
+const PRSmartphone := preload("res://game/rooms/smartphone/room_smartphone.gd")
 # ---- classes
 
 # nodes ----
@@ -17,6 +18,7 @@ var Prologue: PRPrologue : get = get_Prologue
 var BathRoom: PRBathRoom : get = get_BathRoom
 var Closet: PRCloset : get = get_Closet
 var Limonchi: PRLimonchi : get = get_Limonchi
+var Smartphone: PRSmartphone : get = get_Smartphone
 # ---- nodes
 
 # functions ----
@@ -26,4 +28,5 @@ func get_Prologue() -> PRPrologue: return get_runtime_room("Prologue")
 func get_BathRoom() -> PRBathRoom: return get_runtime_room("BathRoom")
 func get_Closet() -> PRCloset: return get_runtime_room("Closet")
 func get_Limonchi() -> PRLimonchi: return get_runtime_room("Limonchi")
+func get_Smartphone() -> PRSmartphone: return get_runtime_room("Smartphone")
 # ---- functions
